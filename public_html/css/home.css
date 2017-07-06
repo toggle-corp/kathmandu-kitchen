@@ -1,0 +1,82 @@
+* {
+  box-sizing: border-box;
+  font-family: 'News Cycle', sans-serif;
+  font-weight: 400; }
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 14px; }
+
+body > header {
+  background: url("../img/header-bg.jpg");
+  background-color: #ddd;
+  background-blend-mode: soft-light;
+  background-position: center center;
+  background-size: cover;
+  flex-wrap: wrap; }
+  body > header #main-menu {
+    height: 96px;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    body > header #main-menu .menu-item {
+      text-transform: uppercase;
+      cursor: pointer;
+      padding: 6px 16px;
+      font-weight: 700;
+      color: rgba(0, 0, 0, 0.7);
+      margin: 0 10px;
+      border: 2px solid transparent;
+      transition: 0.2s all ease-in-out;
+      letter-spacing: 0.1em; }
+      body > header #main-menu .menu-item:hover {
+        color: #a82315;
+        border-color: #d62c1a; }
+  body > header #promo {
+    height: calc(100vh - 96px - 240px);
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    body > header #promo h1 {
+      text-transform: uppercase;
+      text-align: center; }
+      body > header #promo h1 strong {
+        font-family: 'Sacramento', sans-serif;
+        display: block;
+        text-transform: none;
+        font-size: 3em; }
+    body > header #promo p {
+      font-size: 1.5em;
+      text-align: center;
+      letter-spacing: 0.1em;
+      font-weight: 700;
+      color: rgba(0, 0, 0, 0.5); }
+  body > header #navigator {
+    height: 240px;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    body > header #navigator button {
+      height: 96px;
+      width: 96px;
+      color: rgba(0, 0, 0, 0.3);
+      font-size: 6em;
+      background-color: transparent;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      animation: jumpy 1.6s ease-in-out infinite;
+      transition: 0.2s color ease-in-out;
+      margin: 0; }
+      body > header #navigator button:hover {
+        color: black; }
+@keyframes jumpy {
+  0% {
+    transform: translateY(0); }
+  50% {
+    transform: translateY(16px); }
+  100% {
+    transform: translateY(0); } }
+
+/*# sourceMappingURL=home.css.map */

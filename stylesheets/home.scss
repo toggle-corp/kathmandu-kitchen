@@ -1,0 +1,100 @@
+@import 'base';
+
+body {
+    >header {
+        background: url('../img/header-bg.jpg');
+        background-color: #ddd;
+        background-blend-mode: soft-light;
+        background-position: center center;
+        background-size: cover;
+        flex-wrap: wrap;
+
+        $menu-height: 96px;
+        $navigator-height: 240px;
+
+        #main-menu {
+            height: $menu-height;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .menu-item {
+                text-transform: uppercase;
+                cursor: pointer;
+                padding: 6px 16px;
+                font-weight: 700;
+                color: rgba(0, 0, 0, 0.7);
+                margin: 0 10px;
+                border: 2px solid transparent;
+                transition: 0.2s all ease-in-out;
+                letter-spacing: 0.1em;
+
+                &:hover {
+                    color: darken($primary-color, 20%);
+                    border-color: darken($primary-color, 10%);
+                }
+            }
+
+        }
+
+        #promo {
+            height: calc(100vh - #{$menu-height} - #{$navigator-height});
+            display: flex;
+            align-items: center;
+            justify-content: center;
+             
+            h1 {
+                text-transform: uppercase;
+                text-align: center;
+
+                strong {
+                    font-family: 'Sacramento', sans-serif;
+                    display: block;
+                    text-transform: none;
+                    font-size: 3em;
+                }
+            }
+
+            p {
+                font-size: 1.5em;
+                text-align: center;
+                letter-spacing: 0.1em;
+                font-weight: 700;
+                color: rgba(0, 0, 0, 0.5);
+            }
+        }
+
+        #navigator {
+            height: $navigator-height;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+
+            button {
+                height: 96px;
+                width: 96px;
+                color: rgba(0, 0, 0, 0.3);
+                font-size: 6em;
+                background-color: transparent;
+                border: none;
+                outline: none;
+                cursor: pointer;
+                animation: jumpy 1.6s ease-in-out infinite;
+                transition: 0.2s color ease-in-out;
+                margin: 0;
+
+                &:hover {
+                    color: rgba(0, 0, 0, 1);
+                }
+            }
+
+            @keyframes jumpy {
+                0% { transform: translateY(0); }
+                50% { transform: translateY(16px); }
+                100% { transform: translateY(0); }
+            }
+        }
+
+    }
+}

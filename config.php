@@ -5,8 +5,8 @@
 
 define("HOST",      "localhost");
 define("USER",      "root");
-define("PASSWORD",  "noob");
-define("DATABASE",  "fiber-db");
+define("PASSWORD",  "root");
+define("DATABASE",  "kathmandu-kitchen");
 
 define("ROOTDIR", __DIR__);
 

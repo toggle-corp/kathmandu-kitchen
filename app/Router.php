@@ -5,7 +5,7 @@ class Router extends RouterBase
     public function __construct()
     {
         $this->routing_rules = array(
-            "^$" => array("template", "fiber.html"),
+            "^$" => array("template", "home.html"),
 
             "^example$"
                 => array('controller', 'ExampleController'),
