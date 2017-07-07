@@ -2,4 +2,4 @@
 .sass-cache/
 
 # CSS map
-.css.map
+*.css.map
