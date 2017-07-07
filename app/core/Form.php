@@ -61,6 +61,8 @@ class Form {
                     $form .= '<input type="text" ' . $this->get_form_attrs($item, true) . '>';
                 } elseif ($type == 'integer') {
                     $form .= '<input type="number" ' . $this->get_form_attrs($item, true) . '>';
+                } elseif ($type == 'float') {
+                    $form .= '<input type="number" step="any" ' . $this->get_form_attrs($item, true) . '>';
                 } elseif ($type == 'boolean') {
                     $form .= '<input type="checkbox" ' . $this->get_form_attrs($item, true) . '>';
                 } elseif ($type == 'datetime') {
@@ -160,7 +162,7 @@ class Form {
         $name = $item[0];
         $type = $item[1];
 
-        $id = str_replace('_', '-', $item[0]);
+        $id = $this->prefix . str_replace('_', '-', $item[0]);
         $container = '<div class="child-container ' . ($item['custom_class'] ? $item['custom_class'] : '') . '" id="' . $id . '">';
 
         $form = new $item['form']();
@@ -180,7 +182,7 @@ class Form {
         $name = $item[0];
         $type = $item[1];
 
-        $id = str_replace('_', '-', $item[0]);
+        $id = $this->prefix . str_replace('_', '-', $item[0]);
         $container = '<div class="children-container ' . ($item['custom_class'] ? $item['custom_class'] : '') . '" id="' . $id . '">';
 
         $form = new $item['form']();
@@ -203,7 +205,7 @@ class Form {
             }
         }
 
-        $singular_name = $item['singular'];
+        $singular_name = $this->prefix . $item['singular'];
         $container .= '<a class="add-child" onclick="add_' . $singular_name . '(this)">Add ' . split_snake_case($item['singular']) .'</a>';
         $container .= <<<SCRIPT
         <script>

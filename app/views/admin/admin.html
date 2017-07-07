@@ -1,0 +1,51 @@
+{% if $form %}
+
+<main class="form">
+<form method="post" enctype="multipart/form-data">
+    <header>
+        <h2>{{ $title }}</h2>
+        <div class="action-buttons">
+            {% if $obj %}
+            <input type="submit" name="delete" value="Delete" onclick="return confirm('Are you sure you want to delete this item?');">
+            {% endif %}
+            <input type="submit" value="Save">
+        </div>
+    </header>
+    <div class="content">
+        {{ $form->generate() }}
+    </div>
+</form>
+</main>
+
+{% else %}
+
+<aside>
+    <header>
+    </header>
+    <div class="content">
+            {% foreach $models as $model %}
+            <a class="model" href="#{{ $model['id'] }}">{{ $model['title'] }}</a>
+            {% endfor %}
+    </div>
+</aside>
+<main>
+{% foreach $models as $model %}
+<section id="{{ $model['id'] }}" hidden>
+    <header>
+        <h3>{{ $model['title'] }}</h3>
+        <div class="action-buttons">
+            <a href="{% url '{{ $model['url'] }}' %}">Add new</a>
+        </div>
+    </header>
+    <div class="content">
+        {% foreach $model['items'] as $item %}
+        <a class="item" href="{% url '{{ $model['url'] }}' %}/{{ $item->id }}">
+            {% if $item->title %}{{ $item->title }}{% elseif $item->description %}{{ $item->description }}{% else %}{{ $item->name }}{% endif %}
+            {% if $item->tag %}({{ $item->tag }}){% endif %}
+        </a>
+        {% endfor %}
+    </div>
+</section>
+{% endfor %}
+</main>
+{% endif %}

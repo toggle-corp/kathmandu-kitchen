@@ -5,22 +5,18 @@ class Router extends RouterBase
     public function __construct()
     {
         $this->routing_rules = array(
-            "^$" => array("template", "home.html"),
+            '^$' => ['template', 'home.html'],
 
-            "^example$"
-                => array('controller', 'ExampleController'),
+            '^admin$' => ['controller', 'AdminController'],
 
-            "^example/create_user/(?<username>\w+)/(?<password>\w+)$"
-                => array('controller', 'ExampleController:create_user'),
+            '^admin/language' =>['controller', 'AdminController:language'],
+            '^admin/language/(?<language_id>\d+)' =>['controller', 'AdminController:language'],
 
-            "^example/test(?:/(?<username>\w+)/(?<password>\w+))?$"
-                => array('controller', 'ExampleController:test'),
+            '^admin/category' =>['controller', 'AdminController:category'],
+            '^admin/category/(?<category_id>\d+)' =>['controller', 'AdminController:category'],
 
-            "^example/logout$"
-                => array('controller', 'ExampleController:logout'),
-
-            "^example/form$"
-                => array('controller', 'ExampleController:form'),
+            '^admin/food-item' =>['controller', 'AdminController:food_item'],
+            '^admin/food-item/(?<food_item_id>\d+)' =>['controller', 'AdminController:food_item'],
         );
     }
 }

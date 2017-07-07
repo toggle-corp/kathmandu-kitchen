@@ -3,3 +3,6 @@
 
 # CSS map
 *.css.map
+
+# Uploaded media
+uploads/
