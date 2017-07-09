@@ -62,7 +62,7 @@ class Model
 
     public function get_schema_fields() {
         $schema = $this->get_schema();
-        if ($schema) {
+        if (isset($schema)) {
             $fields = array('id');
             $types = array('id'=>'integer');
             foreach ($schema as $item) {
@@ -126,9 +126,13 @@ class Model
             $update_string .= "$name=$val";
         }
 
-        $sql = "INSERT INTO " . $this->get_table_name() .
-            " ($keys) VALUES($values) " .
-            " ON DUPLICATE KEY UPDATE $update_string";
+        if (empty($keys)) {
+            $sql = "INSERT INTO " . $this->get_table_name() . " (id) VALUES(null)";
+        } else {
+            $sql = "INSERT INTO " . $this->get_table_name() .
+                " ($keys) VALUES($values) " .
+                " ON DUPLICATE KEY UPDATE $update_string";
+        }
 
         $db->query_with_error($sql);
 

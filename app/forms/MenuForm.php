@@ -24,8 +24,9 @@ class FoodTagForm extends Form {
 class CategoryForm extends Form {
     public function get_schema() {
         return [
+            ['default_name', 'string', 'max_length'=>255],
             ['name', 'child', 'form'=>'LocalesForm'],
-            ['image', 'file', 'dir'=>'uploads', 'max_length'=>255],
+            ['image', 'file', 'dir'=>'uploads', 'max_length'=>255, 'null'=>true],
         ];
     }
 
@@ -38,9 +39,10 @@ class CategoryForm extends Form {
 class FoodItemForm extends Form {
     public function get_schema() {
         return [
-            ['category', 'foreign', 'model'=>'Category'],
+            ['default_name', 'string', 'max_length'=>255],
+            ['category', 'foreign', 'model'=>'Category', 'name_field'=>'default_name'],
             ['name', 'child', 'form'=>'LocalesForm'],
-            ['image', 'file', 'dir'=>'uploads', 'max_length'=>255],
+            ['image', 'file', 'dir'=>'uploads', 'max_length'=>255, 'null'=>true],
             ['price', 'float'],
             ['description', 'child', 'form'=>'LocalesForm'],
             ['tags', 'children', 'singular'=>'tag', 'form'=>'FoodTagForm'],
