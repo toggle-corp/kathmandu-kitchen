@@ -5,10 +5,10 @@ class FoodItem extends Model {
         return [
             ['category', 'integer'],
             ['default_name', 'string', 'max_length'=>255],
-            ['name', 'integer'],
+            ['name', 'integer', 'delete'=>'locales'],
             ['image', 'string', 'max_length'=>255, 'null'=>true],
             ['price', 'float', 'decimal'=>2],
-            ['description', 'integer'],
+            ['description', 'integer', 'delete'=>'locales'],
         ];
     }
 }
