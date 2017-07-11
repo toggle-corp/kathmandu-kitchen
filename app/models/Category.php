@@ -3,7 +3,8 @@
 class Category extends Model {
     public function get_schema() {
         return [
-            ['name', 'integer'],
+            ['default_name', 'string', 'max_length'=>255],
+            ['name', 'integer', 'delete'=>'locales'],
             ['image', 'string', 'max_length'=>255, 'null'=>true],
         ];
     }

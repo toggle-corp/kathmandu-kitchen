@@ -1,0 +1,1 @@
+ALTER TABLE `category` MODIFY `image` VARCHAR(255);
