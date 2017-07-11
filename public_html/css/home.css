@@ -8,69 +8,143 @@ body {
   padding: 0;
   font-size: 14px; }
 
-body > header {
-  background: url("../img/header-bg.jpg");
-  background-color: #ddd;
-  background-blend-mode: soft-light;
-  background-position: center center;
-  background-size: cover;
-  flex-wrap: wrap; }
-  body > header #main-menu {
-    height: 96px;
-    display: flex;
-    align-items: center;
-    justify-content: center; }
-    body > header #main-menu .menu-item {
-      text-transform: uppercase;
-      cursor: pointer;
-      padding: 6px 16px;
-      font-weight: 700;
-      color: rgba(0, 0, 0, 0.7);
-      margin: 0 10px;
-      border: 2px solid transparent;
-      transition: 0.2s all ease-in-out;
-      letter-spacing: 0.1em; }
-      body > header #main-menu .menu-item:hover {
-        color: #a82315;
-        border-color: #d62c1a; }
-  body > header #promo {
-    height: calc(100vh - 96px - 240px);
-    display: flex;
-    align-items: center;
-    justify-content: center; }
-    body > header #promo h1 {
-      text-transform: uppercase;
-      text-align: center; }
-      body > header #promo h1 strong {
-        font-family: 'Sacramento', sans-serif;
-        display: block;
-        text-transform: none;
-        font-size: 3em; }
-    body > header #promo p {
-      font-size: 1.5em;
-      text-align: center;
-      letter-spacing: 0.1em;
-      font-weight: 700;
-      color: rgba(0, 0, 0, 0.5); }
-  body > header #navigator {
-    height: 240px;
-    display: flex;
-    align-items: center;
-    justify-content: center; }
-    body > header #navigator button {
-      height: 96px;
-      width: 96px;
-      color: rgba(0, 0, 0, 0.3);
-      font-size: 6em;
-      background-color: transparent;
-      border: none;
-      outline: none;
-      cursor: pointer;
-      animation: jumpy 1.6s ease-in-out infinite;
-      transition: 0.2s color ease-in-out;
-      margin: 0; }
-      body > header #navigator button:hover {
-        color: black; }
+body {
+  position: relative; }
+  body h1, body h2, body h3, body h4, body h5, body h6, body p {
+    margin: 0; }
+  body > #landing {
+    color: #fff;
+    background-color: transparent;
+    flex-wrap: wrap; }
+    body > #landing > header {
+      height: 200px;
+      padding: 0 24px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between; }
+      body > #landing > header #logo-container {
+        height: 100%; }
+        body > #landing > header #logo-container img {
+          height: 100%;
+          width: auto; }
+      body > #landing > header #main-menu {
+        height: 96px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end; }
+        body > #landing > header #main-menu .menu-item {
+          text-transform: uppercase;
+          cursor: pointer;
+          padding: 6px 16px;
+          font-weight: 700;
+          color: rgba(255, 255, 255, 0.7);
+          margin: 0 10px;
+          border: 2px solid transparent;
+          transition: 0.2s all ease-in-out;
+          letter-spacing: 0.1em; }
+          body > #landing > header #main-menu .menu-item:hover {
+            color: #e08226;
+            border-color: #e08226; }
+    body > #landing > .content {
+      height: calc(100vh - 200px - 240px);
+      display: flex; }
+      body > #landing > .content #promo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-basis: 60%; }
+        body > #landing > .content #promo h1 {
+          text-transform: uppercase;
+          text-align: center;
+          font-size: 2em;
+          margin-bottom: 0; }
+          body > #landing > .content #promo h1 strong {
+            font-family: 'Sacramento', sans-serif;
+            display: block;
+            text-transform: none;
+            font-size: 3em; }
+        body > #landing > .content #promo p {
+          font-size: 2em;
+          text-align: center;
+          letter-spacing: 0.1em;
+          margin-top: 0;
+          font-weight: 700;
+          color: rgba(255, 255, 255, 0.5); }
+      body > #landing > .content #reservation-form-wrapper {
+        flex-basis: 40%; }
+        body > #landing > .content #reservation-form-wrapper header h3 {
+          font-size: 3em;
+          font-family: 'Sacramento', sans-serif;
+          text-align: center; }
+        body > #landing > .content #reservation-form-wrapper .content {
+          padding: 32px;
+          font-size: 1.33em; }
+          body > #landing > .content #reservation-form-wrapper .content .radio-input-container {
+            padding: 10px;
+            display: flex;
+            align-items: center; }
+            body > #landing > .content #reservation-form-wrapper .content .radio-input-container > label {
+              color: rgba(255, 255, 255, 0.6); }
+            body > #landing > .content #reservation-form-wrapper .content .radio-input-container .radio-group label {
+              padding: 0 10px;
+              display: inline-flex;
+              align-items: center; }
+              body > #landing > .content #reservation-form-wrapper .content .radio-input-container .radio-group label input {
+                margin-right: 8px; }
+          body > #landing > .content #reservation-form-wrapper .content .input-container {
+            padding: 10px; }
+            body > #landing > .content #reservation-form-wrapper .content .input-container > label {
+              display: block;
+              color: rgba(255, 255, 255, 0.6); }
+            body > #landing > .content #reservation-form-wrapper .content .input-container input {
+              font-size: inherit;
+              width: 100%;
+              background-color: transparent;
+              outline: none;
+              border: none;
+              border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+              color: rgba(255, 255, 255, 0.5); }
+              body > #landing > .content #reservation-form-wrapper .content .input-container input:focus {
+                color: rgba(255, 255, 255, 0.9);
+                border-bottom-color: #e08226; }
+          body > #landing > .content #reservation-form-wrapper .content .action-buttons {
+            text-align: center;
+            margin-top: 32px;
+            padding: 10px; }
+            body > #landing > .content #reservation-form-wrapper .content .action-buttons button {
+              background-color: transparent;
+              border: transparent;
+              outline: none;
+              color: rgba(255, 255, 255, 0.5);
+              cursor: pointer;
+              text-transform: uppercase;
+              font-size: 1em;
+              padding: 6px 48px;
+              border: 2px solid rgba(255, 255, 255, 0.1);
+              border-radius: 3px; }
+          body > #landing > .content #reservation-form-wrapper .content .input-row {
+            display: flex; }
+            body > #landing > .content #reservation-form-wrapper .content .input-row .input-container {
+              flex-basis: 50%; }
+    body > #landing #navigator {
+      height: 240px;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+      body > #landing #navigator button {
+        height: 96px;
+        width: 96px;
+        color: rgba(255, 255, 255, 0.3);
+        font-size: 6em;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        animation: jumpy 1.6s ease-in-out infinite;
+        transition: 0.2s color ease-in-out;
+        margin: 0; }
+        body > #landing #navigator button:hover {
+          color: white; }
 @keyframes jumpy {
   0% {
     transform: translateY(0); }
@@ -78,5 +152,196 @@ body > header {
     transform: translateY(16px); }
   100% {
     transform: translateY(0); } }
+  body #our-menu {
+    min-height: 100vh;
+    background-color: #f5f5f5; }
+    body #our-menu > header {
+      height: 96px;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+      body #our-menu > header h2 {
+        font-family: "Sacramento", sans-serif;
+        font-size: 3em; }
+    body #our-menu > .content {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      flex-wrap: wrap; }
+      body #our-menu > .content .menu-group {
+        margin: 10px;
+        width: 360px;
+        background-color: #fff;
+        box-shadow: 0 3px 25px -7px rgba(0, 0, 0, 0.3); }
+        body #our-menu > .content .menu-group.expanded > header > div button {
+          transform: rotate(180deg); }
+        body #our-menu > .content .menu-group > header {
+          height: 300px;
+          flex-wrap: wrap;
+          position: relative; }
+          body #our-menu > .content .menu-group > header img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center center;
+            filter: brightness(50%); }
+          body #our-menu > .content .menu-group > header > div {
+            background-color: rgba(255, 255, 255, 0.7);
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 16px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%; }
+          body #our-menu > .content .menu-group > header h3 {
+            font-weight: 700;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center; }
+          body #our-menu > .content .menu-group > header button {
+            width: 40px;
+            height: 40px;
+            border: none;
+            outline: none;
+            background-color: transparent;
+            border-radius: 50%;
+            font-size: 1.33em;
+            transition: 0.2s transform ease-in-out;
+            transform: rotate(-90deg); }
+            body #our-menu > .content .menu-group > header button:hover {
+              background-color: rgba(0, 0, 0, 0.06);
+              cursor: pointer; }
+        body #our-menu > .content .menu-group > .content {
+          display: none; }
+        body #our-menu > .content .menu-group .menu-item {
+          border-top: 2px solid rgba(0, 0, 0, 0.05);
+          display: flex;
+          justify-content: space-between;
+          flex-wrap: wrap;
+          cursor: pointer; }
+          body #our-menu > .content .menu-group .menu-item:hover {
+            background-color: rgba(0, 0, 0, 0.06); }
+          body #our-menu > .content .menu-group .menu-item img {
+            display: none;
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            object-position: center center; }
+          body #our-menu > .content .menu-group .menu-item .title {
+            height: 48px;
+            flex-basis: 70%;
+            display: flex;
+            align-items: center;
+            padding: 0 16px;
+            color: #b9691a; }
+          body #our-menu > .content .menu-group .menu-item .price {
+            flex-basis: 30%;
+            padding: 0 16px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end; }
+          body #our-menu > .content .menu-group .menu-item .description {
+            display: none;
+            flex-basis: 100%;
+            padding: 10px 16px;
+            color: rgba(0, 0, 0, 0.7); }
+  body #modal-container {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: transparent; }
+    body #modal-container .modal {
+      display: none;
+      position: absolute;
+      width: 300px;
+      height: 200px;
+      left: 0;
+      top: 0;
+      background-color: #fff; }
+      body #modal-container .modal > header {
+        height: 96px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 32px; }
+        body #modal-container .modal > header button {
+          background-color: transparent;
+          border: none;
+          width: 48px;
+          height: 48px;
+          outline: none;
+          border-radius: 50%;
+          font-size: 2em; }
+          body #modal-container .modal > header button:hover {
+            background-color: rgba(0, 0, 0, 0.1); }
+        body #modal-container .modal > header .search-input-container {
+          border-bottom: 2px solid rgba(0, 0, 0, 0.1); }
+          body #modal-container .modal > header .search-input-container i {
+            font-size: 1.3em;
+            margin-right: 6px;
+            display: inline-block; }
+          body #modal-container .modal > header .search-input-container input {
+            font-size: 1.3em;
+            border: none;
+            outline: none;
+            background-color: transparent; }
+      body #modal-container .modal .content {
+        height: calc(100% - 72px);
+        overflow-y: auto; }
+      body #modal-container .modal#our-menu-modal header h2 {
+        font-family: "Sacramento", sans-serif;
+        font-size: 3em; }
+      body #modal-container .modal#our-menu-modal > .content {
+        display: flex; }
+        body #modal-container .modal#our-menu-modal > .content .category-list {
+          flex-basis: 320px;
+          padding: 10px; }
+          body #modal-container .modal#our-menu-modal > .content .category-list a {
+            display: block;
+            width: 100%;
+            padding: 10px 32px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            text-transform: uppercase;
+            cursor: pointer; }
+            body #modal-container .modal#our-menu-modal > .content .category-list a:hover {
+              background-color: rgba(0, 0, 0, 0.06); }
+            body #modal-container .modal#our-menu-modal > .content .category-list a.active {
+              background-color: #e08226;
+              color: #fff; }
+        body #modal-container .modal#our-menu-modal > .content .item-list .menu-items {
+          flex-basis: calc(100% - 320px);
+          display: flex;
+          flex-wrap: wrap;
+          align-items: flex-start; }
+          body #modal-container .modal#our-menu-modal > .content .item-list .menu-items .menu-item {
+            width: 300px;
+            margin: 10px;
+            box-shadow: 0 3px 25px -5px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-wrap: wrap; }
+            body #modal-container .modal#our-menu-modal > .content .item-list .menu-items .menu-item img {
+              width: 100%;
+              flex-basis: 100%;
+              height: 200px;
+              object-fit: cover;
+              object-position: center center; }
+            body #modal-container .modal#our-menu-modal > .content .item-list .menu-items .menu-item .title {
+              flex-basis: 70%;
+              padding: 10px;
+              color: #b9691a; }
+            body #modal-container .modal#our-menu-modal > .content .item-list .menu-items .menu-item .price {
+              flex-basis: 30%;
+              padding: 10px;
+              text-align: right; }
+            body #modal-container .modal#our-menu-modal > .content .item-list .menu-items .menu-item .description {
+              flex-basis: 100%;
+              padding: 10px;
+              color: rgba(0, 0, 0, 0.6); }
 
 /*# sourceMappingURL=home.css.map */

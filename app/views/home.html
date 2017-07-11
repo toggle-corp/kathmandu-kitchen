@@ -8,23 +8,206 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" >
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" />
     <link rel="stylesheet" type="text/css" href="{% url 'css/home.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% url 'css/cooking.css' %}">
+     
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="{% url 'js/home.js' %}"></script>
 </head>
 <body>
-    <header>
-        <div id="main-menu">
-            <a class="menu-item">See Menu</a>
-            <a class="menu-item">Make Reservations</a>
-            <a class="menu-item">Contact us</a>
+    <section id="landing">
+        <div class="cooking">
+            <div class="wrap">
+                <div class="background">
+                    <canvas class="background-canvas"></canvas>
+                </div>
+            </div>
         </div>
-        <div id="promo">
-            <div>
-                <h1>Welcome to <strong>Kathmandu Kitchen</strong></h1>
-                <p>The taste you deserve</p>
+        <header>
+            <div id="logo-container">
+                <img src="{% url 'img/logo.png' %}">
+            </div>
+
+            <div id="main-menu">
+                <a class="menu-item">See Menu</a>
+                <a class="menu-item">Opening hours</a>
+                <a class="menu-item">Make Reservations</a>
+                <a class="menu-item">Contact us</a>
+            </div>
+        </header>
+        <script src="{% url 'js/cooking.js' %}"></script>
+        <div class="content">
+            <div id="promo">
+                <div>
+                    <h1>Welcome to <strong>Kathmandu Kitchen</strong></h1>
+                    <p>The taste you deserve</p>
+                </div>
+            </div>
+            <div id="reservation-form-wrapper">
+                <header>
+                    <h3>Make a reservation</h3>
+                </header>
+                <div class="content">
+                    <div class="radio-input-container">
+                        <label>Select location:</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="reservation-location">Amsterdam</label>
+                            <label><input type="radio" name="reservation-location">Zaansted</label>
+                        </div>
+                    </div>
+                    <div class="input-row">
+                        <div class="input-container">
+                            <label>Date:</label>
+                            <input type="date">
+                        </div>
+                        <div class="input-container">
+                            <label>Number of person:</label>
+                            <input type="number" step="1">
+                        </div>
+                    </div>
+                    <div class="input-row">
+                        <div class="input-container">
+                            <label>Time:</label>
+                            <input type="time">
+                        </div>
+                        <div class="input-container">
+                            <label>Email:</label>
+                            <input type="text">
+                        </div>
+                    </div>
+                    <div class="action-buttons">
+                        <button>Submit</button>
+                    </div>
+                </div>
+
             </div>
         </div>
         <div id="navigator">
             <button><i class="ion-ios-arrow-down"></i></button>
         </div>
-    </header>
+    </section>
+     
+    <section id="our-menu">
+        <header>
+            <h2>Our Menu</h2>
+        </header>
+        <div class="content">
+            <div class="menu-group" data-target="#menu-items-tandoori">
+                <header>
+                    <img src="{% url 'img/header-bg.jpg' %}">
+                    <div>
+                        <h3>Tandoori Dish</h3>
+                        <button class="expand-menu-group-btn"><i class="ion-ios-arrow-down"></i></button>
+                    </div>
+                </header>
+                <div class="content">
+                    <div class="menu-item">
+                        <img src="{% url 'img/test.jpg' %}">
+                        <h4 class="title">Chicken</h4>
+                        <span class="price">1500</span>
+                        <p class="description">Lamb meat I guess, served with bla bla bla, just some dead lamb</p>
+                    </div> 
+                    <div class="menu-item">
+                        <img src="{% url 'img/test.jpg' %}">
+                        <h4 class="title">Kathmandu special</h4>
+                        <span class="price">1500</span>
+                        <p class="description">Lamb meat I guess, served with bla bla bla, just some dead lamb</p>
+                    </div> 
+                </div>
+            </div>
+            <div class="menu-group" data-target="#menu-items-vegetarian">
+                <header>
+                    <img src="{% url 'img/header-bg.jpg' %}">
+                    <div>
+                        <h3>Vegetarian</h3>
+                        <button class="expand-menu-group-btn"><i class="ion-ios-arrow-down"></i></button>
+                    </div>
+                </header>
+            </div>
+            <div class="menu-group" data-target="#menu-items-chicken">
+                <header>
+                    <img src="{% url 'img/header-bg.jpg' %}">
+                    <div>
+                        <h3>Chicken</h3>
+                        <button class="expand-menu-group-btn"><i class="ion-ios-arrow-down"></i></button>
+                    </div>
+                </header>
+            </div> 
+            <div class="menu-group" data-target="#menu-items-kathmandu-special">
+                 <header>
+                    <img src="{% url 'img/header-bg.jpg' %}">
+                    <div>
+                        <h3>Kathmandu special</h3>
+                        <button class="expand-menu-group-btn"><i class="ion-ios-arrow-down"></i></button>
+                    </div>
+                </header>
+            </div>
+        </div>
+    </section>
+    <div id="modal-container">
+        <div class="modal" id="our-menu-modal">
+            <header>
+                <h2>Our menu</h2>
+                <div class="search-input-container">
+                    <i class="ion-ios-search"></i>
+                    <input type="search" placeholder="Search">
+                </div>
+                <button class="btn-close-modal"><i class="ion-ios-close-empty"></i></button>
+            </header>
+            <div class="content">
+                <div class="category-list">
+                    <a data-target="#menu-items-tandoori">Tandori</a>
+                    <a data-target="#menu-items-chicken">Chicken</a>
+                    <a data-target="#menu-items-vegetarian">Vegetarian</a>
+                    <a data-target="#menu-items-kathmandu-special">Kathmandu Special</a>
+                </div>
+                <div class="item-list">
+                    <div class="menu-items" id="menu-items-tandoori" hidden>
+                        <div class="menu-item">
+                            <img src="{% url 'img/test.jpg' %}">
+                            <h4 class="title">Tandoori Lamb Tikka</h4>
+                            <span class="price">1500</span>
+                            <p class="description">Lamb meat I guess, served with bla bla bla, just some dead lamb</p>
+                        </div>
+                        <div class="menu-item">
+                            <img src="{% url 'img/test.jpg' %}">
+                            <h4 class="title">Tandoori Lamb Tikka</h4>
+                            <span class="price">1500</span>
+                            <p class="description">Lamb meat I guess, served with bla bla bla, just some dead lamb</p>
+                        </div> 
+                        <div class="menu-item">
+                            <img src="{% url 'img/test.jpg' %}">
+                            <h4 class="title">Tandoori Lamb Tikka</h4>
+                            <span class="price">1500</span>
+                            <p class="description">Lamb meat I guess, served with bla bla bla, just some dead lamb</p>
+                        </div> 
+                    </div> 
+                    <div class="menu-items" id="menu-items-chicken" hidden>
+                        <div class="menu-item">
+                            <img src="{% url 'img/test.jpg' %}">
+                            <h4 class="title">Tandoori Lamb Tikka</h4>
+                            <span class="price">1500</span>
+                            <p class="description">Lamb meat I guess, served with bla bla bla, just some dead lamb</p>
+                        </div> 
+                    </div> 
+                    <div class="menu-items" id="menu-items-vegetarian" hidden>
+                        <div class="menu-item">
+                            <img src="{% url 'img/test.jpg' %}">
+                            <h4 class="title">Tandoori Lamb Tikka</h4>
+                            <span class="price">1500</span>
+                            <p class="description">Lamb meat I guess, served with bla bla bla, just some dead lamb</p>
+                        </div> 
+                        <div class="menu-item">
+                            <img src="{% url 'img/test.jpg' %}">
+                            <h4 class="title">Tandoori Lamb Tikka</h4>
+                            <span class="price">1500</span>
+                            <p class="description">Lamb meat I guess, served with bla bla bla, just some dead lamb</p>
+                        </div> 
+                    </div> 
+                    <div class="menu-items" id="menu-items-kathmandu-special" hidden>
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
