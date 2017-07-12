@@ -22,25 +22,25 @@ class AdminController extends Controller {
         $data = [];
 
         $models = [];
-        
+
         $model = [];
         $model['title'] = 'Language';
         $model['id'] = 'languages';
         $model['url'] = 'admin/language';
         $model['items'] = Language::query()->get();
         $models[] = $model;
-        
+
         $model = [];
         $model['title'] = 'Category';
         $model['id'] = 'categories';
         $model['url'] = 'admin/category';
         $model['items'] = Category::query()->get();
         $models[] = $model;
-        
+
         $model = [];
         $model['title'] = 'FoodItem';
         $model['id'] = 'food_items';
-        $model['url'] = 'admin/food-items';
+        $model['url'] = 'admin/food-item';
         $model['items'] = FoodItem::query()->get();
         $models[] = $model;
 
@@ -91,6 +91,7 @@ class AdminController extends Controller {
         $data = [];
         $data['form'] = $form;
         $data['title'] = $title;
+        $data['id'] = $admin_path;
 
         if ($id != null) {
             $obj = $model_class::query()->where('id=?', $id)->first();

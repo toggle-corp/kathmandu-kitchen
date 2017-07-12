@@ -1,0 +1,137 @@
+* {
+  box-sizing: border-box;
+  font-family: 'News Cycle', sans-serif;
+  font-weight: 400; }
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 14px; }
+
+body {
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden; }
+  body aside {
+    flex-basis: 320px;
+    height: 100vh; }
+    body aside > header {
+      height: 56px; }
+    body aside .content {
+      height: calc(100% - 56px);
+      overflow-y: auto; }
+      body aside .content .model {
+        display: block;
+        width: 100%;
+        padding: 10px 24px;
+        cursor: pointer; }
+        body aside .content .model:hover {
+          background-color: rgba(0, 0, 0, 0.05); }
+        body aside .content .model.active {
+          background-color: #e08226;
+          color: #fff; }
+  body main {
+    flex-basis: calc(100% - 320px);
+    height: 100vh;
+    overflow-y: auto;
+    background-color: #f0f0f0; }
+    body main > section header {
+      height: 56px;
+      padding: 0 32px; }
+      body main > section header .action-buttons a {
+        text-decoration: none;
+        color: #fff;
+        background-color: #e08226;
+        margin-bottom: 10px;
+        padding: 2px 4px; }
+        body main > section header .action-buttons a span {
+          padding: 2px 4px; }
+    body main > section .content {
+      margin-top: 20px;
+      height: calc(100% - 56px);
+      overflow-y: auto;
+      padding: 0 32px; }
+      body main > section .content > a {
+        margin-bottom: 20px;
+        color: black;
+        text-decoration: none; }
+  body #language {
+    flex-basis: 60%; }
+    body #language form {
+      padding: 10px 20px; }
+      body #language form .content .field {
+        display: flex;
+        padding: 4px 8px; }
+        body #language form .content .field label {
+          flex-basis: 20%;
+          text-align: right;
+          margin-right: 4px; }
+        body #language form .content .field input {
+          flex-basis: 70%;
+          margin-left: 10px; }
+      body #language form .action-buttons {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 10px; }
+        body #language form .action-buttons input {
+          margin-right: 10px;
+          color: #fff;
+          background-color: #e08226;
+          border: none;
+          cursor: pointer;
+          padding: 4px 8px; }
+          body #language form .action-buttons input[name="delete"] {
+            background-color: rgba(255, 0, 0, 0.8); }
+  body #food_item, body #category {
+    flex-basis: 60%; }
+    body #food_item form, body #category form {
+      padding: 10px 20px; }
+      body #food_item form .content .field, body #category form .content .field {
+        display: flex;
+        flex-wrap: wrap;
+        flex-basis: 100%;
+        padding: 4px 8px; }
+        body #food_item form .content .field:nth-child(odd), body #category form .content .field:nth-child(odd) {
+          background-color: rgba(0, 0, 0, 0.06); }
+        body #food_item form .content .field label:not(.remove-input-wrapper), body #category form .content .field label:not(.remove-input-wrapper) {
+          font-weight: bold;
+          flex-basis: 144px; }
+        body #food_item form .content .field label.remove-input-wrapper, body #category form .content .field label.remove-input-wrapper {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          padding: 0 10px;
+          user-select: none;
+          margin-left: auto; }
+        body #food_item form .content .field input, body #category form .content .field input {
+          flex-basis: calc(100% - 144px); }
+          body #food_item form .content .field input[name="remove_image"], body #category form .content .field input[name="remove_image"] {
+            outline: none;
+            margin: 0 6px 0 0;
+            flex-basis: auto;
+            color: red; }
+        body #food_item form .content .field .child-container, body #food_item form .content .field .children-container, body #category form .content .field .child-container, body #category form .content .field .children-container {
+          flex-basis: 100%;
+          padding: 10px; }
+          body #food_item form .content .field .child-container .child, body #food_item form .content .field .children-container .child, body #category form .content .field .child-container .child, body #category form .content .field .children-container .child {
+            padding: 10px;
+            border-bottom: 2px solid rgba(0, 0, 0, 0.1); }
+          body #food_item form .content .field .child-container a, body #food_item form .content .field .children-container a, body #category form .content .field .child-container a, body #category form .content .field .children-container a {
+            color: #e08226;
+            cursor: pointer;
+            text-transform: uppercase; }
+      body #food_item form .action-buttons, body #category form .action-buttons {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 10px; }
+        body #food_item form .action-buttons input, body #category form .action-buttons input {
+          margin-right: 10px;
+          color: #fff;
+          background-color: #e08226;
+          border: none;
+          cursor: pointer;
+          padding: 4px 8px; }
+          body #food_item form .action-buttons input[name="delete"], body #category form .action-buttons input[name="delete"] {
+            background-color: rgba(255, 0, 0, 0.8); }
+
+/*# sourceMappingURL=admin.css.map */

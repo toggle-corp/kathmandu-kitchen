@@ -1,0 +1,67 @@
+@import 'base';
+
+
+body {
+
+    #login-container {
+        position:fixed;
+        top: 30%;
+        left: 40%;
+        width: 25%;
+        padding: 10px 24px;
+        border: 2px solid $primary-color;
+        background-color: #f0f0f0;
+
+        header {
+            height: 72px;
+            display: flex;
+            align-items: center;
+
+            h1 {
+                margin: 0;
+
+                small {
+                    font-size: 0.8em;
+
+                    &:before {
+                        content: '/';
+                        padding: 0 10px;
+                    }
+                }
+            }
+        }
+
+        main {
+            form {
+                >div {
+                    display: flex;
+                    padding: 10px 0;
+                    margin-bottom: 10px;
+
+                    label {
+                        text-align: right;
+                        margin-right: 4px;
+                        flex-basis: 144px;
+                    }
+                    input {
+                        flex-basis: calc(100% - 144px);
+                        align-self: center;
+                    }
+                }
+                .btn-login {
+                   input {
+                       display: flex;
+                       flex-basis: 10%;
+                       background-color: $primary-color;
+                       border: none;
+                       cursor: pointer;
+                       padding: 4px 8px;
+                    }
+                       justify-content: center;
+
+                }
+            }
+        }
+    }
+
+}

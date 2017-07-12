@@ -9,56 +9,57 @@
     <title>Kathmandu Kitchen - Admin panel</title>
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% url 'css/logn.css' %}">
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 
     <link href="{% url 'css/login.css' %}" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <h1>Kathmandu Kitchen</h1>
-        <h2>Admin</h2>
-    </header>
+    <div id="login-container">
+        <header>
+            <h1>Kathmandu Kitchen<small>Admin Panel</small></h1>
+        </header>
 
-    <main>
-        {% if $new_user %}
-        <form method="post">
-            {% if $error %}
-            <div class="error">{{ $error }}</div>
+        <main>
+            {% if $new_user %}
+            <form method="post">
+                {% if $error %}
+                <div class="error">{{ $error }}</div>
+                {% endif %}
+                <div>
+                    <label>Username :</label>
+                    <input name="username" type="text" required>
+                </div>
+                <div>
+                    <label>Password :</label>
+                    <input name="password" type="password" required>
+                </div>
+                <div>
+                    <label>Confirm password :</label>
+                    <input name="retype_password" type="password" required>
+                </div>
+
+                <div class="btn-login"><input name="register" type="submit" value="Register"></div>
+            </form>
+            {% else %}
+            <form method="post">
+                {% if $error %}
+                <div class="error">{{ $error }}</div>
+                {% endif %}
+                <h3>Login</h3>
+                <div>
+                    <label>Username :</label>
+                    <input name="username" type="text" required>
+                </div>
+                <div>
+                    <label>Password :</label>
+                    <input name="password" type="password" required>
+                </div>
+
+                <div class="btn-login"> <input type="submit" value="Login"> </div>
+            </form>
             {% endif %}
-            <h3>Register</h3>
-            <div>
-                <label>Username</label>
-                <input name="username" type="text" required>
-            </div>
-            <div>
-                <label>Password</label>
-                <input name="password" type="password" required>
-            </div>
-            <div>
-                <label>Retype password</label>
-                <input name="retype_password" type="password" required>
-            </div>
-
-            <input name="register" type="submit" value="Register">
-        </form>
-        {% else %}
-        <form method="post">
-            {% if $error %}
-            <div class="error">{{ $error }}</div>
-            {% endif %}
-            <h3>Login</h3>
-            <div>
-                <label>Username</label>
-                <input name="username" type="text" required>
-            </div>
-            <div>
-                <label>Password</label>
-                <input name="password" type="password" required>
-            </div>
-
-            <input type="submit" value="Login">
-        </form>
-        {% endif %}
-    </main>
+        </main>
+</div>
 </body>
 </html>

@@ -84,7 +84,7 @@ body {
             display: flex;
             align-items: center; }
             body > #landing > .content #reservation-form-wrapper .content .radio-input-container > label {
-              color: rgba(255, 255, 255, 0.6); }
+              color: rgba(255, 255, 255, 0.8); }
             body > #landing > .content #reservation-form-wrapper .content .radio-input-container .radio-group label {
               padding: 0 10px;
               display: inline-flex;
@@ -95,7 +95,7 @@ body {
             padding: 10px; }
             body > #landing > .content #reservation-form-wrapper .content .input-container > label {
               display: block;
-              color: rgba(255, 255, 255, 0.6); }
+              color: rgba(255, 255, 255, 0.8); }
             body > #landing > .content #reservation-form-wrapper .content .input-container input {
               font-size: inherit;
               width: 100%;
@@ -122,6 +122,9 @@ body {
               padding: 6px 48px;
               border: 2px solid rgba(255, 255, 255, 0.1);
               border-radius: 3px; }
+              body > #landing > .content #reservation-form-wrapper .content .action-buttons button:hover {
+                color: #fff;
+                background-color: #e08226; }
           body > #landing > .content #reservation-form-wrapper .content .input-row {
             display: flex; }
             body > #landing > .content #reservation-form-wrapper .content .input-row .input-container {
