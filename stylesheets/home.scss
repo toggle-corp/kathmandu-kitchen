@@ -580,7 +580,7 @@ body {
                 height: calc(100% - 72px);
                 overflow-y: auto;
             }
-             
+
             &#hamburger-modal {
                 h2 {
                     font-family: $font-family-title;
@@ -631,7 +631,7 @@ body {
 
                         a {
                             cursor: pointer;
-                            height: 56px; 
+                            height: 56px;
                             margin-bottom: 16px;
                             display: flex;
                             align-items: center;
@@ -645,7 +645,7 @@ body {
                             input {
                                 display: none;
                             }
-                             
+
                             &:hover {
                                 background-color: rgba(0, 0, 0, 0.05);
                             }
@@ -659,8 +659,13 @@ body {
                     }
 
                 }
+                @media screen and (max-width: 720px) {
+                    width: 100%;
+                    left: 0;
+                    transform: translate(0, -50%);
+                }
             }
-             
+
             &#our-menu-modal {
                 header {
                     h2 {

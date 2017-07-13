@@ -560,6 +560,11 @@ body {
               body #modal-container .modal#config-modal .content #location-select-modal a.active {
                 background-color: #e08226;
                 color: #fff; }
+        @media screen and (max-width: 720px) {
+          body #modal-container .modal#config-modal {
+            width: 100%;
+            left: 0;
+            transform: translate(0, -50%); } }
       body #modal-container .modal#our-menu-modal header h2 {
         font-family: "Sacramento", sans-serif;
         font-size: 3em; }
