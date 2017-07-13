@@ -1,6 +1,5 @@
 @import 'base';
-@import 'contact-us';
-@import 'opening-hours';
+@import 'opening-hours-and-contact-us';
 
 body {
     position: relative;
@@ -10,11 +9,6 @@ body {
     }
 
     >#landing {
-        // background: url('../img/header-bg.jpg');
-        // background-color: #424242;
-        // background-blend-mode: multiply;
-        // background-position: center center;
-        // background-size: cover;
         color: #fff;
         background-color: transparent;
         flex-wrap: wrap;
@@ -518,6 +512,11 @@ body {
                 }
             }
         }
+    }
+
+    >footer {
+        min-height: 50vh;
+        background-color: #313131;
     }
 
     #modal-container {
