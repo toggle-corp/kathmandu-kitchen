@@ -1,1 +1,0 @@
-CREATE TABLE IF NOT EXISTS locale_string ( `id` INT(11) NOT NULL AUTO_INCREMENT, `locales` INT(11), `language` INT(11) NOT NULL, `value` TEXT NOT NULL, PRIMARY KEY (`id`))

@@ -6,6 +6,6 @@ cmd = 'sass --watch '
 
 for file in os.listdir("stylesheets"):
     if not file.startswith("_") and file.endswith(".scss"):
-        cmd += 'stylesheets/'+file+':public_html/css/'+file[:-4]+'css '
+        cmd += 'stylesheets/'+file+':static/css/'+file[:-4]+'css '
 
 os.system(cmd)

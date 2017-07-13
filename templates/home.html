@@ -1,3 +1,4 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,11 +9,11 @@
     <link href="https://fonts.googleapis.com/css?family=News+Cycle:400,700|Sacramento" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" >
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" />
-    <link rel="stylesheet" type="text/css" href="{% url 'css/home.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% url 'css/cooking.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/cooking.css' %}">
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-    <script src="{% url 'js/home.js' %}"></script>
+    <script src="{% static 'js/home.js' %}"></script>
 </head>
 <body>
     <section id="landing">
@@ -25,7 +26,7 @@
         </div>
         <header>
             <div id="logo-container">
-                <img src="{% url 'img/logo.png' %}">
+                <img src="{% static 'img/logo.png' %}">
             </div>
 
             <div id="main-menu">
@@ -36,7 +37,7 @@
                 <a class="hamburger-item"><i class="ion-navicon"></i></a>
             </div>
         </header>
-        <script src="{% url 'js/cooking.js' %}"></script>
+        <script src="{% static 'js/cooking.js' %}"></script>
         <div class="content">
             <div id="promo">
                 <div>
@@ -95,7 +96,7 @@
         <div class="content">
             <div class="menu-group" data-target="#menu-items-tandoori">
                 <header>
-                    <img src="{% url 'img/header-bg.jpg' %}">
+                    <img src="{% static 'img/header-bg.jpg' %}">
                     <div>
                         <h3>Tandoori Dish</h3>
                         <button class="expand-menu-group-btn"><i class="ion-ios-arrow-down"></i></button>
@@ -104,7 +105,7 @@
             </div>
             <div class="menu-group" data-target="#menu-items-vegetarian">
                 <header>
-                    <img src="{% url 'img/header-bg.jpg' %}">
+                    <img src="{% static 'img/header-bg.jpg' %}">
                     <div>
                         <h3>Vegetarian</h3>
                         <button class="expand-menu-group-btn"><i class="ion-ios-arrow-down"></i></button>
@@ -113,7 +114,7 @@
             </div>
             <div class="menu-group" data-target="#menu-items-chicken">
                 <header>
-                    <img src="{% url 'img/header-bg.jpg' %}">
+                    <img src="{% static 'img/header-bg.jpg' %}">
                     <div>
                         <h3>Chicken</h3>
                         <button class="expand-menu-group-btn"><i class="ion-ios-arrow-down"></i></button>
@@ -122,7 +123,7 @@
             </div>
             <div class="menu-group" data-target="#menu-items-kathmandu-special">
                  <header>
-                    <img src="{% url 'img/header-bg.jpg' %}">
+                    <img src="{% static 'img/header-bg.jpg' %}">
                     <div>
                         <h3>Kathmandu special</h3>
                         <button class="expand-menu-group-btn"><i class="ion-ios-arrow-down"></i></button>
@@ -189,7 +190,7 @@
                 <div class="item-list">
                     <div class="menu-items" id="menu-items-tandoori" hidden>
                         <div class="menu-item">
-                            <img src="{% url 'img/test.jpg' %}">
+                            <img src="{% static 'img/test.jpg' %}">
                             <div class="menu-item-details">
                                 <h4 class="title">Tandoori Lamb Tikka</h4>
                                 <span class="price">1500</span>
@@ -197,7 +198,7 @@
                             </div>
                         </div>
                         <div class="menu-item">
-                            <img src="{% url 'img/test.jpg' %}">
+                            <img src="{% static 'img/test.jpg' %}">
                             <div class="menu-item-details">
                                 <h4 class="title">Tandoori Lamb Tikka</h4>
                                 <span class="price">1500</span>
@@ -205,7 +206,7 @@
                             </div>
                         </div>
                         <div class="menu-item">
-                            <img src="{% url 'img/test.jpg' %}">
+                            <img src="{% static 'img/test.jpg' %}">
                             <div class="menu-item-details">
                                 <h4 class="title">Tandoori Lamb Tikka</h4>
                                 <span class="price">1500</span>
@@ -215,7 +216,7 @@
                     </div>
                     <div class="menu-items" id="menu-items-chicken" hidden>
                         <div class="menu-item">
-                            <img src="{% url 'img/test.jpg' %}">
+                            <img src="{% static 'img/test.jpg' %}">
                             <div class="menu-item-details">
                                 <h4 class="title">Tandoori Lamb Tikka</h4>
                                 <span class="price">1500</span>
@@ -225,7 +226,7 @@
                     </div>
                     <div class="menu-items" id="menu-items-vegetarian" hidden>
                         <div class="menu-item">
-                            <img src="{% url 'img/test.jpg' %}">
+                            <img src="{% static 'img/test.jpg' %}">
                             <div class="menu-item-details">
                                 <h4 class="title">Tandoori Lamb Tikka</h4>
                                 <span class="price">1500</span>
@@ -233,7 +234,7 @@
                             </div>
                         </div>
                         <div class="menu-item">
-                            <img src="{% url 'img/test.jpg' %}">
+                            <img src="{% static 'img/test.jpg' %}">
                             <div class="menu-item-details">
                                 <h4 class="title">Tandoori Lamb Tikka</h4>
                                 <span class="price">1500</span>
