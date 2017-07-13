@@ -45,6 +45,8 @@ body {
           body > #landing > header #main-menu .menu-item:hover {
             color: #e08226;
             border-color: #e08226; }
+        body > #landing > header #main-menu .hamburger-item {
+          display: none; }
     body > #landing > .content {
       height: calc(100vh - 200px - 240px);
       display: flex; }
@@ -71,7 +73,8 @@ body {
           font-weight: 700;
           color: rgba(255, 255, 255, 0.5); }
       body > #landing > .content #reservation-form-wrapper {
-        flex-basis: 40%; }
+        flex-basis: 40%;
+        align-self: center; }
         body > #landing > .content #reservation-form-wrapper header h3 {
           font-size: 3em;
           font-family: 'Sacramento', sans-serif;
@@ -152,6 +155,119 @@ body {
     transform: translateY(16px); }
   100% {
     transform: translateY(0); } }
+    @media screen and (max-width: 1280px) {
+      body > #landing > header #logo-container img {
+        height: 180px;
+        width: auto; }
+      body > #landing #main-menu .menu-item {
+        font-size: 0.85em;
+        margin: 0 6px; }
+      body > #landing .content #promo {
+        flex-basis: 50%; }
+        body > #landing .content #promo h1 {
+          font-size: 1.6em; }
+        body > #landing .content #promo p {
+          font-size: 1em; }
+      body > #landing .content #reservation-form-wrapper {
+        flex-basis: 50%; }
+        body > #landing .content #reservation-form-wrapper label {
+          font-size: 0.8em; } }
+    @media screen and (max-width: 1140px) {
+      body > #landing > header #logo-container img {
+        height: 160px;
+        width: auto; }
+      body > #landing #main-menu .menu-item {
+        font-size: 0.8em;
+        margin: 0 4px; }
+      body > #landing .content #promo {
+        flex-basis: 40%; }
+        body > #landing .content #promo h1 {
+          font-size: 1.5em; }
+        body > #landing .content #promo p {
+          font-size: 0.9em; }
+      body > #landing .content #reservation-form-wrapper {
+        flex-basis: 60%; }
+        body > #landing .content #reservation-form-wrapper label {
+          font-size: 0.7em; } }
+    @media screen and (max-width: 720px) {
+      body > #landing {
+        height: auto;
+        min-height: 100vh; }
+        body > #landing .cooking {
+          height: 102vh; }
+        body > #landing > header {
+          height: 120px;
+          margin-bottom: 24px;
+          justify-content: space-between; }
+          body > #landing > header #logo-container {
+            height: 100%;
+            display: flex;
+            align-items: center; }
+            body > #landing > header #logo-container img {
+              height: 96px;
+              width: auto; }
+        body > #landing #main-menu .menu-item {
+          display: none; }
+        body > #landing #main-menu .hamburger-item {
+          display: block !important;
+          font-size: 2.5em;
+          cursor: pointer; }
+        body > #landing > .content {
+          height: auto !important;
+          flex-direction: column;
+          justify-content: space-around; }
+          body > #landing > .content #promo {
+            flex-basis: 100%;
+            display: none; }
+          body > #landing > .content #reservation-form-wrapper {
+            flex-basis: 100%; }
+            body > #landing > .content #reservation-form-wrapper header h3 {
+              font-size: 3em; }
+            body > #landing > .content #reservation-form-wrapper .content {
+              padding-top: 8px;
+              padding-bottom: 8px; }
+        body > #landing #navigator {
+          height: 120px;
+          align-items: flex-start; }
+          body > #landing #navigator button {
+            height: 64px;
+            font-size: 5em; } }
+    @media screen and (max-width: 320px) {
+      body > #landing .cooking {
+        height: 102vh; }
+      body > #landing > header {
+        height: 96px;
+        margin-bottom: 0;
+        justify-content: space-between; }
+        body > #landing > header #logo-container {
+          height: 100%;
+          display: flex;
+          align-items: center; }
+          body > #landing > header #logo-container img {
+            height: 64px;
+            width: auto; }
+      body > #landing .content #reservation-form-wrapper .content .input-row {
+        flex-wrap: wrap; }
+        body > #landing .content #reservation-form-wrapper .content .input-row .input-container {
+          padding: 2px 10px; }
+        body > #landing .content #reservation-form-wrapper .content .input-row #number-field {
+          flex-basis: 100%; }
+        body > #landing .content #reservation-form-wrapper .content .input-row #date-field {
+          flex-basis: 100%; }
+      body > #landing .content #reservation-form-wrapper .content .action-buttons {
+        margin-top: 16px;
+        padding: 4px; }
+        body > #landing .content #reservation-form-wrapper .content .action-buttons button {
+          font-size: 0.8em;
+          padding: 0 36px;
+          color: rgba(255, 255, 255, 0.8);
+          border: 2px solid rgba(255, 255, 255, 0.3); }
+      body > #landing #navigator {
+        height: 64px;
+        align-items: flex-start; }
+        body > #landing #navigator button {
+          height: 36px;
+          font-size: 36px; } }
   body #our-menu {
     min-height: 100vh;
     background-color: #f5f5f5; }
@@ -259,8 +375,6 @@ body {
     body #modal-container .modal {
       display: none;
       position: absolute;
-      width: 300px;
-      height: 200px;
       left: 0;
       top: 0;
       background-color: #fff; }
@@ -299,6 +413,24 @@ body {
         font-size: 3em; }
       body #modal-container .modal#our-menu-modal > .content {
         display: flex; }
+        body #modal-container .modal#our-menu-modal > .content .selected-category-wrapper {
+          display: none;
+          width: 100%;
+          margin: 10px 30px 0 19px; }
+          body #modal-container .modal#our-menu-modal > .content .selected-category-wrapper .selected-category {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            padding: 10px 32px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            text-transform: uppercase;
+            cursor: pointer;
+            background-color: #e08226;
+            color: #fff; }
+            body #modal-container .modal#our-menu-modal > .content .selected-category-wrapper .selected-category i {
+              transition: 200ms all ease-in-out; }
+          body #modal-container .modal#our-menu-modal > .content .selected-category-wrapper.open i {
+            transform: rotate(180deg); }
         body #modal-container .modal#our-menu-modal > .content .category-list {
           flex-basis: 320px;
           padding: 10px; }
@@ -343,5 +475,35 @@ body {
               flex-basis: 100%;
               padding: 10px;
               color: rgba(0, 0, 0, 0.6); }
+    @media screen and (max-width: 720px) {
+      body #modal-container .modal > header {
+        flex-wrap: wrap;
+        padding: 0 16px 0 32px; }
+        body #modal-container .modal > header h2 {
+          order: 1;
+          flex-basis: calc(100% - 48px); }
+        body #modal-container .modal > header button {
+          order: 2;
+          flex-basis: 48px;
+          flex-grow: 0;
+          flex-shrink: 0; }
+        body #modal-container .modal > header .search-input-container {
+          order: 3;
+          flex-basis: calc(100% - 16px); }
+      body #modal-container .modal#our-menu-modal > .content {
+        flex-wrap: wrap;
+        align-content: flex-start; }
+        body #modal-container .modal#our-menu-modal > .content .selected-category-wrapper {
+          flex-basis: 100%;
+          display: block; }
+        body #modal-container .modal#our-menu-modal > .content .category-list {
+          display: none;
+          align-self: flex-start;
+          flex-basis: 100%;
+          margin: 0 20px 0 10px; }
+        body #modal-container .modal#our-menu-modal > .content .item-list {
+          flex-basis: 100%; }
+          body #modal-container .modal#our-menu-modal > .content .item-list .menu-items {
+            justify-content: center; } }
 
 /*# sourceMappingURL=home.css.map */

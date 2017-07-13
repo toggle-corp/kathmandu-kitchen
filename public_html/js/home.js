@@ -1,17 +1,27 @@
 $(document).ready(function() {
     $('#our-menu .menu-item').on('click', function() {
         let prev = $('#our-menu .menu-item.expanded');
-         
+
         prev.find('img').slideUp();
         prev.find('.description').slideUp();
         prev.removeClass('expanded');
-             
+
         if(!$(this).is(prev)) {
             $(this).find('img').slideDown();
             $(this).find('.description').slideDown();
             $(this).addClass('expanded');
         }
-         
+
+    });
+    $('.selected-category-wrapper').on('click',function(){
+        if ($('.category-list').is(':visible')){
+            $('.selected-category-wrapper').removeClass('open');
+            $('.category-list').slideUp();
+        }
+        else {
+            $('.selected-category-wrapper').addClass('open');
+            $('.category-list').slideDown();
+        }
     });
 
     $('#our-menu .expand-menu-group-btn').on('click', function() {
@@ -22,7 +32,7 @@ $(document).ready(function() {
     $('#our-menu-modal .btn-close-modal').on('click', function() {
         $(this).closest('.modal').fadeOut(function() {
             $('#modal-container').hide();
-        }); 
+        });
     });
 
     $('#our-menu-modal .category-list a').on('click', function() {
@@ -39,8 +49,8 @@ function showModal(modalSelector, clickInvokerSelector) {
 
     $(modalSelector).find('.content').hide();
 
-    $(modalSelector).css({ 
-        'left': pos.left, 
+    $(modalSelector).css({
+        'left': pos.left,
         'top': pos.top - $(window).scrollTop(),
         'width': width,
         'height': height,
@@ -66,6 +76,14 @@ function showMenuItem(callerElementSelector) {
     let caller = $(callerElementSelector);
     caller.addClass('active');
     caller.siblings().removeClass('active');
+
+    let callerText = caller.text();
+    $('#category-name').text(callerText);
+
+    if ($('.selected-category-wrapper').is(':visible')){
+        $('.category-list').slideUp();
+        $('.selected-category-wrapper').removeClass('open');
+    }
 
     let target = $($(callerElementSelector).data('target'));
     target.siblings().removeClass('active');
