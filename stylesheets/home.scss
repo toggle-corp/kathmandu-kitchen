@@ -1,4 +1,6 @@
 @import 'base';
+@import 'contact-us';
+@import 'opening-hours';
 
 body {
     position: relative;
@@ -452,17 +454,6 @@ body {
                 background-color: #fff;
                 box-shadow: 0 3px 25px -7px rgba(0, 0, 0, 0.3);
 
-                &.expanded {
-                    >header {
-                        >div {
-                            button {
-                                transform: rotate(180deg);
-                            }
-                        }
-                    }
-
-                }
-
                 >header {
                     height: 300px;
                     flex-wrap: wrap;
@@ -517,48 +508,12 @@ body {
                 >.content {
                     display: none;
                 }
+            }
+            @media screen and (max-width: 720px) {
+                .menu-group{
 
-                .menu-item {
-                    border-top: 2px solid rgba(0, 0, 0, 0.05);
-                    display: flex;
-                    justify-content: space-between;
-                    flex-wrap: wrap;
-                    cursor: pointer;
-
-                    &:hover {
-                        background-color: rgba(0, 0, 0, 0.06);
-                    }
-
-                    img {
-                        display: none;
-                        width: 100%;
-                        height: 200px;
-                        object-fit: cover;
-                        object-position: center center;
-                    }
-
-                    .title {
-                        height: 48px;
-                        flex-basis: 70%;
-                        display: flex;
-                        align-items:center;
-                        padding: 0 16px;
-                        color: darken($primary-color, 10%);
-                    }
-
-                    .price {
-                        flex-basis: 30%;
-                        padding: 0 16px;
-                        display: flex;
-                        align-items: center;
-                        justify-content: flex-end;
-                    }
-
-                    .description {
-                        display: none;
-                        flex-basis: 100%;
-                        padding: 10px 16px;
-                        color: rgba(0, 0, 0, 0.7);
+                    >header{
+                        height: 180px;
                     }
                 }
             }
@@ -626,7 +581,39 @@ body {
                 height: calc(100% - 72px);
                 overflow-y: auto;
             }
+            &#hamburger-modal {
+                h2 {
+                    font-family: $font-family-title;
+                    font-size: 3em;
+                }
+                .content{
+                    margin-top: 24px;
+                    display: flex;
+                    align-items: flex-start;
+                    justify-content: center;
 
+                    #main-menu-modal {
+                        display: flex;
+                        align-items: center;
+                        flex-direction: column;
+                        justify-content: center;
+
+                        .menu-item {
+                            text-transform: uppercase;
+                            cursor: pointer;
+                            padding: 6px 16px;
+                            font-weight: 700;
+                            font-size: 1.3em;
+                            color: rgba(255, 255, 255, 0.7);
+                            margin: 16px 10px;
+                            border: 2px solid transparent;
+                            transition: 0.2s all ease-in-out;
+                            letter-spacing: 0.1em;
+                            color: $primary-color;
+                        }
+                    }
+                }
+            }
             &#our-menu-modal {
                 header {
                     h2 {
@@ -641,7 +628,6 @@ body {
                     .selected-category-wrapper{
                         display: none;
                         width: 100%;
-                        margin: 10px 30px 0 19px;
 
                         .selected-category {
                             display: flex;
@@ -711,30 +697,32 @@ body {
                                     object-position: center center;
                                 }
 
-                                .title {
-                                    flex-basis: 70%;
-                                    padding: 10px;
-                                    color: darken($primary-color, 10%);
-                                }
+                                .menu-item-details{
+                                    display: flex;
+                                    flex-wrap: wrap;
 
-                                .price {
-                                    flex-basis: 30%;
-                                    padding: 10px;
-                                    text-align: right;
-                                }
+                                    .title {
+                                        flex-basis: 70%;
+                                        padding: 10px;
+                                        color: darken($primary-color, 10%);
+                                    }
 
-                                .description {
-                                    flex-basis: 100%;
-                                    padding: 10px;
-                                    color: rgba(0, 0, 0, 0.6);
-                                }
+                                    .price {
+                                        flex-basis: 30%;
+                                        padding: 10px;
+                                        text-align: right;
+                                    }
 
+                                    .description {
+                                        flex-basis: 100%;
+                                        padding: 10px;
+                                        color: rgba(0, 0, 0, 0.6);
+                                    }
+                                }
                             }
                         }
-
                     }
                 }
-
             }
         }
         @media screen and (max-width: 720px) {
@@ -759,6 +747,11 @@ body {
                     }
                 }
                 &#our-menu-modal {
+                    header{
+                        h2{
+                            margin-top: 6px;
+                        }
+                    }
                     >.content{
                         flex-wrap: wrap;
                         align-content: flex-start;
@@ -778,6 +771,21 @@ body {
 
                             .menu-items{
                                 justify-content: center;
+                                padding: 16px;
+
+                                .menu-item {
+                                    width: 100%;
+                                    margin: 6px;
+
+                                    img {
+                                        width: 30%;
+                                        flex-basis: 30%;
+                                        max-height: 120px;
+                                    }
+                                    .menu-item-details{
+                                        flex-basis: 70%;
+                                    }
+                                }
                             }
                         }
                     }

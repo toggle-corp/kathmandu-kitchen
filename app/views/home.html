@@ -101,20 +101,6 @@
                         <button class="expand-menu-group-btn"><i class="ion-ios-arrow-down"></i></button>
                     </div>
                 </header>
-                <div class="content">
-                    <div class="menu-item">
-                        <img src="{% url 'img/test.jpg' %}">
-                        <h4 class="title">Chicken</h4>
-                        <span class="price">1500</span>
-                        <p class="description">Lamb meat I guess, served with bla bla bla, just some dead lamb</p>
-                    </div>
-                    <div class="menu-item">
-                        <img src="{% url 'img/test.jpg' %}">
-                        <h4 class="title">Kathmandu special</h4>
-                        <span class="price">1500</span>
-                        <p class="description">Lamb meat I guess, served with bla bla bla, just some dead lamb</p>
-                    </div>
-                </div>
             </div>
             <div class="menu-group" data-target="#menu-items-vegetarian">
                 <header>
@@ -145,7 +131,39 @@
             </div>
         </div>
     </section>
+
+    <section id="opening-hours">
+        <header>
+            <h2>Opening Hours</h2>
+        </header>
+        <div class="content">
+            
+        </div>
+    </section>
+
+    <section id="contact-us">
+        <header>
+            <h2>Contact Us</h2>
+        </header>
+        <div class="content">
+        </div>
+    </section>
+
     <div id="modal-container">
+        <div class="modal" id="hamburger-modal">
+            <header>
+                <h2>Navigate</h2>
+                <button class="btn-close-modal"><i class="ion-ios-close-empty"></i></button>
+            </header>
+            <div class="content">
+                <div id="main-menu-modal">
+                    <a class="menu-item">See Menu</a>
+                    <a class="menu-item">Opening hours</a>
+                    <a class="menu-item">Make Reservations</a>
+                    <a class="menu-item">Contact us</a>
+                </div>
+            </div>
+        </div>
         <div class="modal" id="our-menu-modal">
             <header>
                 <h2>Our menu</h2>
@@ -172,43 +190,55 @@
                     <div class="menu-items" id="menu-items-tandoori" hidden>
                         <div class="menu-item">
                             <img src="{% url 'img/test.jpg' %}">
-                            <h4 class="title">Tandoori Lamb Tikka</h4>
-                            <span class="price">1500</span>
-                            <p class="description">Lamb meat I guess, served with bla bla bla, just some dead lamb</p>
+                            <div class="menu-item-details">
+                                <h4 class="title">Tandoori Lamb Tikka</h4>
+                                <span class="price">1500</span>
+                                <p class="description">Lamb meat I guess, served with bla bla bla, just some dead lamb</p>
+                            </div>
                         </div>
                         <div class="menu-item">
                             <img src="{% url 'img/test.jpg' %}">
-                            <h4 class="title">Tandoori Lamb Tikka</h4>
-                            <span class="price">1500</span>
-                            <p class="description">Lamb meat I guess, served with bla bla bla, just some dead lamb</p>
+                            <div class="menu-item-details">
+                                <h4 class="title">Tandoori Lamb Tikka</h4>
+                                <span class="price">1500</span>
+                                <p class="description">Lamb meat I guess, served with bla bla bla, just some dead lamb</p>
+                            </div>
                         </div>
                         <div class="menu-item">
                             <img src="{% url 'img/test.jpg' %}">
-                            <h4 class="title">Tandoori Lamb Tikka</h4>
-                            <span class="price">1500</span>
-                            <p class="description">Lamb meat I guess, served with bla bla bla, just some dead lamb</p>
+                            <div class="menu-item-details">
+                                <h4 class="title">Tandoori Lamb Tikka</h4>
+                                <span class="price">1500</span>
+                                <p class="description">Lamb meat I guess, served with bla bla bla, just some dead lamb</p>
+                            </div>
                         </div>
                     </div>
                     <div class="menu-items" id="menu-items-chicken" hidden>
                         <div class="menu-item">
                             <img src="{% url 'img/test.jpg' %}">
-                            <h4 class="title">Tandoori Lamb Tikka</h4>
-                            <span class="price">1500</span>
-                            <p class="description">Lamb meat I guess, served with bla bla bla, just some dead lamb</p>
+                            <div class="menu-item-details">
+                                <h4 class="title">Tandoori Lamb Tikka</h4>
+                                <span class="price">1500</span>
+                                <p class="description">Lamb meat I guess, served with bla bla bla, just some dead lamb</p>
+                            </div>
                         </div>
                     </div>
                     <div class="menu-items" id="menu-items-vegetarian" hidden>
                         <div class="menu-item">
                             <img src="{% url 'img/test.jpg' %}">
-                            <h4 class="title">Tandoori Lamb Tikka</h4>
-                            <span class="price">1500</span>
-                            <p class="description">Lamb meat I guess, served with bla bla bla, just some dead lamb</p>
+                            <div class="menu-item-details">
+                                <h4 class="title">Tandoori Lamb Tikka</h4>
+                                <span class="price">1500</span>
+                                <p class="description">Lamb meat I guess, served with bla bla bla, just some dead lamb</p>
+                            </div>
                         </div>
                         <div class="menu-item">
                             <img src="{% url 'img/test.jpg' %}">
-                            <h4 class="title">Tandoori Lamb Tikka</h4>
-                            <span class="price">1500</span>
-                            <p class="description">Lamb meat I guess, served with bla bla bla, just some dead lamb</p>
+                            <div class="menu-item-details">
+                                <h4 class="title">Tandoori Lamb Tikka</h4>
+                                <span class="price">1500</span>
+                                <p class="description">Lamb meat I guess, served with bla bla bla, just some dead lamb</p>
+                            </div>
                         </div>
                     </div>
                     <div class="menu-items" id="menu-items-kathmandu-special" hidden>
