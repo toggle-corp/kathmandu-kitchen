@@ -433,7 +433,7 @@ body {
     top: 0;
     width: 100vw;
     height: 100vh;
-    background-color: transparent; }
+    background-color: rgba(0, 0, 0, 0.5); }
     body #modal-container .modal {
       display: none;
       position: absolute;
@@ -495,6 +495,36 @@ body {
             transition: 0.2s all ease-in-out;
             letter-spacing: 0.1em;
             color: #e08226; }
+      body #modal-container .modal#config-modal {
+        left: 50%;
+        top: 50%;
+        width: 512px;
+        height: 300px;
+        transform: translate(-50%, -50%);
+        box-shadow: 0 5px 32px 0 rgba(0, 0, 0, 0.9); }
+        body #modal-container .modal#config-modal .content {
+          padding: 32px; }
+          body #modal-container .modal#config-modal .content #location-select-modal {
+            height: 100%; }
+            body #modal-container .modal#config-modal .content #location-select-modal a {
+              cursor: pointer;
+              height: 56px;
+              margin-bottom: 16px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-size: 1.33em;
+              border: 1px solid rgba(0, 0, 0, 0.1);
+              font-weight: 700;
+              color: rgba(0, 0, 0, 0.6);
+              border-radius: 5px; }
+              body #modal-container .modal#config-modal .content #location-select-modal a input {
+                display: none; }
+              body #modal-container .modal#config-modal .content #location-select-modal a:hover {
+                background-color: rgba(0, 0, 0, 0.05); }
+              body #modal-container .modal#config-modal .content #location-select-modal a.active {
+                background-color: #e08226;
+                color: #fff; }
       body #modal-container .modal#our-menu-modal header h2 {
         font-family: "Sacramento", sans-serif;
         font-size: 3em; }

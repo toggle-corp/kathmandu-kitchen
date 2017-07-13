@@ -42,7 +42,16 @@ $(document).ready(function() {
         showMenuItem(this);
     });
 
+
+    showConfigModal();
+
+
 });
+
+function showConfigModal() {
+    $('#modal-container').show();
+    $('#config-modal').show();
+}
 
 function showModal(modalSelector, clickInvokerSelector) {
     let invoker = $(clickInvokerSelector);

@@ -526,7 +526,7 @@ body {
         top: 0;
         width: 100vw;
         height: 100vh;
-        background-color: transparent;
+        background-color: rgba(0, 0, 0, 0.5);
 
         .modal {
             display: none;
@@ -580,6 +580,7 @@ body {
                 height: calc(100% - 72px);
                 overflow-y: auto;
             }
+             
             &#hamburger-modal {
                 h2 {
                     font-family: $font-family-title;
@@ -613,6 +614,53 @@ body {
                     }
                 }
             }
+
+            &#config-modal {
+                left: 50%;
+                top: 50%;
+                width: 512px;
+                height: 300px;
+                transform: translate(-50%, -50%);
+                box-shadow: 0 5px 32px 0 rgba(0, 0, 0, 0.9);
+
+                .content {
+                    padding: 32px;
+
+                    #location-select-modal {
+                        height: 100%;
+
+                        a {
+                            cursor: pointer;
+                            height: 56px; 
+                            margin-bottom: 16px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-size: 1.33em;
+                            border: 1px solid rgba(0, 0, 0, 0.1);
+                            font-weight: 700;
+                            color: rgba(0, 0, 0, 0.6);
+                            border-radius: 5px;
+
+                            input {
+                                display: none;
+                            }
+                             
+                            &:hover {
+                                background-color: rgba(0, 0, 0, 0.05);
+                            }
+
+                            &.active {
+                                background-color: $primary-color;
+                                color: #fff;
+                            }
+
+                        }
+                    }
+
+                }
+            }
+             
             &#our-menu-modal {
                 header {
                     h2 {
@@ -725,8 +773,8 @@ body {
             }
         }
         @media screen and (max-width: 720px) {
-            .modal{
-                >header{
+            .modal {
+                >header {
                     flex-wrap: wrap;
                     padding: 0 16px 0 32px;
 
