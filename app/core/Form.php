@@ -81,10 +81,10 @@ class Form {
                     $form .= '<input type="file" ' . $this->get_form_attrs($item, false) . '>';
                     $item['null'] = $was_null;
                     if ($this->obj->$name) {
-                        $form .= 'Current: <a href="/' . $this->obj->$name . '">' . $this->obj->$name . '</a>';
+                        $form .= '<label>Current</label><a href="/' . $this->obj->$name . '">' . $this->obj->$name . '</a>';
 
                         if ($item['null']) {
-                            $form .= '<input type="checkbox" name="remove_' . $this->prefix . $name . $this->suffix . '"> Remove';
+                            $form .= '<label class="remove-input-wrapper"><input type="checkbox" name="remove_' . $this->prefix . $name . $this->suffix . '"> Remove</label>';
                         }
                     }
                 } elseif ($type == 'children') {
