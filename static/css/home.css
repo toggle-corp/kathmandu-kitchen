@@ -94,6 +94,41 @@ body #opening-hours-and-contact-us {
         flex-basis: 100%;
         height: 60%;
         background-color: rgba(0, 0, 0, 0.1); }
+  @media screen and (max-width: 1080px) {
+    body #opening-hours-and-contact-us #opening-hours {
+      flex-basis: 45%; }
+      body #opening-hours-and-contact-us #opening-hours .content #opening-hour-list .opening-hour > * {
+        font-size: 0.9em; }
+    body #opening-hours-and-contact-us #contact-us {
+      flex-basis: 55%; } }
+  @media screen and (max-width: 720px) {
+    body #opening-hours-and-contact-us {
+      flex-wrap: wrap; }
+      body #opening-hours-and-contact-us #opening-hours {
+        flex-basis: 100%; }
+        body #opening-hours-and-contact-us #opening-hours > header {
+          height: 96px; }
+        body #opening-hours-and-contact-us #opening-hours .content #opening-hour-list .opening-hour > * {
+          font-size: 1em; }
+      body #opening-hours-and-contact-us #contact-us {
+        min-height: 100vh;
+        flex-basis: 100%; }
+        body #opening-hours-and-contact-us #contact-us .content {
+          height: auto;
+          font-size: 1.1em; }
+          body #opening-hours-and-contact-us #contact-us .content #contact-info {
+            height: 40%;
+            flex-basis: 100%; }
+            body #opening-hours-and-contact-us #contact-us .content #contact-info .name {
+              font-size: 1.2em; }
+            body #opening-hours-and-contact-us #contact-us .content #contact-info .extra {
+              padding: 0; }
+          body #opening-hours-and-contact-us #contact-us .content #find-us {
+            flex-basis: 100%;
+            margin-left: 32px;
+            margin-bottom: 16px; }
+          body #opening-hours-and-contact-us #contact-us .content #location-map {
+            height: 50vh; } }
 
 body {
   position: relative; }

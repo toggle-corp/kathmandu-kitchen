@@ -7,7 +7,7 @@ body {
         #opening-hours {
             flex-basis: 30%;
             background-color: #f0f0f0;
-             
+
             >header {
                 height: $header-height*3;
                 display: flex;
@@ -48,7 +48,7 @@ body {
         #contact-us {
             background-color: #fafafa;
             flex-basis: 70%;
-             
+
             >header {
                 height: $header-height;
                 display: flex;
@@ -134,10 +134,78 @@ body {
                     background-color: rgba(0, 0, 0, 0.1);
                 }
             }
-
-            
         }
+        @media screen and (max-width: 1080px) {
+            #opening-hours {
+                flex-basis: 45%;
 
+                .content{
+                    #opening-hour-list {
+                        .opening-hour {
+                            >* {
+                                font-size: 0.9em;
+                            }
+                        }
+                    }
+                }
+            }
+            #contact-us {
+                flex-basis: 55%;
+            }
+        }
+        @media screen and (max-width: 720px) {
+            flex-wrap: wrap;
+            $header-height: 96px;
 
+            #opening-hours {
+                flex-basis: 100%;
+
+                >header {
+                    height: $header-height;
+                }
+
+                .content{
+
+                    #opening-hour-list {
+                        .opening-hour {
+                            >* {
+                                font-size: 1em;
+                            }
+                        }
+                    }
+                }
+            }
+            #contact-us {
+                min-height: 100vh;
+                flex-basis: 100%;
+
+                .content {
+                    height: auto;
+                    font-size: 1.1em;
+
+                    #contact-info {
+                        height: 40%;
+                        flex-basis: 100%;
+
+                        .name {
+                            font-size: 1.2em;
+                        }
+                        .extra {
+                            padding: 0;
+                        }
+                    }
+
+                    #find-us {
+                        flex-basis: 100%;
+                        margin-left: 32px;
+                        margin-bottom: 16px;
+                    }
+
+                    #location-map {
+                        height: 50vh;
+                    }
+                }
+            }
+        }
     }
 }
