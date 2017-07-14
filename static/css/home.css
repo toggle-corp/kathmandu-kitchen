@@ -284,34 +284,6 @@ body {
         animation: jumpy 1.6s ease-in-out infinite; }
         body > #landing #navigator #navigate-down-btn:hover {
           color: white; }
-      body > #landing #navigator #config-buttons {
-        position: absolute;
-        display: flex;
-        right: 0;
-        bottom: 0; }
-        body > #landing #navigator #config-buttons .change-config {
-          height: 144px;
-          width: 144px;
-          color: rgba(255, 255, 255, 0.6);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-wrap: wrap;
-          text-align: center;
-          align-content: center; }
-          body > #landing #navigator #config-buttons .change-config .current {
-            font-size: 3em;
-            flex-basis: 100%; }
-          body > #landing #navigator #config-buttons .change-config .next a {
-            color: #e08226;
-            outline: none; }
-        body > #landing #navigator #config-buttons button {
-          cursor: pointer;
-          outline: none;
-          background-color: transparent;
-          border: none; }
-          body > #landing #navigator #config-buttons button:hover {
-            background-color: rgba(255, 255, 255, 0.05); }
 @keyframes jumpy {
   0% {
     transform: translateY(0); }
@@ -319,6 +291,45 @@ body {
     transform: translateY(16px); }
   100% {
     transform: translateY(0); } }
+    body > #landing #config-buttons {
+      position: absolute;
+      display: flex;
+      right: 0;
+      top: calc(100vh - 144px); }
+      body > #landing #config-buttons .change-config {
+        height: 144px;
+        width: 144px;
+        color: rgba(255, 255, 255, 0.6);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        text-align: center;
+        align-content: center;
+        z-index: 1000; }
+        body > #landing #config-buttons .change-config .current {
+          font-size: 3em;
+          flex-basis: 100%; }
+        body > #landing #config-buttons .change-config .next a {
+          color: #e08226;
+          outline: none; }
+      body > #landing #config-buttons button {
+        cursor: pointer;
+        outline: none;
+        background-color: transparent;
+        border: none; }
+        body > #landing #config-buttons button:hover {
+          background-color: rgba(255, 255, 255, 0.05); }
+      @media screen and (max-width: 720px) {
+        body > #landing #config-buttons {
+          width: 100vw;
+          top: calc(100vh - 96px);
+          justify-content: space-between; }
+          body > #landing #config-buttons .change-config {
+            height: 96px;
+            width: 96px; }
+            body > #landing #config-buttons .change-config .current {
+              font-size: 1.5em; } }
     @media screen and (max-width: 1280px) {
       body > #landing > header #logo-container img {
         height: 180px;
@@ -393,7 +404,7 @@ body {
         body > #landing #navigator {
           height: 120px;
           align-items: flex-start; }
-          body > #landing #navigator button {
+          body > #landing #navigator #navigate-down-btn {
             height: 64px;
             font-size: 5em; } }
     @media screen and (max-width: 320px) {
@@ -429,7 +440,7 @@ body {
       body > #landing #navigator {
         height: 64px;
         align-items: flex-start; }
-        body > #landing #navigator button {
+        body > #landing #navigator #navigate-down-btn {
           height: 36px;
           font-size: 36px; } }
   body #our-menu {

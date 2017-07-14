@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-14 16:16+0545\n"
+"POT-Creation-Date: 2017-07-14 16:44+0545\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,19 +18,19 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: templates/home.html:45 templates/home.html:195
+#: templates/home.html:45 templates/home.html:197
 msgid "See Menu"
 msgstr "Zie menu"
 
-#: templates/home.html:46 templates/home.html:196
+#: templates/home.html:46 templates/home.html:198
 msgid "Opening hours"
 msgstr "Openingstijden"
 
-#: templates/home.html:47 templates/home.html:197
+#: templates/home.html:47 templates/home.html:199
 msgid "Make Reservations"
 msgstr "Reserveren"
 
-#: templates/home.html:48 templates/home.html:198
+#: templates/home.html:48 templates/home.html:200
 msgid "Contact us"
 msgstr "Neem contact met ons op"
 
@@ -70,34 +70,68 @@ msgstr "voorleggen"
 msgid "click to change"
 msgstr "Klik om te veranderen"
 
-#: templates/home.html:105
+#: templates/home.html:106
 msgid "change to"
 msgstr "veranderen naar"
 
-#: templates/home.html:113
+#: templates/home.html:115
 msgid "Our Menu"
 msgstr "Zie menu"
 
-#: templates/home.html:133
+#: templates/home.html:135
 msgid "Opening Hours"
 msgstr "Openingstijden"
 
-#: templates/home.html:150
+#: templates/home.html:152
 msgid "Contact Us"
 msgstr "Neem contact met ons op"
 
-#: templates/home.html:173
+#: templates/home.html:175
 msgid "Find us on"
 msgstr "Vind ons op"
 
-#: templates/home.html:190
+#: templates/home.html:192
 msgid "Navigate"
 msgstr "Navigeren"
 
-#: templates/home.html:205
+#: templates/home.html:207
 msgid "Select location"
 msgstr "Selecteer een locatie"
 
-#: templates/home.html:223
+#: templates/home.html:225
 msgid "Our menu"
 msgstr "Ons menu"
+
+#: templates/reservation-complete.html:18
+#, fuzzy
+#| msgid "Make Reservations"
+msgid "Reservation Details"
+msgstr "Reserveren"
+
+#: templates/reservation-complete.html:21
+#, fuzzy
+#| msgid "Make Reservations"
+msgid "Reservation date"
+msgstr "Reserveren"
+
+#: templates/reservation-complete.html:25
+#, fuzzy
+#| msgid "Make Reservations"
+msgid "Reservation time"
+msgstr "Reserveren"
+
+#: templates/reservation-complete.html:29
+msgid "No of people"
+msgstr "Aantal mensen"
+
+#: templates/reservation-complete.html:33
+msgid "Reserved by"
+msgstr "Gereserveerd door"
+
+#: templates/reservation-complete.html:36
+msgid "We'll let you know about the reservation by email asap."
+msgstr "Wij informeren u graag over de reservering per email."
+
+#: templates/reservation-complete.html:38
+msgid "Go back to website"
+msgstr "Ga terug naar de website"

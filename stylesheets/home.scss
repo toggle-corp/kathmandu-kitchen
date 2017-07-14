@@ -217,54 +217,68 @@ body {
                 }
             }
 
-            #config-buttons {
-                position: absolute;
-                display: flex;
-                right: 0;
-                bottom: 0;
-
-                .change-config {
-                    height: 144px;
-                    width: 144px;
-                    color: rgba(255, 255, 255, 0.6);
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    flex-wrap: wrap;
-                    text-align: center;
-                    align-content: center;
-
-                    .current {
-                        font-size: 3em;
-                        flex-basis: 100%;
-                    }
-
-                    .next {
-                        a {
-                            color: $primary-color;
-                            outline: none;
-                        }
-                    }
-
-                }
-
-                button {
-                    cursor: pointer;
-                    outline: none;
-                    background-color: transparent;
-                    border: none;
-
-                    &:hover {
-                        background-color: rgba(255, 255, 255, 0.05);
-                    }
-
-                }
-            }
-
             @keyframes jumpy {
                 0% { transform: translateY(0); }
                 50% { transform: translateY(16px); }
                 100% { transform: translateY(0); }
+            }
+        }
+        #config-buttons {
+            position: absolute;
+            display: flex;
+            right: 0;
+            top: calc(100vh - 144px);
+
+            .change-config {
+                height: 144px;
+                width: 144px;
+                color: rgba(255, 255, 255, 0.6);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-wrap: wrap;
+                text-align: center;
+                align-content: center;
+                z-index: 1000;
+
+                .current {
+                    font-size: 3em;
+                    flex-basis: 100%;
+                }
+
+                .next {
+                    a {
+                        color: $primary-color;
+                        outline: none;
+                    }
+                }
+
+            }
+
+            button {
+                cursor: pointer;
+                outline: none;
+                background-color: transparent;
+                border: none;
+
+                &:hover {
+                    background-color: rgba(255, 255, 255, 0.05);
+                }
+
+            }
+            @media screen and (max-width: 720px) {
+                width: 100vw;
+                top: calc(100vh - 96px);
+                justify-content: space-between;
+
+                .change-config {
+                    height: 96px;
+                    width: 96px;
+
+                    .current {
+                        font-size: 1.5em;
+                    }
+                }
             }
         }
         @media screen and (max-width: 1280px) {
@@ -396,7 +410,7 @@ body {
                 height: 120px;
                 align-items: flex-start;
 
-                button{
+                #navigate-down-btn{
                     height: 64px;
                     font-size: 5em;
                 }
@@ -456,7 +470,7 @@ body {
                 height: 64px;
                 align-items: flex-start;
 
-                button{
+                #navigate-down-btn{
                     height: 36px;
                     font-size: 36px;
                 }

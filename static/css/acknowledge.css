@@ -3,6 +3,11 @@
   font-family: 'News Cycle', sans-serif;
   font-weight: 400; }
 
+a, a:visited {
+  text-decoration: none;
+  outline: none;
+  cursor: pointer; }
+
 body {
   margin: 0;
   padding: 0;

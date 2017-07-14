@@ -15,26 +15,26 @@
 
 <body>
     <header>
-        <h3>Reservation Details</h3>
+        <h3>{% trans 'Reservation Details' %}</h3>
     </header>
     <div class="detail date">
-        <a class="detail-title">Reservation date</a>
+        <a class="detail-title">{% trans 'Reservation date' %}</a>
         <a class="detail-info">{{ reservation.date }}</a>
     </div>
     <div class="detail time">
-        <a class="detail-title">Reservation time</a>
+        <a class="detail-title">{% trans 'Reservation time' %}</a>
         <a class="detail-info">{{ reservation.time }}</a>
     </div>
     <div class="detail no-of-people">
-        <a class="detail-title">No of people</a>
+        <a class="detail-title">{% trans 'No of people' %}</a>
         <a class="detail-info">{{ reservation.persons }}</a>
     </div>
     <div class="detail email">
-        <a class="detail-title">Reserved by</a>
+        <a class="detail-title">{% trans 'Reserved by' %}</a>
         <a class="detail-info">{{ reservation.email }}</a>
     </div>
-    <p class="info">We'll let you know about the reservation by email asap.</p>
+    <p class="info">{% trans "We'll let you know about the reservation by email asap." %}</p>
     <div class="action-container" id="home-container">
-        <a class="home" href="{% url 'home' %}">Go back to website</a>
+        <a class="home" href="{% url 'home' %}">{% trans "Go back to website" %}</a>
     </div>
 </body>
