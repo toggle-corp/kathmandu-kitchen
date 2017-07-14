@@ -273,7 +273,7 @@ body {
 
                 .change-config {
                     height: 96px;
-                    width: 96px;
+                    width: 120px;
 
                     .current {
                         font-size: 1.5em;
@@ -585,6 +585,7 @@ body {
         top: 0;
         width: 100vw;
         height: 100vh;
+        z-index: 1111;
         background-color: rgba(0, 0, 0, 0.5);
 
         .modal {

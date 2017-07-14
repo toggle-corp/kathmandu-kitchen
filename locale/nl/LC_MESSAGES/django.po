@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-14 16:44+0545\n"
+"POT-Creation-Date: 2017-07-14 17:31+0545\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,34 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: branch/models.py:6
+msgid "Monday"
+msgstr "Maandag"
+
+#: branch/models.py:7
+msgid "Tuesday"
+msgstr "Dinsdag"
+
+#: branch/models.py:8
+msgid "Wednesday"
+msgstr "Woensdag"
+
+#: branch/models.py:9
+msgid "Thursday"
+msgstr "Donderdag"
+
+#: branch/models.py:10
+msgid "Friday"
+msgstr "Vrijdag"
+
+#: branch/models.py:11
+msgid "Saturday"
+msgstr "Zaterdag"
+
+#: branch/models.py:12
+msgid "Sunday"
+msgstr "Zondag"
 
 #: templates/home.html:45 templates/home.html:197
 msgid "See Menu"
@@ -55,22 +83,22 @@ msgid "Number of person"
 msgstr "Aantal personen"
 
 #: templates/home.html:80
-msgid "Time:"
-msgstr "Tijd:"
+msgid "Time"
+msgstr "Tijd"
 
 #: templates/home.html:84
-msgid "Email:"
+msgid "Email"
 msgstr "E-mail"
 
 #: templates/home.html:89
 msgid "Submit"
 msgstr "voorleggen"
 
-#: templates/home.html:101
+#: templates/home.html:99
 msgid "click to change"
 msgstr "Klik om te veranderen"
 
-#: templates/home.html:106
+#: templates/home.html:104
 msgid "change to"
 msgstr "veranderen naar"
 
@@ -102,15 +130,15 @@ msgstr "Selecteer een locatie"
 msgid "Our menu"
 msgstr "Ons menu"
 
+#: templates/home.html:228
+msgid "Search"
+msgstr "Zoeken"
+
 #: templates/reservation-complete.html:18
-#, fuzzy
-#| msgid "Make Reservations"
 msgid "Reservation Details"
 msgstr "Reserveren"
 
 #: templates/reservation-complete.html:21
-#, fuzzy
-#| msgid "Make Reservations"
 msgid "Reservation date"
 msgstr "Reserveren"
 
