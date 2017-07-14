@@ -1,6 +1,7 @@
 from django.conf.urls import url, static
 from django.contrib import admin
 from django.conf import settings
+from django.contrib.auth.views import login
 
 from .views import HomeView
 from reservation.views import ReservationView, \
@@ -10,6 +11,9 @@ from reservation.views import ReservationView, \
 urlpatterns = [
     url(r'^$', HomeView.as_view()),
     url(r'^admin/', admin.site.urls),
+
+    url(r'^accounts/login/$', login,
+        kwargs={"template_name": "admin/login.html"}),
 
     url(r'^reservation-complete/(?P<reservation_id>\d+)/$',
         ReservationCompleteView.as_view(),
