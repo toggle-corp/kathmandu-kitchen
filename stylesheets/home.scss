@@ -197,8 +197,9 @@ body {
             display: flex;
             align-items: center;
             justify-content: center;
+            position: relative;
 
-            button {
+            #navigate-down-btn {
                 height: 96px;
                 width: 96px;
                 color: rgba(255, 255, 255, 0.3);
@@ -207,12 +208,56 @@ body {
                 border: none;
                 outline: none;
                 cursor: pointer;
-                animation: jumpy 1.6s ease-in-out infinite;
                 transition: 0.2s color ease-in-out;
                 margin: 0;
+                animation: jumpy 1.6s ease-in-out infinite;
 
                 &:hover {
                     color: rgba(255, 255, 255, 1);
+                }
+            }
+
+            #config-buttons {
+                position: absolute;
+                display: flex;
+                right: 0;
+                bottom: 0;
+
+                .change-config {
+                    height: 144px;
+                    width: 144px;
+                    color: rgba(255, 255, 255, 0.6);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-wrap: wrap;
+                    text-align: center;
+                    align-content: center;
+
+                    .current {
+                        font-size: 3em;
+                        flex-basis: 100%;
+                    }
+
+                    .next {
+                        a {
+                            color: $primary-color;
+                            outline: none;
+                        }
+                    }
+
+                }
+
+                button {
+                    cursor: pointer;
+                    outline: none;
+                    background-color: transparent;
+                    border: none;
+
+                    &:hover {
+                        background-color: rgba(255, 255, 255, 0.05);
+                    }
+
                 }
             }
 
@@ -674,6 +719,10 @@ body {
                     }
                 }
 
+                .no-img {
+                    display: none;
+                }
+
                 >.content {
                     display: flex;
 
@@ -731,7 +780,7 @@ body {
                             flex-basis: calc(100% - 320px);
                             display: flex;
                             flex-wrap: wrap;
-                            align-items: flex-start;
+                            //align-items: flex-start;
 
                             .menu-item {
                                 width: 300px;
@@ -763,6 +812,11 @@ body {
                                         flex-basis: 30%;
                                         padding: 10px;
                                         text-align: right;
+
+                                        &:before {
+                                            content: '€';
+                                            margin-right: 4px;
+                                        }
                                     }
 
                                     .description {

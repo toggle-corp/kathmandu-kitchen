@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-14 15:43+0545\n"
+"POT-Creation-Date: 2017-07-14 16:16+0545\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,10 +18,86 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: templates/home.html:48
+#: templates/home.html:45 templates/home.html:195
+msgid "See Menu"
+msgstr "Zie menu"
+
+#: templates/home.html:46 templates/home.html:196
+msgid "Opening hours"
+msgstr "Openingstijden"
+
+#: templates/home.html:47 templates/home.html:197
+msgid "Make Reservations"
+msgstr "Reserveren"
+
+#: templates/home.html:48 templates/home.html:198
+msgid "Contact us"
+msgstr "Neem contact met ons op"
+
+#: templates/home.html:57
 msgid "Welcome to <strong>Kathmandu Kitchen</strong>"
 msgstr "Welkom in <strong>Kathmandu Kitchen</strong>"
 
-#: templates/home.html:49
+#: templates/home.html:58
 msgid "The taste you deserve"
 msgstr "De smaak die je verdient"
+
+#: templates/home.html:63
+msgid "Make a reservation"
+msgstr "Reserveren"
+
+#: templates/home.html:70
+msgid "Date"
+msgstr "Datum"
+
+#: templates/home.html:74
+msgid "Number of person"
+msgstr "Aantal personen"
+
+#: templates/home.html:80
+msgid "Time:"
+msgstr "Tijd:"
+
+#: templates/home.html:84
+msgid "Email:"
+msgstr "E-mail"
+
+#: templates/home.html:89
+msgid "Submit"
+msgstr "voorleggen"
+
+#: templates/home.html:101
+msgid "click to change"
+msgstr "Klik om te veranderen"
+
+#: templates/home.html:105
+msgid "change to"
+msgstr "veranderen naar"
+
+#: templates/home.html:113
+msgid "Our Menu"
+msgstr "Zie menu"
+
+#: templates/home.html:133
+msgid "Opening Hours"
+msgstr "Openingstijden"
+
+#: templates/home.html:150
+msgid "Contact Us"
+msgstr "Neem contact met ons op"
+
+#: templates/home.html:173
+msgid "Find us on"
+msgstr "Vind ons op"
+
+#: templates/home.html:190
+msgid "Navigate"
+msgstr "Navigeren"
+
+#: templates/home.html:205
+msgid "Select location"
+msgstr "Selecteer een locatie"
+
+#: templates/home.html:223
+msgid "Our menu"
+msgstr "Ons menu"

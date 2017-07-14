@@ -62,22 +62,22 @@
 	
 	var textureAlign = { x: 0.5, y: 0.9 };
 	var textures = [{
-        file: 'static/img/cooking.jpg',
+        file: '/static/img/cooking.jpg',
 	  name: 'image',
 	  align: textureAlign,
 	  scale: { x: 1, y: 1 }
 	}, {
-        file: 'static/img/cooking-blur.jpg',
+        file: '/static/img/cooking-blur.jpg',
 	  name: 'blur',
 	  align: textureAlign,
 	  scale: { x: 0.8, y: 0.8 }
 	}, {
-        file: 'static/img/cooking-maps.jpg',
+        file: '/static/img/cooking-maps.jpg',
 	  name: 'maps',
 	  align: textureAlign,
 	  scale: { x: 0.05, y: 0.05 }
 	}, {
-        file: 'static/img/noise.png',
+        file: '/static/img/noise.png',
 	  name: 'noise',
 	  repeat: true,
 	  fill: false

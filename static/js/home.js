@@ -1,3 +1,6 @@
+let locationPreferenceKey = "kathmandu-kitchen-location-preference"; 
+let languagePreferenceKey = "kathmandu-kitchen-language-preference"; 
+ 
 $(document).ready(function() {
     $('#our-menu .menu-item').on('click', function() {
         let prev = $('#our-menu .menu-item.expanded');
@@ -42,12 +45,52 @@ $(document).ready(function() {
         showMenuItem(this);
     });
 
+    if (typeof(Storage) !== "undefined") {
+        let languagePreference = localStorage.getItem(languagePreferenceKey);
+        let locationPreference = localStorage.getItem(locationPreferenceKey);
+     
+        if (!locationPreference) {
+            locationPreference = localStorage.setItem(locationPreferenceKey, currentBranchCode);
+            showConfigModal();
+        }
+    } else {
+        // No Web Storage support :/
+    }
 
-    showConfigModal();
 
+    $('#navigate-down-btn').on('click', function() {
+        $('html, body').animate({
+            scrollTop: $('#our-menu').offset().top
+        }, 500);
+    });
+     
+    $('#menu-contact-us').on('click', function() {
+        $('html, body').animate({
+            scrollTop: $('#contact-us').offset().top
+        }, 500);
+    });
+     
+    $('#menu-opening-hours').on('click', function() {
+        $('html, body').animate({
+            scrollTop: $('#opening-hours').offset().top
+        }, 500);
+    });
+     
+    $('#menu-see-menu').on('click', function() {
+        $('html, body').animate({
+            scrollTop: $('#our-menu').offset().top
+        }, 500);
+    });
 
 });
+ 
 
+function clearConfigSession() {
+    localStorage.removeItem(languagePreferenceKey);
+    localStorage.removeItem(locationPreferenceKey);
+}
+
+ 
 function showConfigModal() {
     $('#modal-container').show();
     $('#config-modal').show();
@@ -109,3 +152,5 @@ function showMenuItem(callerElementSelector) {
     target.addClass('active');
     target.show();
 }
+
+
