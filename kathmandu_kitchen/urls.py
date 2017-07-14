@@ -9,7 +9,7 @@ from reservation.views import ReservationView, \
 
 
 urlpatterns = [
-    url(r'^$', HomeView.as_view()),
+    url(r'^$', HomeView.as_view(), name='home'),
     url(r'^admin/', admin.site.urls),
 
     url(r'^accounts/login/$', login,

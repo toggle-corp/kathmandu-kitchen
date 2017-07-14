@@ -59,10 +59,10 @@ class AcknowledgeReservataion(LoginRequiredMixin, View):
             'reservation': reservation,
         }
 
-        send_mail('acknowledge-mail.html',
+        send_mail('acknowledge-email.html',
                   context,
                   'info@togglecorp.com',    # from
                   [reservation.email]       # to
                   )
 
-        return redirect('acknowledge-reservation')
+        return redirect('home')
