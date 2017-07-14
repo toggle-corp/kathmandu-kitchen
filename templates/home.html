@@ -14,6 +14,17 @@
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script src="{% static 'js/home.js' %}"></script>
+
+    <script>
+        let branches = [
+        {% for branch in branches %}
+            { 'code': "{{ branch.code }}", 'name': "{{ branch.name }}" },
+        {% endfor %}
+        ];
+ 
+        let currentBranchCode = "{{ current_branch.code }}";
+    </script>
+        
 </head>
 <body>
     <section id="landing">
@@ -53,13 +64,6 @@
                     <h3>Make a reservation</h3>
                 </header>
                 <div class="content">
-                    <!-- <div class="radio-input-container">
-                        <label>Select location:</label>
-                        <div class="radio-group">
-                            <label><input type="radio" name="reservation-location">Amsterdam</label>
-                            <label><input type="radio" name="reservation-location">Zaansted</label>
-                        </div>
-                    </div> -->
                     <div class="input-row">
                         <div id="date-field" class="input-container">
                             <label>Date:</label>
@@ -88,7 +92,17 @@
             </div>
         </div>
         <div id="navigator">
-            <button><i class="ion-ios-arrow-down"></i></button>
+            <button id="navigate-down-btn"><i class="ion-ios-arrow-down"></i></button>
+            <div id="config-buttons">
+                <button class="change-config" onclick="showConfigModal()">
+                    <span class="current">{{ current_branch.code }}</span>
+                    <span class="next">click to change</span>
+                </button>
+                <div class="change-config">
+                    <span class="current">EN</span>
+                    <span class="next">change to <a href="#">Dutch</a></span>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -226,9 +240,9 @@
                 <div id="location-select-modal">
                     {% for branch in branches %}
                     {% if current_branch == branch %}
-                    <a class="active" onclick="hideConfigModal()">{{ branch }}</a>
+                    <a class="active" onclick="hideConfigModal('{{ branch.code }}')">{{ branch }}</a>
                     {% else %}
-                    <a href="{% url 'home' branch.code %}">{{ branch }}</a>
+                    <a onclick="hideConfigModal('{{branch.code}}')" href="{% url 'home' branch.code %}">{{ branch }}</a>
                     {% endif %}
                     {% endfor %}
                 </div>

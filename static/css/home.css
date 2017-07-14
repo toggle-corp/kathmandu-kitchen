@@ -3,6 +3,11 @@
   font-family: 'News Cycle', sans-serif;
   font-weight: 400; }
 
+a, a:visited {
+  text-decoration: none;
+  outline: none;
+  cursor: pointer; }
+
 body {
   margin: 0;
   padding: 0;
@@ -258,8 +263,9 @@ body {
       height: 240px;
       display: flex;
       align-items: center;
-      justify-content: center; }
-      body > #landing #navigator button {
+      justify-content: center;
+      position: relative; }
+      body > #landing #navigator #navigate-down-btn {
         height: 96px;
         width: 96px;
         color: rgba(255, 255, 255, 0.3);
@@ -268,11 +274,39 @@ body {
         border: none;
         outline: none;
         cursor: pointer;
-        animation: jumpy 1.6s ease-in-out infinite;
         transition: 0.2s color ease-in-out;
-        margin: 0; }
-        body > #landing #navigator button:hover {
+        margin: 0;
+        animation: jumpy 1.6s ease-in-out infinite; }
+        body > #landing #navigator #navigate-down-btn:hover {
           color: white; }
+      body > #landing #navigator #config-buttons {
+        position: absolute;
+        display: flex;
+        right: 0;
+        bottom: 0; }
+        body > #landing #navigator #config-buttons .change-config {
+          height: 144px;
+          width: 144px;
+          color: rgba(255, 255, 255, 0.6);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-wrap: wrap;
+          text-align: center;
+          align-content: center; }
+          body > #landing #navigator #config-buttons .change-config .current {
+            font-size: 3em;
+            flex-basis: 100%; }
+          body > #landing #navigator #config-buttons .change-config .next a {
+            color: #e08226;
+            outline: none; }
+        body > #landing #navigator #config-buttons button {
+          cursor: pointer;
+          outline: none;
+          background-color: transparent;
+          border: none; }
+          body > #landing #navigator #config-buttons button:hover {
+            background-color: rgba(255, 255, 255, 0.05); }
 @keyframes jumpy {
   0% {
     transform: translateY(0); }
