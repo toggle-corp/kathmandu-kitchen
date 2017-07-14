@@ -1,0 +1,31 @@
+{% extends "mail_templated/base.tpl" %}
+
+
+{% block subject %}
+Reservation {{ reservation.status }} for {{ reservation.date }}
+{% endblock %}
+
+
+{% block body %}
+Your following reservation has been {{ reservation.status }}.
+
+Date: {{ reservation.date }}
+Time: {{ reservation.time }}
+Number of Persons: {{ reservation.persons }}
+Contact Email: {{ reservation.email }}
+
+You may contact us for more details.
+{% endblock %}
+
+{% block html %}
+<p>Your following reservation has been {{ reservation.status }}.</p>
+
+<div><b>Date:</b> {{ reservation.date }}</div>
+<div><b>Time:</b> {{ reservation.time }}</div>
+<div><b>Number of Persons:</b> {{ reservation.persons }}</div>
+<div><b>Contact Email:</b> {{ reservation.email }}</div>
+
+<p>
+You may contact us for more details.
+</p>
+{% endblock %}
