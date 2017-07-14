@@ -7,8 +7,9 @@ from menu.models import MenuCategory
 
 class HomeView(View):
     def get(self, request, code=None):
-        if not code:
-            return redirect('home', 'AM')
+        if Branch.objects.count() > 0:
+            if not code:
+                return redirect('home', Branch.objects.all()[0].code)
         context = {}
 
         context['branches'] = Branch.objects.all()
