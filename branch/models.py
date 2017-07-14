@@ -2,6 +2,7 @@ from django.db import models
 
 
 class Branch(models.Model):
+    code = models.CharField(max_length=5)
     name = models.CharField(max_length=300)
     contact_number = models.CharField(max_length=100, blank=True)
     address = models.TextField(blank=True)

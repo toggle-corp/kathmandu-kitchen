@@ -53,6 +53,11 @@ function showConfigModal() {
     $('#config-modal').show();
 }
 
+function hideConfigModal() {
+    $('#config-modal').hide();
+    $('#modal-container').hide();
+}
+
 function showModal(modalSelector, clickInvokerSelector) {
     let invoker = $(clickInvokerSelector);
     let pos = invoker.offset();

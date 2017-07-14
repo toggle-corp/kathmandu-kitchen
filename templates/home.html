@@ -37,7 +37,10 @@
                 <a class="hamburger-item"><i class="ion-navicon"></i></a>
             </div>
         </header>
+        <!--
         <script src="{% static 'js/cooking.js' %}"></script>
+        -->
+         
         <div class="content">
             <div id="promo">
                 <div>
@@ -94,42 +97,17 @@
             <h2>Our Menu</h2>
         </header>
         <div class="content">
-            <div class="menu-group" data-target="#menu-items-tandoori">
+            {% for category in categories %}
+            <div class="menu-group" data-target="#menu-items-{{ category.name|slugify }}">
                 <header>
-                    <img src="{% static 'img/header-bg.jpg' %}">
+                    <img {% if category.image %}src="{{ category.image.url }}" {% else %}class="no-img"{% endif %}>
                     <div>
-                        <h3>Tandoori Dish</h3>
+                        <h3>{{ category.name|escape }}</h3>
                         <button class="expand-menu-group-btn"><i class="ion-ios-arrow-down"></i></button>
                     </div>
                 </header>
             </div>
-            <div class="menu-group" data-target="#menu-items-vegetarian">
-                <header>
-                    <img src="{% static 'img/header-bg.jpg' %}">
-                    <div>
-                        <h3>Vegetarian</h3>
-                        <button class="expand-menu-group-btn"><i class="ion-ios-arrow-down"></i></button>
-                    </div>
-                </header>
-            </div>
-            <div class="menu-group" data-target="#menu-items-chicken">
-                <header>
-                    <img src="{% static 'img/header-bg.jpg' %}">
-                    <div>
-                        <h3>Chicken</h3>
-                        <button class="expand-menu-group-btn"><i class="ion-ios-arrow-down"></i></button>
-                    </div>
-                </header>
-            </div>
-            <div class="menu-group" data-target="#menu-items-kathmandu-special">
-                 <header>
-                    <img src="{% static 'img/header-bg.jpg' %}">
-                    <div>
-                        <h3>Kathmandu special</h3>
-                        <button class="expand-menu-group-btn"><i class="ion-ios-arrow-down"></i></button>
-                    </div>
-                </header>
-            </div>
+            {% endfor %}
         </div>
     </section>
 
@@ -246,8 +224,13 @@
             </header>
             <div class="content">
                 <div id="location-select-modal">
-                    <a class="active">Amsterdam</a>
-                    <a>Zaansted</a>
+                    {% for branch in branches %}
+                    {% if current_branch == branch %}
+                    <a class="active" onclick="hideConfigModal()">{{ branch }}</a>
+                    {% else %}
+                    <a href="{% url 'home' branch.code %}">{{ branch }}</a>
+                    {% endif %}
+                    {% endfor %}
                 </div>
             </div>
         </div>
@@ -269,68 +252,25 @@
                     </div>
                 </div>
                 <div class="category-list">
-                    <a data-target="#menu-items-tandoori">Tandori</a>
-                    <a data-target="#menu-items-chicken">Chicken</a>
-                    <a data-target="#menu-items-vegetarian">Vegetarian</a>
-                    <a data-target="#menu-items-kathmandu-special">Kathmandu Special</a>
+                    {% for category in categories %}
+                    <a data-target="#menu-items-{{ category.name|slugify }}">{{ category.name|escape }}</a>
+                    {% endfor %}
                 </div>
                 <div class="item-list">
-                    <div class="menu-items" id="menu-items-tandoori" hidden>
+                    {% for category in categories %}
+                    <div class="menu-items" id="menu-item-{{ category.name|slugify }}">
+                        {% for fooditem in category.fooditem_set.all %}
                         <div class="menu-item">
-                            <img src="{% static 'img/test.jpg' %}">
+                            <img {% if fooditem.image %}src="{{ fooditem.image.url }}" {% else %}class="no-img"{% endif %}>
                             <div class="menu-item-details">
-                                <h4 class="title">Tandoori Lamb Tikka</h4>
-                                <span class="price">1500</span>
-                                <p class="description">Lamb meat I guess, served with bla bla bla, just some dead lamb</p>
+                                <h4 class="title">{{ fooditem.name|escape }}</h4>
+                                <span class="price">{{ fooditem.price }}</span>
+                                <p class="description">{{ fooditem.description|escape }}</p>
                             </div>
                         </div>
-                        <div class="menu-item">
-                            <img src="{% static 'img/test.jpg' %}">
-                            <div class="menu-item-details">
-                                <h4 class="title">Tandoori Lamb Tikka</h4>
-                                <span class="price">1500</span>
-                                <p class="description">Lamb meat I guess, served with bla bla bla, just some dead lamb</p>
-                            </div>
-                        </div>
-                        <div class="menu-item">
-                            <img src="{% static 'img/test.jpg' %}">
-                            <div class="menu-item-details">
-                                <h4 class="title">Tandoori Lamb Tikka</h4>
-                                <span class="price">1500</span>
-                                <p class="description">Lamb meat I guess, served with bla bla bla, just some dead lamb</p>
-                            </div>
-                        </div>
+                        {% endfor %}
                     </div>
-                    <div class="menu-items" id="menu-items-chicken" hidden>
-                        <div class="menu-item">
-                            <img src="{% static 'img/test.jpg' %}">
-                            <div class="menu-item-details">
-                                <h4 class="title">Tandoori Lamb Tikka</h4>
-                                <span class="price">1500</span>
-                                <p class="description">Lamb meat I guess, served with bla bla bla, just some dead lamb</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="menu-items" id="menu-items-vegetarian" hidden>
-                        <div class="menu-item">
-                            <img src="{% static 'img/test.jpg' %}">
-                            <div class="menu-item-details">
-                                <h4 class="title">Tandoori Lamb Tikka</h4>
-                                <span class="price">1500</span>
-                                <p class="description">Lamb meat I guess, served with bla bla bla, just some dead lamb</p>
-                            </div>
-                        </div>
-                        <div class="menu-item">
-                            <img src="{% static 'img/test.jpg' %}">
-                            <div class="menu-item-details">
-                                <h4 class="title">Tandoori Lamb Tikka</h4>
-                                <span class="price">1500</span>
-                                <p class="description">Lamb meat I guess, served with bla bla bla, just some dead lamb</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="menu-items" id="menu-items-kathmandu-special" hidden>
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>
