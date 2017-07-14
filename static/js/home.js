@@ -75,11 +75,12 @@ $(document).ready(function() {
             scrollTop: $('#opening-hours').offset().top
         }, 500);
     });
-
+     
     $('#menu-see-menu').on('click', function() {
-        showModal('#our-menu-modal', this);
+        $('html, body').animate({
+            scrollTop: $('#our-menu').offset().top
+        }, 500);
     });
-
 
 });
  

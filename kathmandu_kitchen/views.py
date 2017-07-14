@@ -24,7 +24,7 @@ class HomeView(View):
         current_language = translation.get_language()
 
         context['current_language'] = current_language
-        context['next_language'] = 'EN' if current_language == 'nl' \
-            else 'NL'
+        context['next_language'] = 'en' if current_language == 'nl' \
+            else 'nl'
 
         return render(request, 'home.html', context)
