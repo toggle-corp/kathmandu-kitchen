@@ -1,1 +1,58 @@
+{% load staticfiles %}
+{% load i18n %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kathmandu Kitchen</title>
 
+    <link href="https://fonts.googleapis.com/css?family=News+Cycle:400,700|Sacramento" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/acknowledge.css' %}">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script>
+        function post(status) {
+            if (status == 'rejected') {
+                if (!confirm('Are you sure you want to reject this reservation?')) {
+                    return;
+                }
+            }
+            $('#status').val(status);
+            $('form').submit();
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <h3>Confirm reservation</h3>
+    </header>
+    <div class="detail date">
+        <a class="detail-title">Reservation date</a>
+        <a class="detail-info">{{ reservation.date }}</a>
+    </div>
+    <div class="detail time">
+        <a class="detail-title">Reservation time</a>
+        <a class="detail-info">{{ reservation.time }}</a>
+    </div>
+    <div class="detail no-of-people">
+        <a class="detail-title">No of people</a>
+        <a class="detail-info">{{ reservation.persons }}</a>
+    </div>
+    <div class="detail email">
+        <a class="detail-title">Reserved by</a>
+        <a class="detail-info">{{ reservation.email }}</a>
+    </div>
+    <div class="action-container">
+        <button class="reject" onclick="post('rejected')">Reject</button>
+        <button class="accept" onclick="post('accepted')">Accept</button>
+    </div>
+
+    <form method="post" hidden>
+        {% csrf_token %}
+        <input id="status" type="hidden" name="status">
+    </form>
+</body>
