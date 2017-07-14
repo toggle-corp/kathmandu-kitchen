@@ -1,13 +1,13 @@
 from django.db import models
 
 DAYS_OF_THE_WEEK = (
-    ('1', 'Monday'),
-    ('2', 'Tuesday'),
-    ('3', 'Wednesday'),
-    ('4', 'Thursday'),
-    ('5', 'Friday'),
-    ('6', 'Saturday'),
-    ('7', 'Sunday'),
+    (1, 'Monday'),
+    (2, 'Tuesday'),
+    (3, 'Wednesday'),
+    (4, 'Thursday'),
+    (5, 'Friday'),
+    (6, 'Saturday'),
+    (7, 'Sunday'),
 )
 
 
@@ -39,7 +39,7 @@ class OpeningHour(models.Model):
 
     def __str__(self):
         return '{} ({} - {})'.format(
-            self.branch.name, str(self.start_time), str(self.end_Time))
+            self.branch.name, str(self.start_time), str(self.end_time))
 
     class Meta:
         ordering = ['day']

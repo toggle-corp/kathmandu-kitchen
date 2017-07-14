@@ -41,16 +41,14 @@
             </div>
 
             <div id="main-menu">
-                <a class="menu-item">See Menu</a>
-                <a class="menu-item">Opening hours</a>
-                <a class="menu-item">Make Reservations</a>
-                <a class="menu-item">Contact us</a>
+                <a class="menu-item" id="menu-see-menu">See Menu</a>
+                <a class="menu-item" id="menu-opening-hours">Opening hours</a>
+                <a class="menu-item" id="menu-make-reservations">Make Reservations</a>
+                <a class="menu-item" id="menu-contact-us">Contact us</a>
                 <a class="hamburger-item"><i class="ion-navicon"></i></a>
             </div>
         </header>
-        <!--
-        <script src="{% static 'js/cooking.js' %}"></script>
-        -->
+         
          
         <div class="content">
             <div id="promo">
@@ -132,48 +130,14 @@
             </header>
             <div class="content">
                 <div id="opening-hour-list">
+                    {% for openinghour in current_branch.openinghour_set.all %}
                     <div class="opening-hour">
-                        <date class="day">Sunday</date>
-                        <time class="open">10:00 AM</time>
-                        <time class="close">8:00 PM</time>
-                        <div class="remark">Open now</div>
+                        <date class="day">{{ openinghour.get_day_display }}</date>
+                        <time class="open">{% if openinghour.start_time %}{{ openinghour.start_time }}{% else %}-{% endif %}</time>
+                        <time class="close">{% if openinghour.end_time %}{{ openinghour.end_time }}{% else %}-{% endif %}</time>
+                        <div class="remark">{{ openinghour.remarks }}</div>
                     </div>
-                    <div class="opening-hour">
-                        <date class="day">Monday</date>
-                        <time class="open">10:00 AM</time>
-                        <time class="close">8:00 PM</time>
-                        <div class="remark">Open now</div>
-                    </div>
-                    <div class="opening-hour">
-                        <date class="day">Tuesday</date>
-                        <time class="open">10:00 AM</time>
-                        <time class="close">8:00 PM</time>
-                        <div class="remark">Open now</div>
-                    </div>
-                    <div class="opening-hour">
-                        <date class="day">Wednesday</date>
-                        <time class="open">10:00 AM</time>
-                        <time class="close">8:00 PM</time>
-                        <div class="remark">Open now</div>
-                    </div>
-                    <div class="opening-hour">
-                        <date class="day">Thursday</date>
-                        <time class="open">10:00 AM</time>
-                        <time class="close">8:00 PM</time>
-                        <div class="remark">Open now</div>
-                    </div>
-                    <div class="opening-hour">
-                        <date class="day">Friday</date>
-                        <time class="open">10:00 AM</time>
-                        <time class="close">8:00 PM</time>
-                        <div class="remark">Open now</div>
-                    </div>
-                    <div class="opening-hour">
-                        <date class="day">Saturday</date>
-                        <time class="open">10:00 AM</time>
-                        <time class="close">8:00 PM</time>
-                        <div class="remark">Open now</div>
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>
@@ -187,26 +151,27 @@
                         <div class="name">Kathmandu Kitchen</div>
                         <div class="info">
                             <i class="fa fa-location-arrow"></i>
-                            <p>Kathmandu, DUH!</p>
+                            <p>{{ current_branch.address }}</p>
                         </div>
                     </div>
                     <div class="extra">
                         <div class="info">
                             <i class="fa fa-phone"></i>
-                            <p>+977 (201) 101456</p>
+                            <p>{{ current_branch.contact_number }}</p>
                         </div>
                         <div class="info">
                             <i class="fa fa-envelope"></i>
-                            <p>info@togglecorp.com</p>
+                            <p>{{ current_branch.admin_email }}</p>
                         </div>
                     </div>
                 </div>
                 <div id="find-us">
                     <div class="title">Find us on</div>
-                    <a class="find-us-on"><i class="fa fa-facebook"></i></a>
-                    <a class="find-us-on"><i class="fa fa-twitter"></i></a>
+                    <a href="{{ current_branch.facebook }}" class="find-us-on"><i class="fa fa-facebook"></i></a>
+                    <a href="{{ current_branch.twitter }}" class="find-us-on"><i class="fa fa-twitter"></i></a>
                 </div>
                 <div id="location-map">
+                    {{ current_branch.map_tag|safe }}
                 </div>
             </div>
         </div>
@@ -289,5 +254,8 @@
             </div>
         </div>
     </div>
+    <!-- 
+    <script src="{% static 'js/cooking.js' %}"></script>
+    -->
 </body>
 </html>

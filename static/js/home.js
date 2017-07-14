@@ -58,6 +58,29 @@ $(document).ready(function() {
     }
 
 
+    $('#navigate-down-btn').on('click', function() {
+        $('html, body').animate({
+            scrollTop: $('#our-menu').offset().top
+        }, 500);
+    });
+     
+    $('#menu-contact-us').on('click', function() {
+        $('html, body').animate({
+            scrollTop: $('#contact-us').offset().top
+        }, 500);
+    });
+     
+    $('#menu-opening-hours').on('click', function() {
+        $('html, body').animate({
+            scrollTop: $('#opening-hours').offset().top
+        }, 500);
+    });
+
+    $('#menu-see-menu').on('click', function() {
+        showModal('#our-menu-modal', this);
+    });
+
+
 });
  
 

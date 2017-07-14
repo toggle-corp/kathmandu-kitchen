@@ -13,7 +13,7 @@ class HomeView(View):
         context = {}
 
         context['branches'] = Branch.objects.all()
-        context['categories'] = MenuCategory.objects.all()
+        context['categories'] = MenuCategory.objects.filter(branch__code=code)
         context['current_branch'] = Branch.objects.get(code=code)
 
         return render(request, 'home.html', context)

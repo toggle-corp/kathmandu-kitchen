@@ -719,6 +719,10 @@ body {
                     }
                 }
 
+                .no-img {
+                    display: none;
+                }
+
                 >.content {
                     display: flex;
 
@@ -776,7 +780,7 @@ body {
                             flex-basis: calc(100% - 320px);
                             display: flex;
                             flex-wrap: wrap;
-                            align-items: flex-start;
+                            //align-items: flex-start;
 
                             .menu-item {
                                 width: 300px;
@@ -808,6 +812,11 @@ body {
                                         flex-basis: 30%;
                                         padding: 10px;
                                         text-align: right;
+
+                                        &:before {
+                                            content: '€';
+                                            margin-right: 4px;
+                                        }
                                     }
 
                                     .description {
