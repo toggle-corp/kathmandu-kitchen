@@ -77,11 +77,11 @@
                         </div>
                         <div class="input-row">
                             <div class="input-container">
-                                <label>{% trans 'Time:' %}</label>
+                                <label>{% trans 'Time' %}:</label>
                                 <input type="time" name="time" required>
                             </div>
                             <div class="input-container">
-                                <label>{% trans 'Email:' %}</label>
+                                <label>{% trans 'Email' %}:</label>
                                 <input type="text" name="email" required>
                             </div>
                         </div>
@@ -243,7 +243,7 @@
                 </div>
                 <div class="item-list">
                     {% for category in categories %}
-                    <div class="menu-items" id="menu-item-{{ category.name|slugify }}">
+                    <div class="menu-items" id="menu-items-{{ category.name|slugify }}" hidden>
                         {% for fooditem in category.fooditem_set.all %}
                         <div class="menu-item">
                             <img {% if fooditem.image %}src="{{ fooditem.image.url }}" {% else %}class="no-img"{% endif %}>
