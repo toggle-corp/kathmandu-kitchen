@@ -40,8 +40,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'mail_templated',
+
     'menu',
     'branch',
+    'reservation',
 ]
 
 MIDDLEWARE = [
