@@ -1,6 +1,6 @@
-let locationPreferenceKey = "kathmandu-kitchen-location-preference"; 
-let languagePreferenceKey = "kathmandu-kitchen-language-preference"; 
- 
+let locationPreferenceKey = "kathmandu-kitchen-location-preference";
+let languagePreferenceKey = "kathmandu-kitchen-language-preference";
+
 $(document).ready(function() {
     $('#our-menu .menu-item').on('click', function() {
         let prev = $('#our-menu .menu-item.expanded');
@@ -48,7 +48,7 @@ $(document).ready(function() {
     if (typeof(Storage) !== "undefined") {
         let languagePreference = localStorage.getItem(languagePreferenceKey);
         let locationPreference = localStorage.getItem(locationPreferenceKey);
-     
+
         if (!locationPreference) {
             locationPreference = localStorage.setItem(locationPreferenceKey, currentBranchCode);
             showConfigModal();
@@ -63,34 +63,40 @@ $(document).ready(function() {
             scrollTop: $('#our-menu').offset().top
         }, 500);
     });
-     
-    $('#menu-contact-us').on('click', function() {
+
+    $('#menu-contact-us, #ham-menu-contact-us').on('click', function() {
         $('html, body').animate({
             scrollTop: $('#contact-us').offset().top
         }, 500);
+        $('.btn-close-modal').trigger('click');
     });
-     
-    $('#menu-opening-hours').on('click', function() {
+
+    $('#menu-opening-hours, #ham-menu-opening-hours').on('click', function() {
         $('html, body').animate({
             scrollTop: $('#opening-hours').offset().top
         }, 500);
+        $('.btn-close-modal').trigger('click');
     });
-     
-    $('#menu-see-menu').on('click', function() {
+
+    $('#menu-see-menu, #ham-menu-see-menu').on('click', function() {
         $('html, body').animate({
             scrollTop: $('#our-menu').offset().top
         }, 500);
+        $('.btn-close-modal').trigger('click');
     });
 
+    $('#ham-menu-reserve').on('click', function() {
+        $('.btn-close-modal').trigger('click');
+    });
 });
- 
+
 
 function clearConfigSession() {
     localStorage.removeItem(languagePreferenceKey);
     localStorage.removeItem(locationPreferenceKey);
 }
 
- 
+
 function showConfigModal() {
     $('#modal-container').show();
     $('#config-modal').show();
@@ -152,5 +158,3 @@ function showMenuItem(callerElementSelector) {
     target.addClass('active');
     target.show();
 }
-
-
