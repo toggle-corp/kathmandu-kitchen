@@ -38,6 +38,7 @@ $(document).ready(function() {
     $('.btn-close-modal').on('click', function() {
         $(this).closest('.modal').fadeOut(function() {
             $('#modal-container').hide();
+            $('html').css('overflow', 'auto');
         });
     });
 
@@ -88,6 +89,12 @@ $(document).ready(function() {
     $('#ham-menu-reserve').on('click', function() {
         $('.btn-close-modal').trigger('click');
     });
+
+    $('#location-select-wrap button').on('click', function() {
+        $('.ghost').removeClass('ghost');
+        $('#location-select-wrap').addClass('ghost');
+        $('html').css('overflow', 'auto');
+    });
 });
 
 
@@ -108,6 +115,7 @@ function hideConfigModal() {
 }
 
 function showModal(modalSelector, clickInvokerSelector) {
+    $('html').css('overflow', 'hidden');
     let invoker = $(clickInvokerSelector);
     let pos = invoker.offset();
     let width = invoker.outerWidth();

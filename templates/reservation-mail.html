@@ -1,6 +1,5 @@
 {% extends "mail_templated/base.tpl" %}
 
-
 {% block subject %}
 Reservation order from {{ reservation.email }}
 {% endblock %}
@@ -14,6 +13,9 @@ Date: {{ reservation.date }}
 Time: {{ reservation.time }}
 Number of Persons: {{ reservation.persons }}
 Contact Email: {{ reservation.email }}
+
+Copy this link to ackowledge:
+{{ url }}
 {% endblock %}
 
 {% block html %}
@@ -23,5 +25,6 @@ Contact Email: {{ reservation.email }}
 <div><b>Time:</b> {{ reservation.time }}</div>
 <div><b>Number of Persons:</b> {{ reservation.persons }}</div>
 <div><b>Contact Email:</b> {{ reservation.email }}</div>
-
+<br><br>
+<a href= "{{ url }}">Click here to acknowledge</a>
 {% endblock %}

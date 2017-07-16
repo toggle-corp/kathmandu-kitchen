@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-14 17:31+0545\n"
+"POT-Creation-Date: 2017-07-16 18:38+0545\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -46,91 +46,95 @@ msgstr "Zaterdag"
 msgid "Sunday"
 msgstr "Zondag"
 
-#: templates/home.html:45 templates/home.html:197
+#: templates/home.html:41 templates/home.html:200
 msgid "See Menu"
 msgstr "Zie menu"
 
-#: templates/home.html:46 templates/home.html:198
+#: templates/home.html:42 templates/home.html:201
 msgid "Opening hours"
 msgstr "Openingstijden"
 
-#: templates/home.html:47 templates/home.html:199
+#: templates/home.html:43 templates/home.html:202
 msgid "Make Reservations"
 msgstr "Reserveren"
 
-#: templates/home.html:48 templates/home.html:200
+#: templates/home.html:44 templates/home.html:203
 msgid "Contact us"
 msgstr "Neem contact met ons op"
 
-#: templates/home.html:57
-msgid "Welcome to <strong>Kathmandu Kitchen</strong>"
-msgstr "Welkom in <strong>Kathmandu Kitchen</strong>"
+#: templates/home.html:53
+msgid "Kathmandu Kitchen"
+msgstr ""
 
-#: templates/home.html:58
+#: templates/home.html:54
 msgid "The taste you deserve"
 msgstr "De smaak die je verdient"
 
-#: templates/home.html:63
-msgid "Make a reservation"
-msgstr "Reserveren"
+#: templates/home.html:58
+msgid "Select a location to get started"
+msgstr "Selecteer een locatie"
 
-#: templates/home.html:70
-msgid "Date"
-msgstr "Datum"
-
-#: templates/home.html:74
-msgid "Number of person"
-msgstr "Aantal personen"
-
-#: templates/home.html:80
-msgid "Time"
-msgstr "Tijd"
-
-#: templates/home.html:84
-msgid "Email"
-msgstr "E-mail"
-
-#: templates/home.html:89
-msgid "Submit"
-msgstr "voorleggen"
-
-#: templates/home.html:99
+#: templates/home.html:67
 msgid "click to change"
 msgstr "Klik om te veranderen"
 
-#: templates/home.html:104
+#: templates/home.html:72
 msgid "change to"
 msgstr "veranderen naar"
 
-#: templates/home.html:115
+#: templates/home.html:83
 msgid "Our Menu"
 msgstr "Zie menu"
 
-#: templates/home.html:135
+#: templates/home.html:102
+msgid "Make a reservation"
+msgstr "Reserveren"
+
+#: templates/home.html:109
+msgid "Date"
+msgstr "Datum"
+
+#: templates/home.html:113
+msgid "Number of person"
+msgstr "Aantal personen"
+
+#: templates/home.html:119
+msgid "Time"
+msgstr "Tijd"
+
+#: templates/home.html:123
+msgid "Email"
+msgstr "E-mail"
+
+#: templates/home.html:128
+msgid "Submit"
+msgstr "voorleggen"
+
+#: templates/home.html:137
 msgid "Opening Hours"
 msgstr "Openingstijden"
 
-#: templates/home.html:152
+#: templates/home.html:154
 msgid "Contact Us"
 msgstr "Neem contact met ons op"
 
-#: templates/home.html:175
+#: templates/home.html:177
 msgid "Find us on"
 msgstr "Vind ons op"
 
-#: templates/home.html:192
+#: templates/home.html:195
 msgid "Navigate"
 msgstr "Navigeren"
 
-#: templates/home.html:207
+#: templates/home.html:210
 msgid "Select location"
 msgstr "Selecteer een locatie"
 
-#: templates/home.html:225
+#: templates/home.html:228
 msgid "Our menu"
 msgstr "Ons menu"
 
-#: templates/home.html:228
+#: templates/home.html:231
 msgid "Search"
 msgstr "Zoeken"
 
@@ -163,3 +167,6 @@ msgstr "Wij informeren u graag over de reservering per email."
 #: templates/reservation-complete.html:38
 msgid "Go back to website"
 msgstr "Ga terug naar de website"
+
+#~ msgid "Welcome to <strong>Kathmandu Kitchen</strong>"
+#~ msgstr "Welkom in <strong>Kathmandu Kitchen</strong>"
