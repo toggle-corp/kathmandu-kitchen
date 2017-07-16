@@ -287,7 +287,9 @@
         }
     }
     @media screen and (max-width: 720px) {
-        $modal-header-height: 144px;
+        // hide search 
+        // $modal-header-height: 144px;
+        $modal-header-height: 96px;
 
         .modal {
             >header {
@@ -328,11 +330,16 @@
                         display: none;
                         align-self: flex-start;
                         flex-basis: 100%;
-                        margin: 0 20px 0 10px;
+                        margin: 0;
+                        position: absolute;
+                        background-color: #fff;
+                        width: 100%;
+                        box-shadow: 0 3px 25px -5px rgba(0, 0, 0, 0.5);
+                        padding: 24px 0;
                     }
                     .item-list{
                         flex-basis: 100%;
-                        height: calc(100% - $header-height);
+                        height: calc(100% - #{$modal-header-height});
                         overflow-y: auto;
 
                         .menu-items{

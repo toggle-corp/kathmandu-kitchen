@@ -57,15 +57,18 @@
             <div id="location-select-wrap">
                 <p>{% trans 'Select a location to get started' %}</p>
                 {% for branch in branches %}
-                <button data-branch-code="{{ branch.code }}">{{ branch }}</button>
+                <button data-branch-code="{{ branch.code }}" data-href="{% url 'home' branch.code %}">{{ branch }}</button>
                 {% endfor %}
             </div>
         </div>
         <div id="config-buttons">
-            <button class="change-config ghost" onclick="showConfigModal()">
+            <!-- button removed due to new design -->
+            <!--
+            <button class="change-config ghost" onclick="showConfigModal()" hidden>
                 <span class="current">{{ current_branch.code }}</span>
                 <span class="next">{% trans 'click to change' %}</span>
             </button>
+            -->
             <div class="change-config">
                 <span class="current">{{ current_language }}</span>
                 {% language next_language %}
@@ -230,10 +233,13 @@
         <div class="modal" id="our-menu-modal">
             <header>
                 <h2>{% trans 'Our menu' %}</h2>
+                <!-- hide search for now -->
+                <!--
                 <div class="search-input-container">
                     <i class="ion-ios-search"></i>
                     <input type="search" placeholder="{% trans 'Search' %}">
                 </div>
+                -->
                 <button class="btn-close-modal"><i class="ion-ios-close-empty"></i></button>
             </header>
             <div class="content">
@@ -269,8 +275,6 @@
             </div>
         </div>
     </div>
-    <!--
     <script src="{% static 'js/cooking.js' %}"></script>
-    -->
 </body>
 </html>

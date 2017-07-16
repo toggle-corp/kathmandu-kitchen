@@ -424,7 +424,7 @@ body #opening-hours-and-contact-us {
                 color: rgba(0, 0, 0, 0.6); }
   @media screen and (max-width: 720px) {
     #modal-container .modal > header {
-      height: 144px;
+      height: 96px;
       flex-wrap: wrap;
       padding: 0 16px 0 32px; }
       #modal-container .modal > header h2 {
@@ -450,10 +450,15 @@ body #opening-hours-and-contact-us {
         display: none;
         align-self: flex-start;
         flex-basis: 100%;
-        margin: 0 20px 0 10px; }
+        margin: 0;
+        position: absolute;
+        background-color: #fff;
+        width: 100%;
+        box-shadow: 0 3px 25px -5px rgba(0, 0, 0, 0.5);
+        padding: 24px 0; }
       #modal-container .modal#our-menu-modal > .content .item-list {
         flex-basis: 100%;
-        height: calc(100% - $header-height);
+        height: calc(100% - 96px);
         overflow-y: auto; }
         #modal-container .modal#our-menu-modal > .content .item-list .menu-items {
           justify-content: center;
@@ -617,6 +622,7 @@ body {
           color: #e08226;
           outline: none; }
       body > #landing #config-buttons button {
+        display: none;
         cursor: pointer;
         outline: none;
         background-color: transparent;
@@ -822,6 +828,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.33em; }
+    font-size: 1.33em;
+    text-align: center;
+    padding: 16px; }
 
 /*# sourceMappingURL=home.css.map */
