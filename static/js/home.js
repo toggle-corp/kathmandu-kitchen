@@ -119,7 +119,9 @@ $(document).ready(function() {
         }
     });
 
-    $('html').css('overflow', 'auto');
+    $(window).on('beforeunload', function() {
+        $(window).scrollTop(0);
+    });
 });
 
 
