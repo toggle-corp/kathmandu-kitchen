@@ -12,6 +12,9 @@ DAYS_OF_THE_WEEK = (
     (7, _('Sunday')),
 )
 
+default_accept_msg = 'Your reservation has been accepted.'
+default_reject_msg = 'Your reservation has been rejected.'
+
 
 class Branch(models.Model):
     code = models.CharField(max_length=5)
@@ -24,6 +27,11 @@ class Branch(models.Model):
 
     facebook = models.CharField(max_length=300, blank=True)
     twitter = models.CharField(max_length=300, blank=True)
+
+    default_accept_message = models.TextField(blank=True,
+                                              default=default_accept_msg)
+    default_reject_message = models.TextField(blank=True,
+                                              default=default_reject_msg)
 
     def __str__(self):
         return self.name

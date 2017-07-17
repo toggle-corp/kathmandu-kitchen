@@ -21,7 +21,7 @@ class HomeView(View):
         if language:
             translation.activate(language)
             request.session[translation.LANGUAGE_SESSION_KEY] = \
-                    language
+                language
 
         current_language = translation.get_language()
 

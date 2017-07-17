@@ -1,6 +1,7 @@
 from django.views.generic import View
 from django.shortcuts import render, redirect
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.utils import translation
 
 from mail_templated import send_mail
 
@@ -29,13 +30,19 @@ class ReservationView(View):
 
         reservation.save()
 
+        language = request.POST.get('language')
+        if language:
+            translation.activate(language)
+            request.session[translation.LANGUAGE_SESSION_KEY] = \
+                language
+
         context = {
             'reservation': reservation,
         }
 
         send_mail('reservation-mail.html',
                   context,
-                  'info@togglecorp.com',    # from
+                  'info@togglecorp.com',             # from
                   [reservation.branch.admin_email]   # to
                   )
 
@@ -45,8 +52,10 @@ class ReservationView(View):
 class AcknowledgeReservataion(LoginRequiredMixin, View):
     def get(self, request, reservation_id):
         reservation = Reservation.objects.get(pk=reservation_id)
+        current_language = translation.get_language()
         context = {
             'reservation': reservation,
+            'current_language': current_language,
         }
         return render(request, 'acknowledge-reservation.html', context)
 

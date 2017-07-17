@@ -31,20 +31,31 @@
         <h3>Confirm reservation</h3>
     </header>
     <div class="detail date">
-        <a class="detail-title">Reservation date</a>
-        <a class="detail-info">{{ reservation.date }}</a>
+        <p class="detail-title">Reservation date</p>
+        <p class="detail-info">{{ reservation.date }}</p>
     </div>
     <div class="detail time">
-        <a class="detail-title">Reservation time</a>
-        <a class="detail-info">{{ reservation.time }}</a>
+        <p class="detail-title">Reservation time</p>
+        <p class="detail-info">{{ reservation.time }}</p>
     </div>
     <div class="detail no-of-people">
-        <a class="detail-title">No of people</a>
-        <a class="detail-info">{{ reservation.persons }}</a>
+        <p class="detail-title">No of people</p>
+        <p class="detail-info">{{ reservation.persons }}</p>
     </div>
     <div class="detail email">
-        <a class="detail-title">Reserved by</a>
-        <a class="detail-info">{{ reservation.email }}</a>
+        <p class="detail-title">Reserved by</p>
+        <p class="detail-info">{{ reservation.email }}</p>
+    </div>
+    <div>
+        <p>Reply in</p>
+        <label>
+            <input type="radio" name="language" value="en" {% if current_langauge != 'nl' %}checked{% endif %}>
+            English
+        </label>
+        <label>
+            <input type="radio" name="language" value="nl" {% if current_langauge == 'nl' %}checked{% endif %}>
+            Dutch
+        </label>
     </div>
     <div class="action-container">
         <button class="reject" onclick="post('rejected')">Reject</button>

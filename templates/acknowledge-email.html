@@ -7,7 +7,7 @@ Reservation {{ reservation.status }} for {{ reservation.date }}
 
 
 {% block body %}
-Your following reservation has been {{ reservation.status }}.
+{% if reservation.status == 'accepted' %}{{ reservation.branch.default_accept_msg }}{% else %}{{ reservation.branch.default_reject_msg }}{% endif %}
 
 Date: {{ reservation.date }}
 Time: {{ reservation.time }}
@@ -18,7 +18,13 @@ You may contact us for more details.
 {% endblock %}
 
 {% block html %}
-<p>Your following reservation has been {{ reservation.status }}.</p>
+<p>
+{% if reservation.status == 'accepted' %}
+{{ reservation.branch.default_accept_msg }}
+{% else %}
+{{ reservation.branch.default_reject_msg }}
+{% endif %}
+</p>
 
 <div><b>Date:</b> {{ reservation.date }}</div>
 <div><b>Time:</b> {{ reservation.time }}</div>
