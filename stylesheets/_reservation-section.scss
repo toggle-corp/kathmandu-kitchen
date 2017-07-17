@@ -1,0 +1,136 @@
+#reservation-section {
+    min-height: 60vh;
+    background-color: #ddd;
+    background-image: url('../img/menu-bg.jpg');
+    background-blend-mode: soft-light;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    #reservation-form-wrapper {
+        flex-basis: 40%;
+        align-self: center;
+
+        header {
+            h3 {
+                font-size: 3em;
+                font-family: 'Sacramento', sans-serif;
+                text-align: center;
+            }
+        }
+
+        .content {
+            padding: 32px;
+            font-size: 1.33em;
+
+            .radio-input-container {
+                padding: 10px;
+                display: flex;
+                align-items: center;
+
+                >label {
+                    color: rgba(0, 0, 0, 0.8);
+                }
+
+                .radio-group {
+                    label {
+                        padding: 0 10px;
+                        display: inline-flex;
+                        align-items: center;
+
+                        input {
+                            margin-right: 8px;
+                        }
+                    }
+
+                }
+            }
+
+            .input-container {
+                padding: 10px;
+
+                >label {
+                    display: block;
+                    color: rgba(0, 0, 0, 0.8);
+                }
+
+                input {
+                    font-size: inherit;
+                    width: 100%;
+                    background-color: transparent;
+                    outline: none;
+                    border: none;
+                    border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+                    color: rgba(0, 0, 0, 0.5);
+
+                    &:focus {
+                        color: rgba(0, 0, 0, 0.9);
+                        border-bottom-color: $primary-color;
+                    }
+                }
+            }
+
+            .action-buttons {
+                text-align: center;
+                margin-top: 32px;
+                padding: 10px;
+
+                button {
+                    background-color: transparent;
+                    border: transparent;
+                    outline: none;
+                    color: rgba(0, 0, 0, 0.5);
+                    cursor: pointer;
+                    text-transform: uppercase;
+                    font-size: 1em;
+                    padding: 6px 48px;
+                    border: 2px solid rgba(0, 0, 0, 0.1);
+                    border-radius: 3px;
+
+                    &:hover {
+                        color: #fff;
+                        background-color: $primary-color;
+                    }
+                }
+            }
+        }
+    }
+    @media screen and (max-width: 720px) {
+        flex-basis: 100%;
+        header{
+            h3{
+                font-size: 3em;
+            }
+        }
+        .content{
+            padding-top: 8px;
+            padding-bottom: 8px;
+        }
+    }
+    @media screen and (max-width: 320px) {
+        #reservation-form-wrapper {
+            .content{
+                .input-row{
+                    flex-wrap: wrap;
+
+                    .input-container{
+                        padding: 2px 10px;
+                        flex-basis: 100%;
+                    }
+                }
+                .action-buttons {
+                    margin-top: 16px;
+                    padding: 4px;
+
+                    button{
+                        font-size: 0.8em;
+                        padding: 0 36px;
+                    }
+                }
+            }
+        }
+    }
+}

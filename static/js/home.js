@@ -38,6 +38,7 @@ $(document).ready(function() {
     $('.btn-close-modal').on('click', function() {
         $(this).closest('.modal').fadeOut(function() {
             $('#modal-container').hide();
+            $('html').css('overflow', 'auto');
         });
     });
 
@@ -51,7 +52,13 @@ $(document).ready(function() {
 
         if (!locationPreference) {
             locationPreference = localStorage.setItem(locationPreferenceKey, currentBranchCode);
-            showConfigModal();
+            //showConfigModal();
+        } else {
+            /*
+            setTimeout( () => {
+                $(`#location-select-wrap button[data-branch-code="${locationPreference}"]`).trigger('click');
+            }, 0);
+            */
         }
     } else {
         // No Web Storage support :/
@@ -85,8 +92,35 @@ $(document).ready(function() {
         $('.btn-close-modal').trigger('click');
     });
 
-    $('#ham-menu-reserve').on('click', function() {
+    $('#menu-make-reservations, #ham-menu-reserve').on('click', function() {
+        $('html, body').animate({
+            scrollTop: $('#reservation-section').offset().top
+        }, 500);
         $('.btn-close-modal').trigger('click');
+    });
+
+    if (localStorage.getItem('noredirect')) {
+        localStorage.removeItem('noredirect');
+        $('.ghost').removeClass('ghost');
+        $('#location-select-wrap').addClass('ghost');
+        $('html').css('overflow', 'auto');
+    }
+     
+    $('#location-select-wrap button').on('click', function() {
+        localStorage.setItem(locationPreferenceKey, $(this).data('branch-code'));
+        if($(this).data('branch-code') == currentBranchCode) {
+            localStorage.removeItem('noredirect');
+            $('.ghost').removeClass('ghost');
+            $('#location-select-wrap').addClass('ghost');
+            $('html').css('overflow', 'auto');
+        } else {
+            localStorage.setItem('noredirect', true);
+            window.location.href = $(this).data('href');
+        }
+    });
+
+    $(window).on('beforeunload', function() {
+        $(window).scrollTop(0);
     });
 });
 
@@ -108,6 +142,7 @@ function hideConfigModal() {
 }
 
 function showModal(modalSelector, clickInvokerSelector) {
+    $('html').css('overflow', 'hidden');
     let invoker = $(clickInvokerSelector);
     let pos = invoker.offset();
     let width = invoker.outerWidth();

@@ -1,5 +1,6 @@
 from django.views.generic import View
 from django.shortcuts import render, redirect
+from django.core.urlresolvers import reverse
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.utils import translation
 
@@ -38,6 +39,8 @@ class ReservationView(View):
 
         context = {
             'reservation': reservation,
+            'url': request.build_absolute_uri(
+                reverse('acknowledge-reservation', args=[reservation.id]))
         }
 
         send_mail('reservation-mail.html',
@@ -46,7 +49,7 @@ class ReservationView(View):
                   [reservation.branch.admin_email]   # to
                   )
 
-        return redirect('reservation-complete')
+        return redirect('reservation-complete', reservation.id)
 
 
 class AcknowledgeReservataion(LoginRequiredMixin, View):
