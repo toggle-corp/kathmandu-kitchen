@@ -1,5 +1,5 @@
 {% extends "mail_templated/base.tpl" %}
-
+{% load i18n %}
 
 {% block subject %}
 Reservation {{ reservation.status }} for {{ reservation.date }}
@@ -7,31 +7,43 @@ Reservation {{ reservation.status }} for {{ reservation.date }}
 
 
 {% block body %}
-{% if reservation.status == 'accepted' %}{{ reservation.branch.default_accept_msg }}{% else %}{{ reservation.branch.default_reject_msg }}{% endif %}
+{% if reservation.status == 'accepted' %}{{ reservation.branch.default_accept_message }}{% else %}{{ reservation.branch.default_reject_message }}{% endif %}
 
-Date: {{ reservation.date }}
-Time: {{ reservation.time }}
-Number of Persons: {{ reservation.persons }}
-Contact Email: {{ reservation.email }}
+{% trans 'Reservation Details' %}
+------------------------------
 
-You may contact us for more details.
+{% trans 'Name' %}: {{ reservation.first_name }} {{ reservation.last_name }}
+{% trans 'Date' %}: {{ reservation.date }}
+{% trans 'Time' %}: {{ reservation.time }}
+{% trans 'Number of Persons' %}: {{ reservation.persons }}
+{% trans 'Contact Email' %}: {{ reservation.email }}
+{% trans 'Special Request' %}:
+{{ reservation.special_request }}
+
+{{ reservation.branch.default_mail_footer }}
+
 {% endblock %}
 
 {% block html %}
 <p>
 {% if reservation.status == 'accepted' %}
-{{ reservation.branch.default_accept_msg }}
+{{ reservation.branch.default_accept_message }}
 {% else %}
-{{ reservation.branch.default_reject_msg }}
+{{ reservation.branch.default_reject_message }}
 {% endif %}
 </p>
 
-<div><b>Date:</b> {{ reservation.date }}</div>
-<div><b>Time:</b> {{ reservation.time }}</div>
-<div><b>Number of Persons:</b> {{ reservation.persons }}</div>
-<div><b>Contact Email:</b> {{ reservation.email }}</div>
+<h2>Reservation Details</h2>
+<div><b>{% trans 'Name' %}:</b> {{ reservation.first_name }} {{ reservation.last_name }}</div>
+<div><b>{% trans 'Date' %}:</b> {{ reservation.date }}</div>
+<div><b>{% trans 'Time' %}:</b> {{ reservation.time }}</div>
+<div><b>{% trans 'Number of Persons' %}:</b> {{ reservation.persons }}</div>
+<div><b>{% trans 'Contact Email' %}:</b> {{ reservation.email }}</div>
+<div><b>{% trans 'Special Request' %}:</b>
+<p><pre>{{ reservation.special_request }}</pre></p>
+</div>
 
-<p>
-You may contact us for more details.
-</p>
+<p><pre>
+{{ reservation.branch.default_mail_footer }}
+</pre><p>
 {% endblock %}

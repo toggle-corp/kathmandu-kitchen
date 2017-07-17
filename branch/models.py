@@ -33,6 +33,8 @@ class Branch(models.Model):
     default_reject_message = models.TextField(blank=True,
                                               default=default_reject_msg)
 
+    default_mail_footer = models.TextField(blank=True, default='')
+
     def __str__(self):
         return self.name
 

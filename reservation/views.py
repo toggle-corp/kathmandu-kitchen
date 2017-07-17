@@ -24,18 +24,17 @@ class ReservationView(View):
         reservation = Reservation()
         reservation.branch = Branch.objects.get(code=branch_code)
 
+        reservation.first_name = request.POST.get('first-name')
+        reservation.last_name = request.POST.get('last-name')
+        reservation.email = request.POST.get('email')
+
+        reservation.special_request = request.POST.get('special-request')
+
         reservation.date = request.POST.get('date')
         reservation.time = request.POST.get('time')
         reservation.persons = int(request.POST.get('persons'))
-        reservation.email = request.POST.get('email')
 
         reservation.save()
-
-        language = request.POST.get('language')
-        if language:
-            translation.activate(language)
-            request.session[translation.LANGUAGE_SESSION_KEY] = \
-                language
 
         context = {
             'reservation': reservation,
@@ -55,10 +54,8 @@ class ReservationView(View):
 class AcknowledgeReservataion(LoginRequiredMixin, View):
     def get(self, request, reservation_id):
         reservation = Reservation.objects.get(pk=reservation_id)
-        current_language = translation.get_language()
         context = {
             'reservation': reservation,
-            'current_language': current_language,
         }
         return render(request, 'acknowledge-reservation.html', context)
 
@@ -66,6 +63,12 @@ class AcknowledgeReservataion(LoginRequiredMixin, View):
         reservation = Reservation.objects.get(pk=reservation_id)
         reservation.status = request.POST.get('status')
         reservation.save()
+
+        language = request.POST.get('language')
+        if language:
+            translation.activate(language)
+            request.session[translation.LANGUAGE_SESSION_KEY] = \
+                language
 
         context = {
             'reservation': reservation,

@@ -9,10 +9,13 @@ Reservation order from {{ reservation.email }}
 Reservation Details
 ------------------------------
 
+Name: {{ reservation.first_name }} {{ reservation.last_name }}
 Date: {{ reservation.date }}
 Time: {{ reservation.time }}
 Number of Persons: {{ reservation.persons }}
 Contact Email: {{ reservation.email }}
+Special Request:
+{{ reservation.special_request }}
 
 Copy this link to ackowledge:
 {{ url }}
@@ -21,10 +24,14 @@ Copy this link to ackowledge:
 {% block html %}
 <h2>Reservation Details</h2>
 
+<div><b>Name:</b> {{ reservation.first_name }} {{ reservation.last_name }}</div>
 <div><b>Date:</b> {{ reservation.date }}</div>
 <div><b>Time:</b> {{ reservation.time }}</div>
 <div><b>Number of Persons:</b> {{ reservation.persons }}</div>
 <div><b>Contact Email:</b> {{ reservation.email }}</div>
+<div><b>Special Request:</b>
+<p><pre>{{ reservation.special_request }}</pre></p>
+</div>
 <br><br>
 <a href= "{{ url }}">Click here to acknowledge</a>
 {% endblock %}

@@ -9,11 +9,16 @@ RESERVATION_CHOICES = (
 
 
 class Reservation(models.Model):
+    first_name = models.CharField(max_length=100, default='')
+    last_name = models.CharField(max_length=100, default='')
+    email = models.CharField(max_length=300)
+
+    special_request = models.TextField(blank=True, default='')
+
     branch = models.ForeignKey(Branch)
     date = models.DateField()
     time = models.TimeField()
     persons = models.IntegerField()
-    email = models.CharField(max_length=300)
     status = models.CharField(max_length=10,
                               choices=RESERVATION_CHOICES,
                               default='pending')

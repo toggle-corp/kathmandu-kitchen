@@ -17,21 +17,33 @@
     <header>
         <h3>{% trans 'Reservation Details' %}</h3>
     </header>
+    <div class="detail name">
+        <p class="detail-title">{% trans 'First name' %}</p>
+        <p class="detail-info">{{ reservation.first_name }}</p>
+    </div>
+    <div class="detail name">
+        <p class="detail-title">{% trans 'Last name' %}</p>
+        <p class="detail-info">{{ reservation.last_name }}</p>
+    </div>
     <div class="detail date">
-        <a class="detail-title">{% trans 'Reservation date' %}</a>
-        <a class="detail-info">{{ reservation.date }}</a>
+        <p class="detail-title">{% trans 'Reservation date' %}</p>
+        <p class="detail-info">{{ reservation.date }}</p>
     </div>
     <div class="detail time">
-        <a class="detail-title">{% trans 'Reservation time' %}</a>
-        <a class="detail-info">{{ reservation.time }}</a>
+        <p class="detail-title">{% trans 'Reservation time' %}</p>
+        <p class="detail-info">{{ reservation.time }}</p>
     </div>
     <div class="detail no-of-people">
-        <a class="detail-title">{% trans 'No of people' %}</a>
-        <a class="detail-info">{{ reservation.persons }}</a>
+        <p class="detail-title">{% trans 'No of people' %}</p>
+        <p class="detail-info">{{ reservation.persons }}</p>
     </div>
     <div class="detail email">
-        <a class="detail-title">{% trans 'Reserved by' %}</a>
-        <a class="detail-info">{{ reservation.email }}</a>
+        <p class="detail-title">{% trans 'Reserved by' %}</p>
+        <p class="detail-info">{{ reservation.email }}</p>
+    </div>
+    <div class="detail request">
+        <p class="detail-title">{% trans 'Special request' %}</p>
+        <pre class="detail-info">{{ reservation.special_request }}</pre>
     </div>
     <p class="info">{% trans "We'll let you know about the reservation by email asap." %}</p>
     <div class="action-container" id="home-container">

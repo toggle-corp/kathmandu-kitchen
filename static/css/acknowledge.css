@@ -27,13 +27,15 @@ body {
       text-align: center;
       text-transform: capitalize; }
   body .detail {
-    width: 300px;
+    width: 350px;
     display: flex;
+    flex-wrap: wrap;
     margin: 8px 0;
     justify-content: space-between; }
     body .detail > * {
       flex-basis: 50%; }
     body .detail .detail-title {
+      flex-basis: 50%;
       color: #e08226;
       text-transform: uppercase;
       font-weight: 800; }
@@ -41,7 +43,12 @@ body {
         content: ':';
         margin-left: 2px; }
     body .detail .detail-info {
-      text-align: left; }
+      text-align: left;
+      margin: 0; }
+      body .detail .detail-infopre {
+        width: 100%; }
+    body .detail p {
+      margin: 0; }
   body .action-container {
     width: 300px;
     margin-top: 16px;
