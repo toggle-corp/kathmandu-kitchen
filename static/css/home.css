@@ -160,24 +160,12 @@ body #opening-hours-and-contact-us {
     #reservation-section #reservation-form-wrapper .content {
       padding: 32px;
       font-size: 1.33em; }
-      #reservation-section #reservation-form-wrapper .content .radio-input-container {
-        padding: 10px;
-        display: flex;
-        align-items: center; }
-        #reservation-section #reservation-form-wrapper .content .radio-input-container > label {
-          color: rgba(0, 0, 0, 0.8); }
-        #reservation-section #reservation-form-wrapper .content .radio-input-container .radio-group label {
-          padding: 0 10px;
-          display: inline-flex;
-          align-items: center; }
-          #reservation-section #reservation-form-wrapper .content .radio-input-container .radio-group label input {
-            margin-right: 8px; }
       #reservation-section #reservation-form-wrapper .content .input-container {
         padding: 10px; }
         #reservation-section #reservation-form-wrapper .content .input-container > label {
           display: block;
           color: rgba(0, 0, 0, 0.8); }
-        #reservation-section #reservation-form-wrapper .content .input-container input {
+        #reservation-section #reservation-form-wrapper .content .input-container textarea, #reservation-section #reservation-form-wrapper .content .input-container input {
           font-size: inherit;
           width: 100%;
           background-color: transparent;
@@ -185,9 +173,11 @@ body #opening-hours-and-contact-us {
           border: none;
           border-bottom: 2px solid rgba(0, 0, 0, 0.3);
           color: rgba(0, 0, 0, 0.5); }
-          #reservation-section #reservation-form-wrapper .content .input-container input:focus {
+          #reservation-section #reservation-form-wrapper .content .input-container textarea:focus, #reservation-section #reservation-form-wrapper .content .input-container input:focus {
             color: rgba(0, 0, 0, 0.9);
             border-bottom-color: #e08226; }
+        #reservation-section #reservation-form-wrapper .content .input-container textarea {
+          height: 96px; }
       #reservation-section #reservation-form-wrapper .content .action-buttons {
         text-align: center;
         margin-top: 32px;
@@ -207,11 +197,11 @@ body #opening-hours-and-contact-us {
             color: #fff;
             background-color: #e08226; }
   @media screen and (max-width: 720px) {
-    #reservation-section {
+    #reservation-section #reservation-form-wrapper {
       flex-basis: 100%; }
-      #reservation-section header h3 {
+      #reservation-section #reservation-form-wrapper header h3 {
         font-size: 3em; }
-      #reservation-section .content {
+      #reservation-section #reservation-form-wrapper .content {
         padding-top: 8px;
         padding-bottom: 8px; } }
   @media screen and (max-width: 320px) {

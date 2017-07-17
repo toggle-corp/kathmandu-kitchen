@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-16 18:38+0545\n"
+"POT-Creation-Date: 2017-07-17 11:21+0545\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -46,19 +46,19 @@ msgstr "Zaterdag"
 msgid "Sunday"
 msgstr "Zondag"
 
-#: templates/home.html:41 templates/home.html:200
+#: templates/home.html:41 templates/home.html:225
 msgid "See Menu"
 msgstr "Zie menu"
 
-#: templates/home.html:42 templates/home.html:201
+#: templates/home.html:42 templates/home.html:226
 msgid "Opening hours"
 msgstr "Openingstijden"
 
-#: templates/home.html:43 templates/home.html:202
+#: templates/home.html:43 templates/home.html:227
 msgid "Make Reservations"
 msgstr "Reserveren"
 
-#: templates/home.html:44 templates/home.html:203
+#: templates/home.html:44 templates/home.html:228
 msgid "Contact us"
 msgstr "Neem contact met ons op"
 
@@ -74,67 +74,79 @@ msgstr "De smaak die je verdient"
 msgid "Select a location to get started"
 msgstr "Selecteer een locatie"
 
-#: templates/home.html:67
+#: templates/home.html:69
 msgid "click to change"
 msgstr "Klik om te veranderen"
 
-#: templates/home.html:72
+#: templates/home.html:75
 msgid "change to"
 msgstr "veranderen naar"
 
-#: templates/home.html:83
+#: templates/home.html:86
 msgid "Our Menu"
 msgstr "Zie menu"
 
-#: templates/home.html:102
-msgid "Make a reservation"
+#: templates/home.html:105
+msgid "Make a Reservation"
 msgstr "Reserveren"
 
-#: templates/home.html:109
+#: templates/home.html:112
 msgid "Date"
 msgstr "Datum"
 
-#: templates/home.html:113
+#: templates/home.html:118
 msgid "Number of person"
 msgstr "Aantal personen"
 
-#: templates/home.html:119
+#: templates/home.html:124
 msgid "Time"
 msgstr "Tijd"
 
-#: templates/home.html:123
+#: templates/home.html:130
+msgid "First Name"
+msgstr "Voornaam"
+
+#: templates/home.html:136
+msgid "Last Name"
+msgstr "Achternaam"
+
+#: templates/home.html:142
 msgid "Email"
 msgstr "E-mail"
 
-#: templates/home.html:128
-msgid "Submit"
-msgstr "voorleggen"
+#: templates/home.html:148
+msgid "Special Request"
+msgstr "Speciale Aanvraag"
 
-#: templates/home.html:137
+#: templates/home.html:153
+msgid "Submit"
+msgstr "Voorleggen"
+
+#: templates/home.html:162
 msgid "Opening Hours"
 msgstr "Openingstijden"
 
-#: templates/home.html:154
+#: templates/home.html:179
 msgid "Contact Us"
 msgstr "Neem contact met ons op"
 
-#: templates/home.html:177
+#: templates/home.html:202
 msgid "Find us on"
 msgstr "Vind ons op"
 
-#: templates/home.html:195
+#: templates/home.html:220
 msgid "Navigate"
 msgstr "Navigeren"
 
-#: templates/home.html:210
+#: templates/home.html:235
 msgid "Select location"
 msgstr "Selecteer een locatie"
 
-#: templates/home.html:228
+#: templates/home.html:253
 msgid "Our menu"
 msgstr "Ons menu"
 
-#: templates/home.html:231
+#: templates/home.html:258
 msgid "Search"
 msgstr "Zoeken"
 

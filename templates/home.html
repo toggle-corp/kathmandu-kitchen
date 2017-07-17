@@ -102,7 +102,7 @@
     <section id="reservation-section">
         <div id="reservation-form-wrapper">
             <header>
-                <h3>{% trans 'Make a reservation' %}</h3>
+                <h3>{% trans 'Make a Reservation' %}</h3>
             </header>
             <div class="content">
                 <form method="POST" action={% url 'reserve' current_branch.code %}>
@@ -127,8 +127,26 @@
                     </div>
                     <div class="input-row">
                         <div class="input-container">
+                            <label>{% trans 'First Name' %}:</label>
+                            <input type="text" name="first-name" required>
+                        </div>
+                    </div>
+                    <div class="input-row">
+                        <div class="input-container">
+                            <label>{% trans 'Last Name' %}:</label>
+                            <input type="text" name="last-name" required>
+                        </div>
+                    </div>
+                    <div class="input-row">
+                        <div class="input-container">
                             <label>{% trans 'Email' %}:</label>
                             <input type="text" name="email" required>
+                        </div>
+                    </div>
+                    <div class="input-row">
+                        <div class="input-container">
+                            <label>{% trans 'Special Request' %}:</label>
+                            <textarea name="special-request"></textarea>
                         </div>
                     </div>
                     <div class="action-buttons">
