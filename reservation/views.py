@@ -44,7 +44,7 @@ class ReservationView(View):
 
         send_mail('reservation-mail.html',
                   context,
-                  'info@togglecorp.com',             # from
+                  'kathmandukitchen.nl@gmail.com',             # from
                   [reservation.branch.admin_email]   # to
                   )
 
@@ -76,7 +76,7 @@ class AcknowledgeReservataion(LoginRequiredMixin, View):
 
         send_mail('acknowledge-email.html',
                   context,
-                  'info@togglecorp.com',    # from
+                  'kathmandukitchen.nl@gmail.com',    # from
                   [reservation.email]       # to
                   )
 
