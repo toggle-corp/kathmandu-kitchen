@@ -66,9 +66,13 @@ body {
         }
 
         > .content {
+            height: 70vh; //fallback
+            height: -webkit-calc(100vh - #{$header-height} - #{$navigator-height});
             height: calc(100vh - #{$header-height} - #{$navigator-height});
+            display: -wekit-flex;
             display: flex;
             flex-wrap: wrap;
+            -webkit-box-pack: start;
 
             #promo {
                 display: flex;

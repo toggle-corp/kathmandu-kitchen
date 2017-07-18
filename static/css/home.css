@@ -508,9 +508,13 @@ body {
         body > #landing > header #main-menu .hamburger-item {
           display: none; }
     body > #landing > .content {
+      height: 70vh;
+      height: -webkit-calc(100vh - 200px - 240px);
       height: calc(100vh - 200px - 240px);
+      display: -wekit-flex;
       display: flex;
-      flex-wrap: wrap; }
+      flex-wrap: wrap;
+      -webkit-box-pack: start; }
       body > #landing > .content #promo {
         display: flex;
         align-items: center;
