@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-17 11:21+0545\n"
+"POT-Creation-Date: 2017-07-17 08:39+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -46,6 +46,80 @@ msgstr "Zaterdag"
 msgid "Sunday"
 msgstr "Zondag"
 
+#: templates/acknowledge-email.html:12 templates/reservation-complete.html:18
+msgid "Reservation Details"
+msgstr "Reserveren"
+
+#: templates/acknowledge-email.html:15 templates/acknowledge-email.html:37
+msgid "Name"
+msgstr "Achternaam"
+
+#: templates/acknowledge-email.html:16 templates/acknowledge-email.html:38
+#: templates/home.html:112
+msgid "Date"
+msgstr "Datum"
+
+#: templates/acknowledge-email.html:17 templates/acknowledge-email.html:39
+#: templates/home.html:124
+msgid "Time"
+msgstr "Tijd"
+
+#: templates/acknowledge-email.html:18 templates/acknowledge-email.html:40
+msgid "Number of Persons"
+msgstr "Aantal personen"
+
+#: templates/acknowledge-email.html:19 templates/acknowledge-email.html:41
+msgid "Contact Email"
+msgstr "Neem contact met ons op"
+
+#: templates/acknowledge-email.html:20 templates/acknowledge-email.html:42
+#: templates/home.html:148
+msgid "Special Request"
+msgstr "Speciale Aanvraag"
+
+#: templates/acknowledge-reservation.html:36
+#: templates/reservation-complete.html:21
+msgid "First name"
+msgstr "Voornaam"
+
+#: templates/acknowledge-reservation.html:40
+#: templates/reservation-complete.html:25
+msgid "Last name"
+msgstr "Achternaam"
+
+#: templates/acknowledge-reservation.html:44
+#: templates/reservation-complete.html:29
+msgid "Reservation date"
+msgstr "Reserveren"
+
+#: templates/acknowledge-reservation.html:48
+#: templates/reservation-complete.html:33
+msgid "Reservation time"
+msgstr "Reserveren"
+
+#: templates/acknowledge-reservation.html:52
+#: templates/reservation-complete.html:37
+msgid "No of people"
+msgstr "Aantal mensen"
+
+#: templates/acknowledge-reservation.html:56
+#: templates/reservation-complete.html:41
+msgid "Reserved by"
+msgstr "Gereserveerd door"
+
+#: templates/acknowledge-reservation.html:60
+#: templates/reservation-complete.html:45
+msgid "Special request"
+msgstr "Speciale Aanvraag"
+
+#: templates/acknowledge-reservation.html:76
+msgid "Reject"
+msgstr "afwijzen"
+
+#: templates/acknowledge-reservation.html:77
+msgid "Accept"
+msgstr "Accepteren"
+
 #: templates/home.html:41 templates/home.html:225
 msgid "See Menu"
 msgstr "Zie menu"
@@ -64,7 +138,7 @@ msgstr "Neem contact met ons op"
 
 #: templates/home.html:53
 msgid "Kathmandu Kitchen"
-msgstr ""
+msgstr "Kathmandu Keuken"
 
 #: templates/home.html:54
 msgid "The taste you deserve"
@@ -90,17 +164,9 @@ msgstr "Zie menu"
 msgid "Make a Reservation"
 msgstr "Reserveren"
 
-#: templates/home.html:112
-msgid "Date"
-msgstr "Datum"
-
 #: templates/home.html:118
 msgid "Number of person"
 msgstr "Aantal personen"
-
-#: templates/home.html:124
-msgid "Time"
-msgstr "Tijd"
 
 #: templates/home.html:130
 msgid "First Name"
@@ -113,10 +179,6 @@ msgstr "Achternaam"
 #: templates/home.html:142
 msgid "Email"
 msgstr "E-mail"
-
-#: templates/home.html:148
-msgid "Special Request"
-msgstr "Speciale Aanvraag"
 
 #: templates/home.html:153
 msgid "Submit"
@@ -150,33 +212,11 @@ msgstr "Ons menu"
 msgid "Search"
 msgstr "Zoeken"
 
-#: templates/reservation-complete.html:18
-msgid "Reservation Details"
-msgstr "Reserveren"
-
-#: templates/reservation-complete.html:21
-msgid "Reservation date"
-msgstr "Reserveren"
-
-#: templates/reservation-complete.html:25
-#, fuzzy
-#| msgid "Make Reservations"
-msgid "Reservation time"
-msgstr "Reserveren"
-
-#: templates/reservation-complete.html:29
-msgid "No of people"
-msgstr "Aantal mensen"
-
-#: templates/reservation-complete.html:33
-msgid "Reserved by"
-msgstr "Gereserveerd door"
-
-#: templates/reservation-complete.html:36
+#: templates/reservation-complete.html:48
 msgid "We'll let you know about the reservation by email asap."
 msgstr "Wij informeren u graag over de reservering per email."
 
-#: templates/reservation-complete.html:38
+#: templates/reservation-complete.html:50
 msgid "Go back to website"
 msgstr "Ga terug naar de website"
 

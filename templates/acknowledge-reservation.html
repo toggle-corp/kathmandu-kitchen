@@ -21,38 +21,63 @@
                 }
             }
             $('#status').val(status);
+            $('#language').val($('input[name="language"]:checked').val());
             $('form').submit();
         }
     </script>
 </head>
 
 <body>
+    {% get_current_language as LANGUAGE_CODE %}
     <header>
         <h3>Confirm reservation</h3>
     </header>
+    <div class="detail name">
+        <a class="detail-title">{% trans 'First name' %}</a>
+        <a class="detail-info">{{ reservation.first_name }}</a>
+    </div>
+    <div class="detail name">
+        <a class="detail-title">{% trans 'Last name' %}</a>
+        <a class="detail-info">{{ reservation.last_name }}</a>
+    </div>
     <div class="detail date">
-        <a class="detail-title">Reservation date</a>
-        <a class="detail-info">{{ reservation.date }}</a>
+        <p class="detail-title">{% trans 'Reservation date' %}</p>
+        <p class="detail-info">{{ reservation.date }}</p>
     </div>
     <div class="detail time">
-        <a class="detail-title">Reservation time</a>
-        <a class="detail-info">{{ reservation.time }}</a>
+        <p class="detail-title">{% trans 'Reservation time' %}</p>
+        <p class="detail-info">{{ reservation.time }}</p>
     </div>
     <div class="detail no-of-people">
-        <a class="detail-title">No of people</a>
-        <a class="detail-info">{{ reservation.persons }}</a>
+        <p class="detail-title">{% trans 'No of people' %}</p>
+        <p class="detail-info">{{ reservation.persons }}</p>
     </div>
     <div class="detail email">
-        <a class="detail-title">Reserved by</a>
-        <a class="detail-info">{{ reservation.email }}</a>
+        <p class="detail-title">{% trans 'Reserved by' %}</p>
+        <p class="detail-info">{{ reservation.email }}</p>
+    </div>
+    <div class="detail request">
+        <p class="detail-title">{% trans 'Special request' %}</p>
+        <pre class="detail-info">{{ reservation.special_request }}</pre>
+    </div>
+    <div>
+        <p>Reply in</p>
+        <label>
+            <input type="radio" name="language" value="en" {% if LANGUAGE_CODE != 'nl' %}checked{% endif %}>
+            {{ 'en'|language_name_translated }}
+        </label>
+        <label>
+            <input type="radio" name="language" value="nl" {% if LANGUAGE_CODE == 'nl' %}checked{% endif %}>
+            {{ 'nl'|language_name_translated }}
+        </label>
     </div>
     <div class="action-container">
-        <button class="reject" onclick="post('rejected')">Reject</button>
-        <button class="accept" onclick="post('accepted')">Accept</button>
+        <button class="reject" onclick="post('rejected')">{% trans 'Reject' %}</button>
+        <button class="accept" onclick="post('accepted')">{% trans 'Accept' %}</button>
     </div>
-
     <form method="post" hidden>
         {% csrf_token %}
         <input id="status" type="hidden" name="status">
+        <input id="language" type="hidden" name="language" value="en">
     </form>
 </body>
