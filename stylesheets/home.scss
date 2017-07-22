@@ -106,6 +106,13 @@ body {
                 align-content: flex-end;
                 flex-wrap: wrap;
 
+                hr {
+                    display: none;
+                    flex-basis: 100%;
+                    margin: 16px;
+                    border: 2px solid rgba(255, 255, 255, 0.1);
+                }
+
                 p {
                     flex-basis: 100%;
                     font-size: 2em;
@@ -251,6 +258,7 @@ body {
 
                     h1{
                         font-size: 7em;
+                        line-height: 1;
                     }
                     p{
                         font-size: 2em;
@@ -347,12 +355,16 @@ body {
                     }
                 }
                 #location-select-wrap {
-                    justify-content: space-between;
+                    justify-content: center;
                     align-items: center;
                     align-content: center;
 
+                    hr {
+                        display: block;
+                    }
+
                     button {
-                        margin-right: 0;
+                        margin: 4px; 
                     }
                     p {
                         text-align: center;

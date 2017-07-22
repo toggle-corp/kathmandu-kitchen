@@ -122,6 +122,9 @@ $(document).ready(function() {
     $(window).on('beforeunload', function() {
         $(window).scrollTop(0);
     });
+
+
+    $('#rm_submit_wrapper').empty().append('<input type="submit">');
 });
 
 

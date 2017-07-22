@@ -140,7 +140,6 @@ body #opening-hours-and-contact-us {
             height: 50vh; } }
 
 #reservation-section {
-  min-height: 60vh;
   background-color: #ddd;
   background-image: url("../img/menu-bg.jpg");
   background-blend-mode: soft-light;
@@ -150,13 +149,144 @@ body #opening-hours-and-contact-us {
   display: flex;
   justify-content: center;
   align-items: center; }
+  #reservation-section #rm_reservation {
+    height: 100%; }
+    #reservation-section #rm_reservation .rm_header {
+      height: 96px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3em;
+      font-family: 'Sacramento', sans-serif;
+      text-transform: capitalize; }
+    #reservation-section #rm_reservation .rm_reservation_body {
+      max-width: 480px;
+      padding: 0 0 16px 0; }
+    #reservation-section #rm_reservation .rm_restaurant_name, #reservation-section #rm_reservation .rm_restaurant_city {
+      display: none; }
+    #reservation-section #rm_reservation .rm_box_row {
+      position: relative;
+      margin-bottom: 24px; }
+      #reservation-section #rm_reservation .rm_box_row .rm_row_title {
+        color: rgba(0, 0, 0, 0.3);
+        text-transform: uppercase;
+        font-weight: 700; }
+      #reservation-section #rm_reservation .rm_box_row input, #reservation-section #rm_reservation .rm_box_row select {
+        color: #414141;
+        font-size: 1.33em;
+        background-color: transparent;
+        width: 100%;
+        border: none;
+        border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+        outline: none; }
+      #reservation-section #rm_reservation .rm_box_row .jcalendar {
+        z-index: 1;
+        background-color: #fff;
+        position: absolute;
+        top: 24px;
+        left: 0;
+        border-radius: 3px;
+        box-shadow: 0 3px 25px -5px rgba(0, 0, 0, 0.5); }
+        #reservation-section #rm_reservation .rm_box_row .jcalendar #calendar {
+          width: auto !important; }
+          #reservation-section #rm_reservation .rm_box_row .jcalendar #calendar tr#jcalendar-links {
+            background-color: #e08226;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 1.33em;
+            font-weight: 700;
+            height: 48px; }
+          #reservation-section #rm_reservation .rm_box_row .jcalendar #calendar tr#jcalendar-links td {
+            color: #fff;
+            border: none; }
+            #reservation-section #rm_reservation .rm_box_row .jcalendar #calendar tr#jcalendar-links td#month {
+              width: auto; }
+          #reservation-section #rm_reservation .rm_box_row .jcalendar #calendar tr#jcalendar-links a {
+            display: block;
+            background-position: center center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 100%;
+            text-decoration: none; }
+            #reservation-section #rm_reservation .rm_box_row .jcalendar #calendar tr#jcalendar-links a.left {
+              background-image: url("http://www.seatme.nl/images/calender/month_left.png"); }
+            #reservation-section #rm_reservation .rm_box_row .jcalendar #calendar tr#jcalendar-links a.right {
+              background-image: url("http://www.seatme.nl/images/calender/month_right.png"); }
+          #reservation-section #rm_reservation .rm_box_row .jcalendar #calendar tr#days td {
+            color: #e08226;
+            font-weight: bold;
+            text-transform: uppercase; }
+          #reservation-section #rm_reservation .rm_box_row .jcalendar #calendar tr td.inactive {
+            color: rgba(0, 0, 0, 0.3); }
+          #reservation-section #rm_reservation .rm_box_row .jcalendar #calendar tr td.active {
+            cursor: pointer; }
+            #reservation-section #rm_reservation .rm_box_row .jcalendar #calendar tr td.active a {
+              font-weight: bold;
+              text-decoration: none;
+              color: #e08226; }
+            #reservation-section #rm_reservation .rm_box_row .jcalendar #calendar tr td.active:hover {
+              background-color: rgba(0, 0, 0, 0.05); }
+          #reservation-section #rm_reservation .rm_box_row .jcalendar #calendar tr td.selected {
+            border: 2px solid #e08226; }
+            #reservation-section #rm_reservation .rm_box_row .jcalendar #calendar tr td.selected a {
+              color: #e08226;
+              text-decoration: none; }
+        #reservation-section #rm_reservation .rm_box_row .jcalendar table td {
+          width: 28px;
+          height: 28px;
+          border-radius: 50%;
+          margin: 3px;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center; }
+          #reservation-section #rm_reservation .rm_box_row .jcalendar table td a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
+            width: 100%;
+            height: 100%; }
+    #reservation-section #rm_reservation #rm_submit_wrapper input {
+      display: inline-block;
+      padding: 4px 16px;
+      border: 2px solid rgba(0, 0, 0, 0.3);
+      background-color: transparent;
+      color: rgba(0, 0, 0, 0.5);
+      text-transform: uppercase;
+      cursor: pointer;
+      outline: none;
+      border-radius: 3px;
+      font-size: 1.33em; }
+      #reservation-section #rm_reservation #rm_submit_wrapper input:hover {
+        color: #e08226;
+        border-color: #e08226; }
+    #reservation-section #rm_reservation #rm_logo_wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 32px; }
+      #reservation-section #rm_reservation #rm_logo_wrapper a.rm_logo {
+        background: url(https://www.seatme.nl/images/srm/seatme-logo.png);
+        width: 97px;
+        height: 26px;
+        margin-left: 6px; }
+      #reservation-section #rm_reservation #rm_logo_wrapper span {
+        color: rgba(0, 0, 0, 0.3);
+        font-weight: 700; }
   #reservation-section #reservation-form-wrapper {
     flex-basis: 40%;
     align-self: center; }
-    #reservation-section #reservation-form-wrapper header h3 {
-      font-size: 3em;
-      font-family: 'Sacramento', sans-serif;
-      text-align: center; }
+    #reservation-section #reservation-form-wrapper header {
+      min-height: 96px;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+      #reservation-section #reservation-form-wrapper header h3 {
+        font-size: 3em;
+        font-family: 'Sacramento', sans-serif;
+        text-align: center; }
     #reservation-section #reservation-form-wrapper .content {
       padding: 32px;
       font-size: 1.33em; }
@@ -540,6 +670,11 @@ body {
         justify-content: flex-start;
         align-content: flex-end;
         flex-wrap: wrap; }
+        body > #landing > .content #location-select-wrap hr {
+          display: none;
+          flex-basis: 100%;
+          margin: 16px;
+          border: 2px solid rgba(255, 255, 255, 0.1); }
         body > #landing > .content #location-select-wrap p {
           flex-basis: 100%;
           font-size: 2em;
@@ -643,7 +778,8 @@ body {
       body > #landing .content #promo {
         flex-basis: 100%; }
         body > #landing .content #promo h1 {
-          font-size: 7em; }
+          font-size: 7em;
+          line-height: 1; }
         body > #landing .content #promo p {
           font-size: 2em; }
       body > #landing .content #reservation-form-wrapper {
@@ -699,11 +835,13 @@ body {
             text-align: center;
             font-size: 1.5em; }
           body > #landing > .content #location-select-wrap {
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
             align-content: center; }
+            body > #landing > .content #location-select-wrap hr {
+              display: block; }
             body > #landing > .content #location-select-wrap button {
-              margin-right: 0; }
+              margin: 4px; }
             body > #landing > .content #location-select-wrap p {
               text-align: center;
               font-size: 1.8em; }

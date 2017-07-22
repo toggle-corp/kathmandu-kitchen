@@ -1,5 +1,4 @@
 #reservation-section {
-    min-height: 60vh;
     background-color: #ddd;
     background-image: url('../img/menu-bg.jpg');
     background-blend-mode: soft-light;
@@ -10,11 +9,212 @@
     justify-content: center;
     align-items: center;
 
+    #rm_reservation {
+        height: 100%;
+         
+        .rm_header {
+            height: 96px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3em;
+            font-family: 'Sacramento', sans-serif;
+            text-transform: capitalize;
+        }
+
+        .rm_reservation_body {
+            max-width: 480px;
+            padding: 0 0 16px 0;
+        }
+
+        .rm_restaurant_name, .rm_restaurant_city {
+            display: none;
+        }
+
+        .rm_box_row {
+            position: relative;
+            margin-bottom: 24px;
+
+            .rm_row_title {
+                color: rgba(0, 0, 0, 0.3);
+                text-transform: uppercase;
+                font-weight: 700;
+            }
+             
+            input, select {
+                color: #414141;
+                font-size: 1.33em;
+                background-color: transparent;
+                width: 100%;
+                border: none;
+                border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+                outline: none;
+            }
+
+            .jcalendar {
+                z-index: 1;
+                background-color: #fff;
+                position: absolute;
+                top: 24px;
+                left: 0;
+                border-radius: 3px;
+                box-shadow: 0 3px 25px -5px rgba(0, 0, 0, 0.5);
+
+                #calendar {
+                    width: auto!important;
+
+                    tr {
+                        &#jcalendar-links {
+                            background-color: $primary-color;
+                            color: #fff;
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            font-size: 1.33em;
+                            font-weight: 700;
+                            height: 48px;
+
+                        }
+                        &#jcalendar-links td {
+                            color: #fff;
+                            border: none;
+
+                            &#month {
+                                width: auto;
+                            }
+                        }
+                         
+                        &#jcalendar-links a {
+                            display: block;
+                            background-position: center center;
+                            background-size: contain;
+                            background-repeat: no-repeat;
+                            width: 100%;
+                            text-decoration: none;
+
+                            &.left {
+                                background-image: url("http://www.seatme.nl/images/calender/month_left.png");
+                            }
+                         
+                            &.right {
+                                background-image: url("http://www.seatme.nl/images/calender/month_right.png");
+                            }
+                        }
+                         
+                        &#days td {
+                            color: $primary-color;
+                            font-weight: bold;
+                            text-transform: uppercase;
+                        }
+                         
+                        td.inactive {
+                            color: rgba(0, 0, 0, 0.3);
+                        }
+                         
+                        td.active {
+                            cursor: pointer;
+                             
+                            a {
+                                font-weight: bold;
+                                text-decoration: none;
+                                color: $primary-color;
+                            }
+                             
+                            &:hover {
+                                background-color: rgba(0, 0, 0, 0.05);
+                            }
+                        }
+                         
+                        td.selected {
+                            border: 2px solid $primary-color;
+                             
+                            a {
+                                color: $primary-color;
+                                text-decoration: none;
+                            }
+                        }
+                    }
+                     
+                }
+
+
+                table {
+                     
+                    td {
+                        width: 28px;
+                        height: 28px;
+                        border-radius: 50%;
+                        margin: 3px;
+                        display: inline-flex;
+                        align-items: center;
+                        justify-content: center;
+
+                        a {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            line-height: 1;
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                }
+            }
+
+        }
+
+        #rm_submit_wrapper {
+            input {
+                display: inline-block;
+                padding: 4px 16px;
+                border: 2px solid rgba(0, 0, 0, 0.3);
+                background-color: transparent;
+                color: rgba(0, 0, 0, 0.5);
+                text-transform: uppercase;
+                cursor: pointer;
+                outline: none;
+                border-radius: 3px;
+                font-size: 1.33em;
+
+                &:hover {
+                    color: $primary-color;
+                    border-color: $primary-color;
+                }
+            }
+        }
+
+        #rm_logo_wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 32px;
+
+            a.rm_logo {
+                background:url(https://www.seatme.nl/images/srm/seatme-logo.png);
+                width: 97px;
+                height: 26px;
+                margin-left: 6px;
+            }
+
+            span {
+                color: rgba(0, 0, 0, 0.3);
+                font-weight: 700;
+            }
+        }
+    }
+
+     
     #reservation-form-wrapper {
         flex-basis: 40%;
         align-self: center;
 
+
         header {
+            min-height: 96px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
             h3 {
                 font-size: 3em;
                 font-family: 'Sacramento', sans-serif;

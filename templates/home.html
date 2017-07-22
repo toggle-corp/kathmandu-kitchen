@@ -55,6 +55,7 @@
                 </div>
             </div>
             <div id="location-select-wrap">
+                <hr>
                 <p>{% trans 'Select a location to get started' %}</p>
                 {% for branch in branches %}
                 <button data-branch-code="{{ branch.code }}" data-href="{% url 'home' branch.code %}">{{ branch }}</button>
@@ -100,6 +101,20 @@
         </div>
     </section>
     <section id="reservation-section">
+
+        {% if current_branch.code == 'AM' %}
+        <div id="rm_reservation" class="section-content">
+            <div class="rm_reservation_top"></div>
+            <div class="rm_reservation_body">
+                <!--sample style from SeatMe-->
+                <!--<link type="text/css" rel="stylesheet" href="https://www.seatme.nl/css/srm.css">-->
+                <div id="rm_wrapper">
+    <script language="javascript" type="text/javascript" src="https://www.seatme.nl/srm/?rid=3552&af=2178&lang={{ current_language.code }}"></script>
+                </div>
+            </div>
+            <div class="rm_reservation_bottom"></div>
+        </div>
+        {% else %}
         <div id="reservation-form-wrapper">
             <header>
                 <h3>{% trans 'Make a Reservation' %}</h3>
@@ -154,6 +169,7 @@
                     </div>
                 </form>
             </div>
+            {% endif %}
         </div>
     </section>
     <section id="opening-hours-and-contact-us">
@@ -211,7 +227,7 @@
     </section>
 
     <footer>
-        <p>Copyright (c) 2017 Kathmandu Kitchen, All Rights Reserved.</p>
+        <p>{% trans 'Copyright (c) 2017 Kathmandu Kitchen, All Rights Reserved' %}.</p>
     </footer>
 
     <div id="modal-container">
