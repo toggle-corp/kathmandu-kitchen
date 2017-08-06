@@ -4,6 +4,7 @@ from django.utils import translation
 
 from branch.models import Branch
 from menu.models import MenuCategory
+from seo.models import MetaInformation
 
 
 class HomeView(View):
@@ -28,5 +29,15 @@ class HomeView(View):
         context['current_language'] = current_language
         context['next_language'] = 'en' if current_language == 'nl' \
             else 'nl'
+
+        infos = MetaInformation.objects.filter(enabled=True)
+        if infos.count() > 0:
+            context['meta_information'] = infos[0]
+            context['meta_keywords'] = [
+                k.keyword for k in infos[0].metakeyword_set.all()
+                if k.enabled
+            ]
+        else:
+            context['meta_information'] = None
 
         return render(request, 'home.html', context)

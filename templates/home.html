@@ -5,7 +5,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Kathmandu Kitchen</title>
+
+    {% if meta_information %}
+    <meta name="description" content="{{ meta_information.meta_description }}">
+    {% if meta_keywords %}
+    <meta name="keywords" content="{% for keyword in meta_keywords %}{{ keyword }}{% if not forloop.last %},{% endif %}{% endfor %}">
+    {% endif %}
+    {% endif %}
 
     <link href="https://fonts.googleapis.com/css?family=News+Cycle:400,700|Sacramento" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" >
