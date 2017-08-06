@@ -50,7 +50,7 @@
         <div class="content">
             <div id="promo">
                 <div>
-                    <h1>{% blocktrans %}Kathmandu Kitchen{% endblocktrans %}</h1>
+                    <h1>Kathmandu Kitchen</h1>
                     <p>{% blocktrans %}The taste you deserve{% endblocktrans %}</p>
                 </div>
             </div>
@@ -106,15 +106,23 @@
         <div id="rm_reservation" class="section-content">
             <div class="rm_reservation_top"></div>
             <div class="rm_reservation_body">
-                <!--sample style from SeatMe-->
-                <!--<link type="text/css" rel="stylesheet" href="https://www.seatme.nl/css/srm.css">-->
                 <div id="rm_wrapper">
-    <script language="javascript" type="text/javascript" src="https://www.seatme.nl/srm/?rid=3552&af=2178&lang={{ current_language.code }}"></script>
+                    <script language="javascript" type="text/javascript" src="https://www.seatme.nl/srm/?rid=3552&af=2178&lang={{ current_language }}"></script>
                 </div>
             </div>
             <div class="rm_reservation_bottom"></div>
         </div>
         {% else %}
+        <div id="rm_reservation" class="section-content">
+            <div class="rm_reservation_top"></div>
+            <div class="rm_reservation_body">
+                <div id="rm_wrapper">
+                    <script language="javascript" type="text/javascript" src="https://www.seatme.nl/srm/?rid=7541&af=5173&lang={{ current_language }}"></script>
+                </div>
+            </div>
+            <div class="rm_reservation_bottom"></div>
+        </div>
+        {% comment %}
         <div id="reservation-form-wrapper">
             <header>
                 <h3>{% trans 'Make a Reservation' %}</h3>
@@ -169,6 +177,7 @@
                     </div>
                 </form>
             </div>
+            {% endcomment %}
             {% endif %}
         </div>
     </section>
