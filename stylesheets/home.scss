@@ -32,13 +32,16 @@ body {
         >header {
             height: $header-height;
             padding: 0 24px;
+            display: -wekit-flex;
             display: flex;
+            -wekit-align-items: flex-start;
             align-items: flex-start;
             justify-content: flex-end;
 
 
             #main-menu {
                 height: $menu-height;
+                display: -wekit-flex;
                 display: flex;
                 align-items: center;
                 justify-content: flex-end;
@@ -72,9 +75,9 @@ body {
             display: -wekit-flex;
             display: flex;
             flex-wrap: wrap;
-            -webkit-box-pack: start;
 
             #promo {
+                display: -wekit-flex;
                 display: flex;
                 align-items: center;
                 justify-content: flex-start;
@@ -100,6 +103,7 @@ body {
             #location-select-wrap {
                 flex-basis: 100%;
                 padding: 0 32px;
+                display: -wekit-flex;
                 display: flex;
                 align-items: flex-end;
                 justify-content: flex-start;
@@ -142,6 +146,7 @@ body {
 
         #navigator {
             height: $navigator-height;
+            display: -wekit-flex;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -179,6 +184,7 @@ body {
 
         #config-buttons {
             position: absolute;
+            display: -wekit-flex;
             display: flex;
             right: 0;
             top: calc(100vh - 144px);
@@ -188,6 +194,7 @@ body {
                 width: 144px;
                 background-color: rgba(255, 255, 255, 0.1);
                 color: rgba(255, 255, 255, 0.6);
+                display: -wekit-flex;
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -321,6 +328,7 @@ body {
 
                 #logo-container{
                     height: 100%;
+                    display: -wekit-flex;
                     display: flex;
                     align-items: center;
 
@@ -341,7 +349,8 @@ body {
                 }
             }
             > .content{
-                height: auto!important;
+                height: auto;
+                display: block;
                 flex-direction: column;
                 justify-content: space-around;
 
@@ -367,6 +376,9 @@ body {
                         margin: 4px; 
                     }
                     p {
+                        color: #fff;
+                        text-shadow: 2px 2px 3px #000;
+                        //background-color: rgba(0, 0, 0, 0.2);
                         text-align: center;
                         font-size: 1.8em;
                     }
@@ -396,6 +408,7 @@ body {
 
                 #logo-container{
                     height: 100%;
+                    display: -wekit-flex;
                     display: flex;
                     align-items: center;
 
@@ -450,6 +463,7 @@ body {
 
         >header {
             height: $header-height;
+            display: -wekit-flex;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -461,6 +475,7 @@ body {
         }
 
         >.content {
+            display: -wekit-flex;
             display: flex;
             justify-content: center;
             align-items: flex-start;
@@ -488,6 +503,7 @@ body {
                     >div {
                         background-color: rgba(255, 255, 255, 0.7);
                         height: 56px;
+                        display: -wekit-flex;
                         display: flex;
                         align-items: center;
                         justify-content: space-between;
@@ -501,6 +517,7 @@ body {
                     h3 {
                         font-weight: 700;
                         text-transform: uppercase;
+                        display: -wekit-flex;
                         display: flex;
                         align-items: center;
                     }
@@ -542,6 +559,7 @@ body {
         min-height: 30vh;
         background-color: #313131;
         color: rgba(255, 255, 255, 0.5);
+        display: -wekit-flex;
         display: flex;
         align-items: center;
         justify-content: center;
