@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'menu',
     'branch',
     'reservation',
+    'seo',
 ]
 
 MIDDLEWARE = [
