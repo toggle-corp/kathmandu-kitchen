@@ -1,3 +1,5 @@
 Django==1.11.3
+django-mail-templated==2.6.5
 django-modeltranslation==0.12.1
+django-tinymce==2.6.0
 pytz==2017.2

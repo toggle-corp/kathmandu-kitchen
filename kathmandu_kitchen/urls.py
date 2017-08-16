@@ -1,4 +1,4 @@
-from django.conf.urls import url, static
+from django.conf.urls import url, static, include
 from django.contrib import admin
 from django.conf import settings
 from django.contrib.auth.views import login
@@ -6,6 +6,7 @@ from django.contrib.auth.views import login
 from .views import HomeView
 from reservation.views import ReservationView, \
     ReservationCompleteView, AcknowledgeReservataion
+from blog.views import BlogView, PostView
 
 
 urlpatterns = [
@@ -25,6 +26,11 @@ urlpatterns = [
     url(r'^acknowledge-reservation/(?P<reservation_id>\d+)/$',
         AcknowledgeReservataion.as_view(),
         name='acknowledge-reservation'),
+
+    url(r'^blog/$', BlogView.as_view(), name='blog'),
+    url(r'^blog/(?P<slug>\w+)/$', PostView.as_view(), name='post'),
+
+    url(r'^tinymce/', include('tinymce.urls')),
 
     url(r'^(?P<code>\w+)/$', HomeView.as_view(), name='home'),
 

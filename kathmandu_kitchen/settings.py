@@ -44,11 +44,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'mail_templated',
+    'tinymce',
 
     'menu',
     'branch',
     'reservation',
     'seo',
+    'blog',
 ]
 
 MIDDLEWARE = [
@@ -146,3 +148,10 @@ STATICFILES_DIRS = [
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+
+# TinyMCE config
+TINYMCE_DEFAULT_CONFIG = {
+    'width': 800,
+    'height': 600,
+}
