@@ -209,12 +209,14 @@
                     flex-grow: 0;
                     flex-shrink: 0;
                     padding: 10px;
+                    z-index: 1;
+                    display: block;
 
                     a {
                         display: block;
                         width: 100%;
                         padding: 10px 32px;
-                        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+                        //border-bottom: 1px solid rgba(0, 0, 0, 0.1);
                         text-transform: uppercase;
                         cursor: pointer;
 
@@ -321,6 +323,7 @@
                 >.content{
                     flex-wrap: wrap;
                     align-content: flex-start;
+                    display: block;
 
                     .selected-category-wrapper{
                         flex-basis: 100%;
@@ -335,7 +338,7 @@
                         background-color: #fff;
                         width: 100%;
                         box-shadow: 0 3px 25px -5px rgba(0, 0, 0, 0.5);
-                        padding: 24px 0;
+                        padding: 10px 0;
                     }
                     .item-list{
                         flex-basis: 100%;
