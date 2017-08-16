@@ -9,7 +9,7 @@ class BlogView(View):
     def get(self, request):
         context = {}
         posts = Post.objects.all()
-        paginator = Paginator(posts, 5)
+        paginator = Paginator(posts, 8)
 
         page = request.GET.get('page')
         try:
@@ -24,12 +24,14 @@ class BlogView(View):
         context['posts'] = posts
 
         page = int(page)
-        context['page'] = page
+        context['current_page'] = page
 
         if page > 1:
             context['last_page'] = page - 1
         if page < paginator.num_pages:
             context['next_page'] = page + 1
+
+        context['pages'] = list(range(1, paginator.num_pages+1))
 
         return render(request, 'blog/blog.html', context)
 
@@ -37,4 +39,5 @@ class BlogView(View):
 class PostView(View):
     def get(self, request, slug):
         context = {}
+        context['post'] = Post.objects.get(slug=slug)
         return render(request, 'blog/post.html', context)

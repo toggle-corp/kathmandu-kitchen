@@ -1,340 +1,337 @@
+{% extends 'base.html' %}
 {% load staticfiles %}
 {% load i18n %}
 <!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Kathmandu Kitchen</title>
 
-    {% if meta_information %}
-    <meta name="description" content="{{ meta_information.meta_description }}">
-    {% if meta_keywords %}
-    <meta name="keywords" content="{% for keyword in meta_keywords %}{{ keyword }}{% if not forloop.last %},{% endif %}{% endfor %}">
-    {% endif %}
-    {% endif %}
+{% block meta %}
+{% if meta_information %}
+<meta name="description" content="{{ meta_information.meta_description }}">
+{% if meta_keywords %}
+<meta name="keywords" content="{% for keyword in meta_keywords %}{{ keyword }}{% if not forloop.last %},{% endif %}{% endfor %}">
+{% endif %}
+{% endif %}
+{% endblock %}
 
-    <link href="https://fonts.googleapis.com/css?family=News+Cycle:400,700|Sacramento" rel="stylesheet">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" >
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" />
-    <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/cooking.css' %}">
 
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-    <script src="{% static 'js/home.js' %}"></script>
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/cooking.css' %}">
 
-    <script>
-        let branches = [
-        {% for branch in branches %}
-            { 'code': "{{ branch.code }}", 'name': "{{ branch.name }}" },
-        {% endfor %}
-        ];
+<script src="{% static 'js/home.js' %}"></script>
 
-        let currentBranchCode = "{{ current_branch.code }}";
-    </script>
+<script>
+    let branches = [
+    {% for branch in branches %}
+        { 'code': "{{ branch.code }}", 'name': "{{ branch.name }}" },
+    {% endfor %}
+    ];
 
-</head>
-<body>
-    <section id="landing">
-        <div class="cooking">
-            <div class="wrap">
-                <div class="background">
-                    <canvas class="background-canvas"></canvas>
-                </div>
-            </div>
-        </div>
-        <header>
-            <div class="ghost" id="main-menu">
-                <a class="menu-item" id="menu-see-menu">{% trans 'See Menu' %}</a>
-                <a class="menu-item" id="menu-opening-hours">{% trans 'Opening hours' %}</a>
-                <a class="menu-item" id="menu-make-reservations">{% trans 'Make Reservations' %}</a>
-                <a class="menu-item" id="menu-contact-us">{% trans 'Contact us' %}</a>
-                <a class="hamburger-item"><i class="ion-navicon"></i></a>
-            </div>
-        </header>
+    let currentBranchCode = "{{ current_branch.code }}";
+</script>
+{% endblock %}
 
-        <div class="content">
-            <div id="promo">
-                <div>
-                    <h1>Kathmandu Kitchen</h1>
-                    <p>{% blocktrans %}The taste you deserve{% endblocktrans %}</p>
-                </div>
-            </div>
-            <div id="location-select-wrap">
-                <hr>
-                <p>{% trans 'Select a location to get started' %}</p>
-                {% for branch in branches %}
-                <button data-branch-code="{{ branch.code }}" data-href="{% url 'home' branch.code %}">{{ branch }}</button>
-                {% endfor %}
-            </div>
-        </div>
-        <div id="config-buttons">
-            <!-- button removed due to new design -->
-            <!--
-            <button class="change-config ghost" onclick="showConfigModal()" hidden>
-                <span class="current">{{ current_branch.code }}</span>
-                <span class="next">{% trans 'click to change' %}</span>
-            </button>
-            -->
-            <div class="change-config">
-                <span class="current">{{ current_language }}</span>
-                {% language next_language %}
-                <span class="next">{% trans 'change to' %} <a href="?language={{ next_language }}">{{ next_language|language_name_translated }}</a></span>
-                {% endlanguage %}
-            </div>
-        </div>
-        <div class="ghost" id="navigator">
-            <button id="navigate-down-btn"><i class="ion-ios-arrow-down"></i></button>
-        </div>
-    </section>
-
-    <section id="our-menu">
-        <header>
-            <h2>{% trans 'Our Menu' %}</h2>
-        </header>
-        <div class="content">
-            {% for category in categories %}
-            <div class="menu-group" data-target="#menu-items-{{ category.name|slugify }}">
-                <header>
-                    <img {% if category.image %}src="{{ category.image.url }}" {% else %}class="no-img"{% endif %}>
-                    <div>
-                        <h3>{{ category.name|escape }}</h3>
-                        <button class="expand-menu-group-btn"><i class="ion-ios-arrow-down"></i></button>
-                    </div>
-                </header>
-            </div>
-            {% endfor %}
-        </div>
-    </section>
-    <section id="reservation-section">
-
-        {% if current_branch.code == 'AM' %}
-        <div id="rm_reservation" class="section-content">
-            <div class="rm_reservation_top"></div>
-            <div class="rm_reservation_body">
-                <div id="rm_wrapper">
-                    <script language="javascript" type="text/javascript" src="https://www.seatme.nl/srm/?rid=3552&af=2178&lang={{ current_language }}"></script>
-                </div>
-            </div>
-            <div class="rm_reservation_bottom"></div>
-        </div>
-        {% else %}
-        <div id="rm_reservation" class="section-content">
-            <div class="rm_reservation_top"></div>
-            <div class="rm_reservation_body">
-                <div id="rm_wrapper">
-                    <script language="javascript" type="text/javascript" src="https://www.seatme.nl/srm/?rid=7541&af=5173&lang={{ current_language }}"></script>
-                </div>
-            </div>
-            <div class="rm_reservation_bottom"></div>
-        </div>
-        {% comment %}
-        <div id="reservation-form-wrapper">
-            <header>
-                <h3>{% trans 'Make a Reservation' %}</h3>
-            </header>
-            <div class="content">
-                <form method="POST" action={% url 'reserve' current_branch.code %}>
-                    {% csrf_token %}
-                    <div class="input-row">
-                        <div id="date-field" class="input-container">
-                            <label>{% trans 'Date' %}:</label>
-                            <input type="date" name="date" required>
-                        </div>
-                    </div>
-                    <div class="input-row">
-                        <div id="number-field" class="input-container">
-                            <label>{% trans 'Number of person' %}:</label>
-                            <input type="number" step="1" name="persons" required>
-                        </div>
-                    </div>
-                    <div class="input-row">
-                        <div class="input-container">
-                            <label>{% trans 'Time' %}:</label>
-                            <input type="time" name="time" required>
-                        </div>
-                    </div>
-                    <div class="input-row">
-                        <div class="input-container">
-                            <label>{% trans 'First Name' %}:</label>
-                            <input type="text" name="first-name" required>
-                        </div>
-                    </div>
-                    <div class="input-row">
-                        <div class="input-container">
-                            <label>{% trans 'Last Name' %}:</label>
-                            <input type="text" name="last-name" required>
-                        </div>
-                    </div>
-                    <div class="input-row">
-                        <div class="input-container">
-                            <label>{% trans 'Email' %}:</label>
-                            <input type="text" name="email" required>
-                        </div>
-                    </div>
-                    <div class="input-row">
-                        <div class="input-container">
-                            <label>{% trans 'Special Request' %}:</label>
-                            <textarea name="special-request"></textarea>
-                        </div>
-                    </div>
-                    <div class="action-buttons">
-                        <button>{% trans 'Submit' %}</button>
-                    </div>
-                </form>
-            </div>
-            {% endcomment %}
-            {% endif %}
-        </div>
-    </section>
-    <section id="opening-hours-and-contact-us">
-        <div id="opening-hours">
-            <header>
-                <h2>{% trans 'Opening Hours' %}</h2>
-            </header>
-            <div class="content">
-                <div id="opening-hour-list">
-                    {% for openinghour in current_branch.openinghour_set.all %}
-                    <div class="opening-hour">
-                        <date class="day">{{ openinghour.get_day_display }}</date>
-                        <time class="open">{% if openinghour.start_time %}{{ openinghour.start_time }}{% else %}-{% endif %}</time>
-                        <time class="close">{% if openinghour.end_time %}{{ openinghour.end_time }}{% else %}-{% endif %}</time>
-                        <div class="remark">{{ openinghour.remarks }}</div>
-                    </div>
-                    {% endfor %}
-                </div>
-            </div>
-        </div>
-        <div id="contact-us">
-            <header>
-                <h2>{% trans 'Contact Us' %}</h2>
-            </header>
-            <div class="content">
-                <div id="contact-info">
-                    <div>
-                        <div class="name">Kathmandu Kitchen</div>
-                        <div class="info">
-                            <i class="fa fa-location-arrow"></i>
-                            <p>{{ current_branch.address }}</p>
-                        </div>
-                    </div>
-                    <div class="extra">
-                        <div class="info">
-                            <i class="fa fa-phone"></i>
-                            <p>{{ current_branch.contact_number }}</p>
-                        </div>
-                        <div class="info">
-                            <i class="fa fa-envelope"></i>
-                            <p>{{ current_branch.admin_email }}</p>
-                        </div>
-                    </div>
-                </div>
-                <div id="find-us">
-                    <div class="title">{% trans 'Find us on' %}</div>
-                    <a href="{{ current_branch.facebook }}" class="find-us-on"><i class="fa fa-facebook"></i></a>
-                    <a href="{{ current_branch.twitter }}" class="find-us-on"><i class="fa fa-twitter"></i></a>
-                </div>
-                <div id="location-map">
-                    {{ current_branch.map_tag|safe }}
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <p>{% trans 'Copyright (c) 2017 Kathmandu Kitchen, All Rights Reserved' %}.</p>
-    </footer>
-
-    <div id="modal-container">
-        <div class="modal" id="hamburger-modal">
-            <header>
-                <h2>{% trans 'Navigate' %}</h2>
-                <button class="btn-close-modal"><i class="ion-ios-close-empty"></i></button>
-            </header>
-            <div class="content">
-                <div id="main-menu-modal">
-                    <a class="menu-item" id="ham-menu-see-menu">{% trans 'See Menu' %}</a>
-                    <a class="menu-item" id="ham-menu-opening-hours">{% trans 'Opening hours' %}</a>
-                    <a class="menu-item" id="ham-menu-reserve">{% trans 'Make Reservations' %}</a>
-                    <a class="menu-item" id="ham-menu-contact-us">{% trans 'Contact us' %}</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="modal" id="config-modal">
-            <header>
-                <h2>{% trans 'Select location' %}</h2>
-                <button class="btn-close-modal"><i class="ion-ios-close-empty"></i></button>
-            </header>
-            <div class="content">
-                <div id="location-select-modal">
-                    {% for branch in branches %}
-                    {% if current_branch == branch %}
-                    <a class="active" onclick="hideConfigModal('{{ branch.code }}')">{{ branch }}</a>
-                    {% else %}
-                    <a onclick="hideConfigModal('{{branch.code}}')" href="{% url 'home' branch.code %}">{{ branch }}</a>
-                    {% endif %}
-                    {% endfor %}
-                </div>
-            </div>
-        </div>
-
-        <div class="modal" id="our-menu-modal">
-            <header>
-                <h2>{% trans 'Our menu' %}</h2>
-                <!-- hide search for now -->
-                <!--
-                <div class="search-input-container">
-                    <i class="ion-ios-search"></i>
-                    <input type="search" placeholder="{% trans 'Search' %}">
-                </div>
-                -->
-                <button class="btn-close-modal"><i class="ion-ios-close-empty"></i></button>
-            </header>
-            <div class="content">
-                <div class="selected-category-wrapper">
-                    <div class="selected-category">
-                        <a id="category-name">Tandoori</a>
-                        <i class="ion-chevron-down"></i>
-                    </div>
-                </div>
-                <div class="category-list">
-                    {% for category in categories %}
-                    <a data-target="#menu-items-{{ category.name|slugify }}">{{ category.name|escape }}</a>
-                    {% endfor %}
-                </div>
-                <div class="item-list">
-                    {% for category in categories %}
-                    <div class="menu-items" id="menu-items-{{ category.name|slugify }}" hidden>
-                        {% for fooditem in category.fooditem_set.all %}
-                        <div class="menu-item">
-                            <img {% if fooditem.image %}src="{{ fooditem.image.url }}" {% else %}class="no-img"{% endif %}>
-                            <div class="menu-item-details">
-                                <div class="menu-item-details-header">
-                                    <h4 class="title">{{ fooditem.name|escape }}</h4>
-                                    <span class="price">{{ fooditem.price }}</span>
-                                </div>
-                                <p class="description">{{ fooditem.description|escape }}</p>
-                            </div>
-                        </div>
-                        {% endfor %}
-                    </div>
-                    {% endfor %}
-                </div>
+{% block body %}
+<section id="landing">
+    <div class="cooking">
+        <div class="wrap">
+            <div class="background">
+                <canvas class="background-canvas"></canvas>
             </div>
         </div>
     </div>
-    <script src="{% static 'js/cooking.js' %}"></script>
-     
-    <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    <header>
+        <div class="ghost" id="main-menu">
+            <a href="{% url 'blog' %}" class="menu-item" id="menu-blog">{% trans 'Goto Blog' %}</a>
+            <a class="menu-item" id="menu-see-menu">{% trans 'See Menu' %}</a>
+            <a class="menu-item" id="menu-opening-hours">{% trans 'Opening Hours' %}</a>
+            <a class="menu-item" id="menu-make-reservations">{% trans 'Make Reservations' %}</a>
+            <a class="menu-item" id="menu-contact-us">{% trans 'Contact Us' %}</a>
+            <a class="hamburger-item"><i class="ion-navicon"></i></a>
+        </div>
+    </header>
 
-    ga('create', 'UA-54361326-1', 'auto');
-    ga('send', 'pageview');
-    </script>
-</body>
-</html>
+    <div class="content">
+        <div id="promo">
+            <div>
+                <h1>Kathmandu Kitchen</h1>
+                <p>{% blocktrans %}The taste you deserve{% endblocktrans %}</p>
+            </div>
+        </div>
+        <div id="location-select-wrap">
+            <hr>
+            <p>{% trans 'Select a location to get started' %}</p>
+            {% for branch in branches %}
+            <button data-branch-code="{{ branch.code }}" data-href="{% url 'home' branch.code %}">{{ branch }}</button>
+            {% endfor %}
+        </div>
+    </div>
+    <div id="config-buttons">
+        <!-- button removed due to new design -->
+        <!--
+        <button class="change-config ghost" onclick="showConfigModal()" hidden>
+            <span class="current">{{ current_branch.code }}</span>
+            <span class="next">{% trans 'click to change' %}</span>
+        </button>
+        -->
+        <div class="change-config">
+            <span class="current">{{ current_language }}</span>
+            {% language next_language %}
+            <span class="next">{% trans 'change to' %} <a href="?language={{ next_language }}">{{ next_language|language_name_translated }}</a></span>
+            {% endlanguage %}
+        </div>
+    </div>
+    <div class="ghost" id="navigator">
+        <button id="navigate-down-btn"><i class="ion-ios-arrow-down"></i></button>
+    </div>
+</section>
+
+<section id="our-menu">
+    <header>
+        <h2>{% trans 'Our Menu' %}</h2>
+    </header>
+    <div class="content">
+        {% for category in categories %}
+        <div class="menu-group" data-target="#menu-items-{{ category.name|slugify }}">
+            <header>
+                <img {% if category.image %}src="{{ category.image.url }}" {% else %}class="no-img"{% endif %}>
+                <div>
+                    <h3>{{ category.name|escape }}</h3>
+                    <button class="expand-menu-group-btn"><i class="ion-ios-arrow-down"></i></button>
+                </div>
+            </header>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+<section id="reservation-section">
+
+    {% if current_branch.code == 'AM' %}
+    <div id="rm_reservation" class="section-content">
+        <div class="rm_reservation_top"></div>
+        <div class="rm_reservation_body">
+            <div id="rm_wrapper">
+                <script language="javascript" type="text/javascript" src="https://www.seatme.nl/srm/?rid=3552&af=2178&lang={{ current_language }}"></script>
+            </div>
+        </div>
+        <div class="rm_reservation_bottom"></div>
+    </div>
+    {% else %}
+    <div id="rm_reservation" class="section-content">
+        <div class="rm_reservation_top"></div>
+        <div class="rm_reservation_body">
+            <div id="rm_wrapper">
+                <script language="javascript" type="text/javascript" src="https://www.seatme.nl/srm/?rid=7541&af=5173&lang={{ current_language }}"></script>
+            </div>
+        </div>
+        <div class="rm_reservation_bottom"></div>
+    </div>
+    {% comment %}
+    <div id="reservation-form-wrapper">
+        <header>
+            <h3>{% trans 'Make a Reservation' %}</h3>
+        </header>
+        <div class="content">
+            <form method="POST" action={% url 'reserve' current_branch.code %}>
+                {% csrf_token %}
+                <div class="input-row">
+                    <div id="date-field" class="input-container">
+                        <label>{% trans 'Date' %}:</label>
+                        <input type="date" name="date" required>
+                    </div>
+                </div>
+                <div class="input-row">
+                    <div id="number-field" class="input-container">
+                        <label>{% trans 'Number of person' %}:</label>
+                        <input type="number" step="1" name="persons" required>
+                    </div>
+                </div>
+                <div class="input-row">
+                    <div class="input-container">
+                        <label>{% trans 'Time' %}:</label>
+                        <input type="time" name="time" required>
+                    </div>
+                </div>
+                <div class="input-row">
+                    <div class="input-container">
+                        <label>{% trans 'First Name' %}:</label>
+                        <input type="text" name="first-name" required>
+                    </div>
+                </div>
+                <div class="input-row">
+                    <div class="input-container">
+                        <label>{% trans 'Last Name' %}:</label>
+                        <input type="text" name="last-name" required>
+                    </div>
+                </div>
+                <div class="input-row">
+                    <div class="input-container">
+                        <label>{% trans 'Email' %}:</label>
+                        <input type="text" name="email" required>
+                    </div>
+                </div>
+                <div class="input-row">
+                    <div class="input-container">
+                        <label>{% trans 'Special Request' %}:</label>
+                        <textarea name="special-request"></textarea>
+                    </div>
+                </div>
+                <div class="action-buttons">
+                    <button>{% trans 'Submit' %}</button>
+                </div>
+            </form>
+        </div>
+        {% endcomment %}
+        {% endif %}
+    </div>
+</section>
+<section id="opening-hours-and-contact-us">
+    <div id="opening-hours">
+        <header>
+            <h2>{% trans 'Opening Hours' %}</h2>
+        </header>
+        <div class="content">
+            <div id="opening-hour-list">
+                {% for openinghour in current_branch.openinghour_set.all %}
+                <div class="opening-hour">
+                    <date class="day">{{ openinghour.get_day_display }}</date>
+                    <time class="open">{% if openinghour.start_time %}{{ openinghour.start_time }}{% else %}-{% endif %}</time>
+                    <time class="close">{% if openinghour.end_time %}{{ openinghour.end_time }}{% else %}-{% endif %}</time>
+                    <div class="remark">{{ openinghour.remarks }}</div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div id="contact-us">
+        <header>
+            <h2>{% trans 'Contact Us' %}</h2>
+        </header>
+        <div class="content">
+            <div id="contact-info">
+                <div>
+                    <div class="name">Kathmandu Kitchen</div>
+                    <div class="info">
+                        <i class="fa fa-location-arrow"></i>
+                        <p>{{ current_branch.address }}</p>
+                    </div>
+                </div>
+                <div class="extra">
+                    <div class="info">
+                        <i class="fa fa-phone"></i>
+                        <p>{{ current_branch.contact_number }}</p>
+                    </div>
+                    <div class="info">
+                        <i class="fa fa-envelope"></i>
+                        <p>{{ current_branch.admin_email }}</p>
+                    </div>
+                </div>
+            </div>
+            <div id="find-us">
+                <div class="title">{% trans 'Find us on' %}</div>
+                <a href="{{ current_branch.facebook }}" class="find-us-on"><i class="fa fa-facebook"></i></a>
+                <a href="{{ current_branch.twitter }}" class="find-us-on"><i class="fa fa-twitter"></i></a>
+            </div>
+            <div id="location-map">
+                {{ current_branch.map_tag|safe }}
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>{% trans 'Copyright (c) 2017 Kathmandu Kitchen, All Rights Reserved' %}.</p>
+</footer>
+
+<div id="modal-container">
+    <div class="modal" id="hamburger-modal">
+        <header>
+            <h2>{% trans 'Navigate' %}</h2>
+            <button class="btn-close-modal"><i class="ion-ios-close-empty"></i></button>
+        </header>
+        <div class="content">
+            <div id="main-menu-modal">
+                <a href="{% url 'blog' %}" id="ham-menu-blog">{% trans 'Goto Blog' %}</a>
+                <a class="menu-item" id="ham-menu-see-menu">{% trans 'See Menu' %}</a>
+                <a class="menu-item" id="ham-menu-opening-hours">{% trans 'Opening hours' %}</a>
+                <a class="menu-item" id="ham-menu-reserve">{% trans 'Make Reservations' %}</a>
+                <a class="menu-item" id="ham-menu-contact-us">{% trans 'Contact us' %}</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="config-modal">
+        <header>
+            <h2>{% trans 'Select location' %}</h2>
+            <button class="btn-close-modal"><i class="ion-ios-close-empty"></i></button>
+        </header>
+        <div class="content">
+            <div id="location-select-modal">
+                {% for branch in branches %}
+                {% if current_branch == branch %}
+                <a class="active" onclick="hideConfigModal('{{ branch.code }}')">{{ branch }}</a>
+                {% else %}
+                <a onclick="hideConfigModal('{{branch.code}}')" href="{% url 'home' branch.code %}">{{ branch }}</a>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="our-menu-modal">
+        <header>
+            <h2>{% trans 'Our menu' %}</h2>
+            <!-- hide search for now -->
+            <!--
+            <div class="search-input-container">
+                <i class="ion-ios-search"></i>
+                <input type="search" placeholder="{% trans 'Search' %}">
+            </div>
+            -->
+            <button class="btn-close-modal"><i class="ion-ios-close-empty"></i></button>
+        </header>
+        <div class="content">
+            <div class="selected-category-wrapper">
+                <div class="selected-category">
+                    <a id="category-name">Tandoori</a>
+                    <i class="ion-chevron-down"></i>
+                </div>
+            </div>
+            <div class="category-list">
+                {% for category in categories %}
+                <a data-target="#menu-items-{{ category.name|slugify }}">{{ category.name|escape }}</a>
+                {% endfor %}
+            </div>
+            <div class="item-list">
+                {% for category in categories %}
+                <div class="menu-items" id="menu-items-{{ category.name|slugify }}" hidden>
+                    {% for fooditem in category.fooditem_set.all %}
+                    <div class="menu-item">
+                        <img {% if fooditem.image %}src="{{ fooditem.image.url }}" {% else %}class="no-img"{% endif %}>
+                        <div class="menu-item-details">
+                            <div class="menu-item-details-header">
+                                <h4 class="title">{{ fooditem.name|escape }}</h4>
+                                <span class="price">{{ fooditem.price }}</span>
+                            </div>
+                            <p class="description">{{ fooditem.description|escape }}</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+<script src="{% static 'js/cooking.js' %}"></script>
+ 
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-54361326-1', 'auto');
+ga('send', 'pageview');
+</script>
+{% endblock %}

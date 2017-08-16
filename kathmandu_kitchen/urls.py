@@ -28,7 +28,7 @@ urlpatterns = [
         name='acknowledge-reservation'),
 
     url(r'^blog/$', BlogView.as_view(), name='blog'),
-    url(r'^blog/(?P<slug>\w+)/$', PostView.as_view(), name='post'),
+    url(r'^blog/(?P<slug>[\w-]+)/$', PostView.as_view(), name='blog_post'),
 
     url(r'^tinymce/', include('tinymce.urls')),
 

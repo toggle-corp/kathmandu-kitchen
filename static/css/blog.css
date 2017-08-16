@@ -1,0 +1,134 @@
+* {
+  box-sizing: border-box;
+  font-family: 'News Cycle', sans-serif;
+  font-weight: 400; }
+
+a, a:visited {
+  text-decoration: none;
+  outline: none;
+  cursor: pointer; }
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 14px; }
+
+body {
+  background-color: #f0f0f0;
+  font-size: 17px; }
+  body h1, body h2, body h3, body h4 {
+    margin: 0; }
+  body > header {
+    flex-basis: 100%;
+    box-shadow: 0 2px 15px -3px rgba(0, 0, 0, 0.5);
+    margin-bottom: 16px; }
+    @media screen and (max-width: 1080px) {
+      body > header {
+        margin-bottom: 10px; } }
+    body > header h1 {
+      font-family: "Sacramento", sans-serif;
+      line-height: 1;
+      min-height: 144px;
+      display: flex;
+      align-items: center;
+      padding: 0 32px;
+      background-color: #fff;
+      font-size: 5em; }
+      @media screen and (max-width: 1080px) {
+        body > header h1 {
+          font-size: 3em; } }
+      body > header h1 a {
+        font-family: inherit;
+        color: #e08226;
+        font-size: inherit; }
+  body > main #post-list {
+    display: flex;
+    min-height: 70vh;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: center; }
+    body > main #post-list .post {
+      max-width: 800px;
+      background-color: #fff;
+      padding: 32px;
+      margin: 24px;
+      box-shadow: 0 2px 15px -3px rgba(0, 0, 0, 0.5); }
+      body > main #post-list .post img {
+        width: calc(100% + 64px);
+        height: 240px;
+        margin: -32px -32px 0 -32px;
+        object-fit: cover; }
+      body > main #post-list .post h3 {
+        font-size: 2em;
+        line-height: 1.25;
+        margin-bottom: 16px;
+        background-color: rgba(255, 255, 255, 0.8);
+        z-index: 1; }
+      body > main #post-list .post date {
+        color: rgba(0, 0, 0, 0.5); }
+        body > main #post-list .post date i {
+          margin-right: 10px; }
+      body > main #post-list .post .content {
+        margin-top: 24px; }
+      body > main #post-list .post a {
+        display: inline-block;
+        text-transform: uppercase;
+        padding: 6px 0;
+        margin: 16px 0 0 0;
+        color: #e08226;
+        font-size: 1em; }
+        body > main #post-list .post a i {
+          margin-left: 8px; }
+      @media screen and (max-width: 1080px) {
+        body > main #post-list .post {
+          margin-bottom: 16px;
+          padding: 24px;
+          margin: 10px; }
+          body > main #post-list .post img {
+            width: calc(100% + 48px);
+            margin: -24px -24px 0 -24px; } }
+      @media screen and (max-width: 720px) {
+        body > main #post-list .post {
+          margin: 6px; }
+          body > main #post-list .post h3 {
+            font-size: 1.33em; } }
+  body > main #page-list {
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center; }
+    body > main #page-list label {
+      text-transform: uppercase;
+      color: rgba(0, 0, 0, 0.6);
+      margin-right: 16px; }
+    body > main #page-list span {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #414141;
+      color: #fff;
+      min-width: 32px;
+      height: 32px; }
+      body > main #page-list span a {
+        color: rgba(255, 255, 255, 0.77);
+        width: 100%;
+        height: 100%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #616161; }
+        body > main #page-list span a:hover {
+          background-color: #717171; }
+  body footer {
+    margin-top: 24px;
+    background-color: #414141;
+    color: rgba(255, 255, 255, 0.5);
+    height: 240px;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    body footer p {
+      padding: 0 24px; }
+
+/*# sourceMappingURL=blog.css.map */

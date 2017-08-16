@@ -1,1 +1,44 @@
-HELLO BLOG
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/blog.css' %}">
+{% endblock %}
+
+{% block body %}
+<header>
+    <h1><a href="{% url 'home' %}">Kathmandu kitchen</a></h1>
+</header>
+<main>
+    <div id="post-list">
+        {% for post in posts %}
+        <article class="post">
+            {% if post.header_image %}
+            <img src="{{ post.header_image.url }}">
+            {% endif %}
+            <h3>{{ post.title }}</h3>
+            <date><i class="ion-ios-calendar"></i>{{ post.created_at }}</date>
+            <div class="content">{{ post.content|truncatewords_html:50|safe }}</div>
+            <a href="{% url 'blog_post' post.slug %}">Read more<i class="ion-ios-arrow-right"></i></a>
+        </article>
+        {% endfor %}
+    </div>
+
+    {% if pages|length > 1 %}
+    <div id="page-list">
+        <label>Goto page:</label>
+        {% for page in pages %}
+        <span class="page-link">
+        {% if page != current_page %}<a href="{% url 'blog' %}?page={{ page }}">{% endif %}
+            {{ page }}
+            {% if page != current_page %}</a>{% endif %}
+        </span>
+        {% endfor %}
+    </div>
+    {% endif %}
+</main>
+ 
+<footer>
+    <p>Copyright (c) 2017 Kathmandu Kitchen, All Rights Reserved.</p>
+</footer>
+{% endblock %}

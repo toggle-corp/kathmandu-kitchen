@@ -1,0 +1,93 @@
+@import 'base';
+
+body {
+    background-color: #f0f0f0;
+     
+    h1, h2, h3, h4 {
+        margin: 0;
+    }
+
+    main {
+        z-index: 1;
+         
+        header {
+            position: relative; 
+            z-index: 1;
+             
+            img {
+                width: 100%;
+                height: 40vh;
+                object-fit: cover;
+            }
+
+            #header-bg {
+                height: 40vh;
+                background: #fd746c;
+                background: linear-gradient(to top, #fd746c, #ff9068);
+            }
+        }
+         
+        article {
+            position: relative; 
+            max-width: 800px;
+            padding: 32px;
+            background-color: #fff;
+            margin: -144px auto 0 auto;
+            z-index: 10;
+            box-shadow: 0 0 25px -5px rgba(0, 0, 0, 0.5);
+             
+            @media screen and (max-width: 720px) {
+                padding: 24px;
+                margin: -108px 10px 0 10px;
+            }
+
+            h2 {
+                font-size: 2em;
+                line-height: 1.25;
+                margin-bottom: 16px;
+            }
+             
+            date {
+                color: rgba(0, 0, 0, 0.5);
+                font-size: 1.11em;
+
+                i {
+                    margin-right: 10px;
+                }
+            }
+
+            .content {
+                margin-top: 24px;
+            }
+             
+            > a {
+                display: inline-block;
+                margin-top: 16px;
+                text-transform: uppercase;
+                color: $primary-color;
+                font-size: 1.11em;
+                padding: 6px 0;
+                
+                i {
+                    margin-right: 8px;
+                }
+            }
+
+
+        }
+    }
+    
+    footer {
+        margin-top: 24px;
+        background-color: #414141;
+        color: rgba(255, 255, 255, 0.5); 
+        height: 240px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+         
+        p {
+            padding: 0 24px;
+        }
+    }
+}

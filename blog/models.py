@@ -5,6 +5,8 @@ from tinymce.models import HTMLField
 
 
 class Post(models.Model):
+    header_image = models.FileField(upload_to='blog_images',
+                                    null=True, blank=True, default=None)
     title = models.CharField(max_length=300)
     content = HTMLField()
     slug = models.SlugField(default=None, null=True, blank=True)

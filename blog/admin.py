@@ -3,7 +3,7 @@ from blog.models import Post
 
 
 class PostAdmin(admin.ModelAdmin):
-    fields = ['title', 'content']
+    fields = ['header_image', 'title', 'content']
 
     def save_model(self, request, obj, form, change):
         if not change:
