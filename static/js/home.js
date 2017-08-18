@@ -126,7 +126,7 @@ $(document).ready(function() {
 
     $('#rm_submit_wrapper').empty().append('<input type="submit">');
 
-    $('#our-menu .viewport').height($('#our-menu .overview').outerHeight());
+    //$('#our-menu .viewport').height($('#our-menu .overview').outerHeight());
 });
 
 
