@@ -64,7 +64,6 @@ $(document).ready(function() {
         // No Web Storage support :/
     }
 
-
     $('#navigate-down-btn').on('click', function() {
         $('html, body').animate({
             scrollTop: $('#our-menu').offset().top
@@ -123,8 +122,11 @@ $(document).ready(function() {
         $(window).scrollTop(0);
     });
 
+    $('#our-menu .content').tinycarousel(); 
 
     $('#rm_submit_wrapper').empty().append('<input type="submit">');
+
+    $('#our-menu .viewport').height($('#our-menu .overview').outerHeight());
 });
 
 

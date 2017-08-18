@@ -18,6 +18,7 @@
 <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
 <link rel="stylesheet" type="text/css" href="{% static 'css/cooking.css' %}">
 
+<script src="{% static 'js/jquery.tinycarousel.min.js' %}"></script>
 <script src="{% static 'js/home.js' %}"></script>
 
 <script>
@@ -91,6 +92,31 @@
         <h2>{% trans 'Our Menu' %}</h2>
     </header>
     <div class="content">
+        <a class="buttons prev" href="#">&#60;</a> 
+        <div class="viewport">
+            <ul class="overview">
+                {% for category in categories %}
+                <li>
+                    <h3>{{ category.name }}</h3>
+                    <div class="menu-items" id="menu-items-{{ category.name|slugify }}">
+                        {% for fooditem in category.fooditem_set.all %}
+                        <div class="menu-item">
+                            <div class="menu-item-details">
+                                <div class="menu-item-details-header">
+                                    <h4 class="title">{{ fooditem.name|escape }}</h4>
+                                    <span class="price">{{ fooditem.price }}</span>
+                                </div>
+                                <p class="description">{{ fooditem.description|escape }}</p>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <a class="buttons next" href="#">&#62;</a> 
+        {% comment %}
         {% for category in categories %}
         <div class="menu-group" data-target="#menu-items-{{ category.name|slugify }}">
             <header>
@@ -102,6 +128,7 @@
             </header>
         </div>
         {% endfor %}
+        {% endcomment %}
     </div>
 </section>
 <section id="reservation-section">
@@ -181,9 +208,9 @@
                 </div>
             </form>
         </div>
-        {% endcomment %}
-        {% endif %}
     </div>
+    {% endcomment %}
+    {% endif %}
 </section>
 <section id="opening-hours-and-contact-us">
     <div id="opening-hours">
@@ -278,6 +305,7 @@
         </div>
     </div>
 
+    {% comment %}
     <div class="modal" id="our-menu-modal">
         <header>
             <h2>{% trans 'Our menu' %}</h2>
@@ -308,6 +336,7 @@
                     {% for fooditem in category.fooditem_set.all %}
                     <div class="menu-item">
                         <img {% if fooditem.image %}src="{{ fooditem.image.url }}" {% else %}class="no-img"{% endif %}>
+
                         <div class="menu-item-details">
                             <div class="menu-item-details-header">
                                 <h4 class="title">{{ fooditem.name|escape }}</h4>
@@ -322,6 +351,7 @@
             </div>
         </div>
     </div>
+    {% endcomment %}
 </div>
 <script src="{% static 'js/cooking.js' %}"></script>
  
