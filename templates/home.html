@@ -92,7 +92,7 @@
         <h2>{% trans 'Our Menu' %}</h2>
     </header>
     <div class="content">
-        <a class="buttons prev" href="#">&#60;</a> 
+        <a class="buttons prev" href="#">&#60;</a>
         <div class="viewport">
             <ul class="overview">
                 {% for category in categories %}
@@ -115,7 +115,7 @@
                 {% endfor %}
             </ul>
         </div>
-        <a class="buttons next" href="#">&#62;</a> 
+        <a class="buttons next" href="#">&#62;</a>
         {% comment %}
         {% for category in categories %}
         <div class="menu-group" data-target="#menu-items-{{ category.name|slugify }}">
@@ -278,7 +278,7 @@
         </header>
         <div class="content">
             <div id="main-menu-modal">
-                <a href="{% url 'blog' %}" id="ham-menu-blog">{% trans 'Goto Blog' %}</a>
+                <a href="{% url 'blog' %}" class="menu-item" id="ham-menu-blog">{% trans 'Goto Blog' %}</a>
                 <a class="menu-item" id="ham-menu-see-menu">{% trans 'See Menu' %}</a>
                 <a class="menu-item" id="ham-menu-opening-hours">{% trans 'Opening hours' %}</a>
                 <a class="menu-item" id="ham-menu-reserve">{% trans 'Make Reservations' %}</a>
@@ -354,7 +354,7 @@
     {% endcomment %}
 </div>
 <script src="{% static 'js/cooking.js' %}"></script>
- 
+
 <script>
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
