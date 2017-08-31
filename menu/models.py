@@ -30,7 +30,7 @@ class FoodItem(models.Model):
     tags = models.ManyToManyField(FoodTag, blank=True)
     image = models.FileField(upload_to='images', null=True, blank=True,
                              default=None)
-    price = models.FloatField()
+    price = models.FloatField(null=True, blank=True, default=None)
 
     def __str__(self):
         return self.name
