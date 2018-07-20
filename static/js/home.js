@@ -126,6 +126,11 @@ $(document).ready(function() {
 
     $('#rm_submit_wrapper').empty().append('<input type="submit">');
 
+
+    $('.ghost').removeClass('ghost');
+    // $('#location-select-wrap').addClass('ghost');
+    $('html').css('overflow', 'auto');
+
     //$('#our-menu .viewport').height($('#our-menu .overview').outerHeight());
 });
 
