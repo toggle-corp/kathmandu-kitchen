@@ -118,100 +118,10 @@
             </ul>
         </div>
         <a class="buttons next" href="#">&#62;</a>
-        {% comment %}
-        {% for category in categories %}
-        <div class="menu-group" data-target="#menu-items-{{ category.name|slugify }}">
-            <header>
-                <img {% if category.image %}src="{{ category.image.url }}" {% else %}class="no-img"{% endif %}>
-                <div>
-                    <h3>{{ category.name|escape }}</h3>
-                    <button class="expand-menu-group-btn"><i class="ion-ios-arrow-down"></i></button>
-                </div>
-            </header>
-        </div>
-        {% endfor %}
-        {% endcomment %}
     </div>
 </section>
 <section id="reservation-section">
-    {% if current_branch.code == 'AMS' %}
-    <div id="rm_reservation" class="section-content">
-        <div class="rm_reservation_top"></div>
-        <div class="rm_reservation_body">
-            <div id="rm_wrapper">
-                <script language="javascript" type="text/javascript" src="https://www.seatme.nl/srm/?rid=3552&af=2178&lang={{ current_language }}"></script>
-            </div>
-        </div>
-        <div class="rm_reservation_bottom"></div>
-    </div>
-    {% else %}
-    <div id="rm_reservation" class="section-content">
-        <div class="rm_reservation_top"></div>
-        <div class="rm_reservation_body">
-            <div id="rm_wrapper">
-                <script language="javascript" type="text/javascript" src="https://www.seatme.nl/srm/?rid=7541&af=5173&lang={{ current_language }}"></script>
-            </div>
-        </div>
-        <div class="rm_reservation_bottom"></div>
-    </div>
-    {% comment %}
-    <div id="reservation-form-wrapper">
-        <header>
-            <h3>{% trans 'Make a Reservation' %}</h3>
-        </header>
-        <div class="content">
-            <form method="POST" action={% url 'reserve' current_branch.code %}>
-                {% csrf_token %}
-                <div class="input-row">
-                    <div id="date-field" class="input-container">
-                        <label>{% trans 'Date' %}:</label>
-                        <input type="date" name="date" required>
-                    </div>
-                </div>
-                <div class="input-row">
-                    <div id="number-field" class="input-container">
-                        <label>{% trans 'Number of person' %}:</label>
-                        <input type="number" step="1" name="persons" required>
-                    </div>
-                </div>
-                <div class="input-row">
-                    <div class="input-container">
-                        <label>{% trans 'Time' %}:</label>
-                        <input type="time" name="time" required>
-                    </div>
-                </div>
-                <div class="input-row">
-                    <div class="input-container">
-                        <label>{% trans 'First Name' %}:</label>
-                        <input type="text" name="first-name" required>
-                    </div>
-                </div>
-                <div class="input-row">
-                    <div class="input-container">
-                        <label>{% trans 'Last Name' %}:</label>
-                        <input type="text" name="last-name" required>
-                    </div>
-                </div>
-                <div class="input-row">
-                    <div class="input-container">
-                        <label>{% trans 'Email' %}:</label>
-                        <input type="text" name="email" required>
-                    </div>
-                </div>
-                <div class="input-row">
-                    <div class="input-container">
-                        <label>{% trans 'Special Request' %}:</label>
-                        <textarea name="special-request"></textarea>
-                    </div>
-                </div>
-                <div class="action-buttons">
-                    <button>{% trans 'Submit' %}</button>
-                </div>
-            </form>
-        </div>
-    </div>
-    {% endcomment %}
-    {% endif %}
+    <div style="margin:0 auto;text-align:center;" id="quandoo-booking-widget"></div>
 </section>
 <section id="opening-hours-and-contact-us">
     <div id="opening-hours">

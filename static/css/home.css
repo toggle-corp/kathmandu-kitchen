@@ -148,7 +148,8 @@ body #opening-hours-and-contact-us {
   background-position: center center;
   display: flex;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  height: auto; }
   #reservation-section #rm_reservation {
     height: 100%; }
     #reservation-section #rm_reservation .rm_header {
