@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-08-31 18:53+0545\n"
+"POT-Creation-Date: 2018-09-03 12:46+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -117,67 +117,71 @@ msgstr "afwijzen"
 msgid "Accept"
 msgstr "Accepteren"
 
-#: templates/home.html:46 templates/home.html:283
+#: templates/home.html:46
+msgid "Order Online"
+msgstr "Bestellen"
+
+#: templates/home.html:47 templates/home.html:193
 msgid "Blog"
 msgstr "Nieuws"
 
-#: templates/home.html:47 templates/home.html:284
+#: templates/home.html:48 templates/home.html:194
 msgid "See Menu"
 msgstr "Zie menu"
 
-#: templates/home.html:48 templates/home.html:220
+#: templates/home.html:49 templates/home.html:130
 msgid "Opening Hours"
 msgstr "Openingstijden"
 
-#: templates/home.html:49 templates/home.html:286
+#: templates/home.html:50 templates/home.html:196
 msgid "Make Reservations"
 msgstr "Reserveren"
 
-#: templates/home.html:50 templates/home.html:237
+#: templates/home.html:51 templates/home.html:147
 msgid "Contact Us"
 msgstr "Neem contact met ons op"
 
-#: templates/home.html:59
+#: templates/home.html:60
 msgid "The taste you deserve"
 msgstr "De smaak die je verdient"
 
-#: templates/home.html:64
+#: templates/home.html:66
 msgid "Select a location to get started"
 msgstr "Selecteer een locatie"
 
-#: templates/home.html:75
+#: templates/home.html:78
 msgid "click to change"
 msgstr "Klik om te veranderen"
 
-#: templates/home.html:81
+#: templates/home.html:84
 msgid "change to"
 msgstr "veranderen naar"
 
-#: templates/home.html:92
+#: templates/home.html:95
 msgid "Our Menu"
 msgstr "Zie menu"
 
-#: templates/home.html:260
+#: templates/home.html:170
 msgid "Find us on"
 msgstr "Vind ons op"
 
-#: templates/home.html:272
+#: templates/home.html:182
 msgid "Copyright (c) 2017 Kathmandu Kitchen, All Rights Reserved"
 msgstr "Copyright (c) 2017 Kathmandu Kitchen, Alle Rechten Gereserveerd"
 
-#: templates/home.html:278
+#: templates/home.html:188
 msgid "Navigate"
 msgstr "Navigeren"
 
-#: templates/home.html:285
+#: templates/home.html:195
 msgid "Opening hours"
 msgstr "Openingstijden"
 
-#: templates/home.html:287
+#: templates/home.html:197
 msgid "Contact us"
 msgstr "Neem contact met ons op"
 
-#: templates/home.html:294
+#: templates/home.html:204
 msgid "Select location"
 msgstr "Selecteer een locatie"
 

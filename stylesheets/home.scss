@@ -97,6 +97,18 @@ body {
                     font-weight: 700;
                     color: rgba(255, 255, 255, 0.5);
                 }
+
+                .order-button {
+                    display: inline-block;
+                    text-transform: uppercase;
+                    padding: 6px 10px;
+                    margin-top: 48px;
+                    background-color: #e02222;
+                    font-weight: 700;
+                    font-size: 17px;
+                    letter-spacing: 0.1em;
+                    color: #fff;
+                }
             }
 
             #location-select-wrap {
@@ -427,7 +439,12 @@ body {
                     p{
                         font-size: 1.2em;
                     }
+
+                    .order-button-container {
+                        text-align: center;
+                    }
                 }
+
                 #location-select-wrap {
                     button {
                         margin-right: 0;

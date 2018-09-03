@@ -668,6 +668,16 @@ body {
           margin-top: 0;
           font-weight: 700;
           color: rgba(255, 255, 255, 0.5); }
+        body > #landing > .content #promo .order-button {
+          display: inline-block;
+          text-transform: uppercase;
+          padding: 6px 10px;
+          margin-top: 48px;
+          background-color: #e02222;
+          font-weight: 700;
+          font-size: 17px;
+          letter-spacing: 0.1em;
+          color: #fff; }
       body > #landing > .content #location-select-wrap {
         flex-basis: 100%;
         padding: 0 32px;
@@ -888,6 +898,8 @@ body {
           font-size: 3em; }
         body > #landing > .content #promo p {
           font-size: 1.2em; }
+        body > #landing > .content #promo .order-button-container {
+          text-align: center; }
         body > #landing > .content #location-select-wrap button {
           margin-right: 0;
           font-size: 1em;
